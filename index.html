@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI for Founders &middot; the companion</title>
+<meta name="description" content="A founder's companion to AI: a two-minute self-check, the RTCF prompting method, starter prompts, and how to run AI privately on your own laptop. Direct it, don't delegate, never surrender." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129302;</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#0a0a0b; --panel:#121318; --panel-2:#16171e; --gray-3:#2a2a30;
+    --gray-2:#5e5e63; --gray-1:#9a9a9e; --text:#e8e6e3; --accent:#6366f1; --accent-2:#818cf8;
+    --font:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--text);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent-2);text-decoration:none;transition:color .15s;}
+  a:hover{color:var(--text);}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 1.5rem;}
+  .corner{position:fixed;top:1.3rem;left:1.6rem;z-index:10;font-family:var(--mono);font-size:.76rem;font-weight:700;color:var(--gray-2);}
+  .corner a{color:var(--gray-2);} .corner a:hover{color:var(--text);} .corner .tld{color:var(--accent);}
+
+  /* hero */
+  .hero{padding:7rem 0 3rem;border-bottom:1px solid var(--gray-3);}
+  .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);}
+  h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1.04;margin:.7rem 0 .4rem;}
+  h1 .accent{color:var(--accent);}
+  .triad{font-family:var(--mono);color:var(--gray-1);font-size:1rem;margin-bottom:1.3rem;}
+  .triad b{color:var(--text);}
+  .lede{font-size:1.18rem;max-width:46rem;color:#c9c7c3;}
+  .cta{margin-top:1.7rem;display:flex;gap:.7rem;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:.6rem 1.15rem;border-radius:9px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;font-family:inherit;}
+  .btn.primary{background:var(--accent);color:#fff;} .btn.primary:hover{background:var(--accent-2);color:#fff;}
+  .btn.ghost{border:1px solid var(--gray-3);color:var(--text);background:none;} .btn.ghost:hover{border-color:var(--accent);}
+
+  section{padding:3.4rem 0;border-bottom:1px solid var(--gray-3);}
+  .sechead{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.4rem;}
+  .sechead h2{font-size:1.55rem;letter-spacing:-.01em;}
+  .sechead .count{font-family:var(--mono);color:var(--gray-2);font-size:.8rem;}
+  .secintro{color:var(--gray-1);max-width:44rem;margin:.2rem 0 1.7rem;}
+
+  /* quiz */
+  .quiz{background:var(--panel);border:1px solid var(--gray-3);border-radius:16px;padding:1.8rem;}
+  .q{display:none;}
+  .q.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .qmeta{font-family:var(--mono);font-size:.72rem;color:var(--gray-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
+  .q h3{font-size:1.25rem;line-height:1.3;margin-bottom:1.1rem;}
+  .opts{display:grid;gap:.6rem;}
+  .opt{text-align:left;background:var(--panel-2);border:1px solid var(--gray-3);color:var(--text);border-radius:10px;
+    padding:.85rem 1rem;font:inherit;font-size:.96rem;cursor:pointer;transition:border-color .15s,background .15s;}
+  .opt:hover{border-color:var(--accent);background:#1b1c24;}
+  .progress{height:4px;background:var(--gray-3);border-radius:2px;margin-bottom:1.4rem;overflow:hidden;}
+  .progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .result{display:none;}
+  .result.show{display:block;}
+  .result .badge{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);}
+  .result h3{font-size:1.7rem;letter-spacing:-.02em;margin:.3rem 0 .6rem;}
+  .result p.lead{color:#c9c7c3;font-size:1.05rem;margin-bottom:1.1rem;}
+  .result ul{list-style:none;display:grid;gap:.55rem;margin:0 0 1.3rem;}
+  .result li{padding-left:1.5rem;position:relative;color:#b9b7b3;}
+  .result li::before{content:"\2192";position:absolute;left:0;color:var(--accent);}
+  .result .tool{font-size:.92rem;color:var(--gray-1);border-left:2px solid var(--gray-3);padding-left:.8rem;margin-bottom:1.2rem;}
+  .restart{font-family:var(--mono);font-size:.78rem;color:var(--gray-1);background:none;border:none;cursor:pointer;}
+  .restart:hover{color:var(--accent-2);}
+
+  /* rtcf */
+  .rtcf{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.4rem;}
+  .rtcf .cell{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1rem;}
+  .rtcf .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-2);margin-bottom:.35rem;}
+  .rtcf .cell p{font-size:.88rem;color:#b9b7b3;}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+  .ba .box{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem;}
+  .ba .box .tag{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
+  .ba .before .tag{color:var(--gray-2);} .ba .after .tag{color:var(--accent-2);}
+  .ba .box pre{white-space:pre-wrap;font-family:var(--mono);font-size:.82rem;line-height:1.5;color:#c9c7c3;}
+  .note{font-size:.86rem;color:var(--gray-1);font-style:italic;border-left:2px solid var(--gray-3);padding-left:.8rem;margin-top:1.2rem;}
+
+  /* prompts */
+  .prompts{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
+  .pcard{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;}
+  .pcard .ptitle{font-weight:600;margin-bottom:.5rem;}
+  .pcard pre{white-space:pre-wrap;font-family:var(--mono);font-size:.8rem;line-height:1.5;color:#b9b7b3;flex:1;margin-bottom:.8rem;}
+  .copy{align-self:flex-start;font-family:var(--mono);font-size:.74rem;color:var(--gray-1);background:none;border:1px solid var(--gray-3);border-radius:7px;padding:.35rem .7rem;cursor:pointer;}
+  .copy:hover{border-color:var(--accent);color:var(--accent-2);}
+
+  /* tools */
+  .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.2rem;}
+  .tool-c{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.2rem;}
+  .tool-c.lead{border-color:var(--accent);}
+  .tool-c .badge2{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2);}
+  .tool-c h3{font-size:1.15rem;margin:.3rem 0 .5rem;}
+  .tool-c p{font-size:.9rem;color:#b9b7b3;margin-bottom:.7rem;}
+  .tool-c a{font-family:var(--mono);font-size:.78rem;}
+  .ipline{background:#0d0e12;border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem 1.3rem;color:#c9c7c3;font-size:1rem;}
+  .ipline b{color:var(--text);}
+
+  /* next */
+  .next{background:linear-gradient(135deg,#15131f,#101018);border:1px solid var(--gray-3);border-radius:16px;padding:1.8rem;}
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.1rem 0 1.4rem;}
+  .phase{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1rem;}
+  .phase .n{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);}
+  .phase b{display:block;margin:.2rem 0 .3rem;}
+  .phase span{font-size:.86rem;color:var(--gray-1);}
+
+  footer{padding:2.4rem 0 3.4rem;color:var(--gray-2);font-size:.9rem;border-bottom:none;}
+  .flinks{display:flex;flex-wrap:wrap;gap:.5rem 1.3rem;margin:.7rem 0 1rem;}
+  .flinks a{font-family:var(--mono);font-size:.78rem;color:var(--gray-1);} .flinks a:hover{color:var(--accent);}
+  .fine{font-size:.8rem;color:var(--gray-2);}
+  .proto{display:inline-block;font-family:var(--mono);font-size:.68rem;color:var(--accent-2);border:1px solid var(--gray-3);border-radius:6px;padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle;}
+
+  @media(max-width:760px){
+    .rtcf,.ba,.prompts,.tools,.phases{grid-template-columns:1fr;}
+    .hero{padding:5.5rem 0 2.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="corner"><a href="https://bigpicture.borck.dev">&larr; the big picture</a></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Curtin Ignition &middot; AI companion</div>
+    <h1>AI for <span class="accent">Founders</span></h1>
+    <div class="triad"><b>Direct</b> it. Don&rsquo;t <b>delegate</b>. Never <b>surrender</b>.</div>
+    <p class="lede">AI lets a team of one move like a team of ten, as long as you stay the one steering. This is the take-home from the session: a two-minute self-check, a prompting method, founder-ready prompts, and how to run it all privately on your own laptop.</p>
+    <div class="cta">
+      <button class="btn primary" onclick="document.getElementById('check').scrollIntoView()">Find your starting point &darr;</button>
+      <a class="btn ghost" href="https://conversationnotdelegation.com">The idea behind it</a>
+    </div>
+  </div>
+</header>
+
+<!-- SELF-CHECK QUIZ -->
+<section id="check">
+  <div class="wrap">
+    <div class="sechead"><h2>Where are you on your AI journey?</h2><span class="count">// two minutes, five questions</span></div>
+    <p class="secintro">No right answers. This points you at the right next step, whether you have barely opened a chatbot or you are already building AI into your product.</p>
+
+    <div class="quiz">
+      <div class="progress"><i id="bar"></i></div>
+      <div id="questions"></div>
+
+      <div class="result" id="result">
+        <div class="badge" id="r-badge"></div>
+        <h3 id="r-title"></h3>
+        <p class="lead" id="r-lead"></p>
+        <ul id="r-steps"></ul>
+        <div class="tool" id="r-tool"></div>
+        <button class="restart" onclick="restart()">&#8635; start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RTCF -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>The method: RTCF</h2><span class="count">// turn a vague prompt into a sharp one</span></div>
+    <p class="secintro">Most weak AI answers come from weak prompts. Give the model four things and the quality jumps. Dial Role up when you run a small or local model, and let it go light on a frontier model where the others carry the weight.</p>
+    <div class="rtcf">
+      <div class="cell"><div class="k">Role</div><p>Who should it be? "A skeptical seed investor."</p></div>
+      <div class="cell"><div class="k">Task</div><p>What exactly do you want done?</p></div>
+      <div class="cell"><div class="k">Context</div><p>Your situation, stage, constraints, audience.</p></div>
+      <div class="cell"><div class="k">Format</div><p>How should the answer come back?</p></div>
+    </div>
+    <div class="ba">
+      <div class="box before"><div class="tag">Vague</div><pre>Is my startup idea any good?</pre></div>
+      <div class="box after"><div class="tag">RTCF</div><pre>Role: a skeptical seed investor who has seen 500 pitches.
+Task: stress-test my idea and find the three weakest assumptions.
+Context: a booking tool for solo tradespeople in WA, pre-revenue, two founders, no funding yet.
+Format: a short list, each weakness with one question I should answer before I build.</pre></div>
+    </div>
+    <div class="note">RTCF is a dial, not a recipe. The point is judgment: you decide what good looks like, the model just drafts toward it.</div>
+  </div>
+</section>
+
+<!-- STARTER PROMPTS -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Starter prompts</h2><span class="count">// steal these, then make them yours</span></div>
+    <p class="secintro">A founder&rsquo;s working set. Each makes the AI argue with you rather than flatter you. Copy, paste, edit the bits in brackets.</p>
+    <div class="prompts" id="prompts"></div>
+  </div>
+</section>
+
+<!-- RUN IT PRIVATE -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Run it private, on your own laptop</h2><span class="count">// no subscription, no data leaving the machine</span></div>
+    <p class="secintro">You can run capable AI locally for free. It is weaker than a frontier model at the hardest tasks, but more than enough for thinking, validating, and rehearsing, and it never sends your work to anyone.</p>
+    <div class="tools">
+      <div class="tool-c lead">
+        <div class="badge2">start here</div>
+        <h3>Msty</h3>
+        <p>One installer, no setup. Picks a model for you, chats with your own documents, runs offline. The smoothest first step for a beginner.</p>
+        <a href="https://msty.app">msty.app &rarr;</a>
+      </div>
+      <div class="tool-c">
+        <div class="badge2">open source</div>
+        <h3>Jan</h3>
+        <p>Polished, open-source, Mac-friendly. Local models and document chat, all on your machine.</p>
+        <a href="https://jan.ai">jan.ai &rarr;</a>
+      </div>
+      <div class="tool-c">
+        <div class="badge2">open source</div>
+        <h3>GPT4All</h3>
+        <p>Free and open, runs on Mac, Windows, and Linux. Built-in "LocalDocs" for grounding answers in your files.</p>
+        <a href="https://gpt4all.io">gpt4all.io &rarr;</a>
+      </div>
+    </div>
+    <div class="ipline"><b>Why bother going local?</b> Your unvalidated idea is often your only asset. Thinking it through with a local model means you are not posting it into someone else&rsquo;s cloud. On a modest laptop, start with a small model (3 to 4 billion parameters) and work up.</div>
+  </div>
+</section>
+
+<!-- NEXT STEP -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Want to go further?</h2></div>
+    <div class="next">
+      <p class="secintro" style="margin-top:0">This session is the founder-flavoured taster of a three-part Exec Ed series at Curtin: from personal practice, to choosing which AI bets to fund, to leading delivery.</p>
+      <div class="phases">
+        <div class="phase"><div class="n">Phase 1</div><b>Practical practice</b><span>Everyday confidence and personal capability, any role.</span></div>
+        <div class="phase"><div class="n">Phase 2</div><b>Strategic innovation</b><span>Decide which AI projects to fund and prioritise.</span></div>
+        <div class="phase"><div class="n">Phase 3</div><b>Project leadership</b><span>Lead teams to implement and deliver AI projects.</span></div>
+      </div>
+      <a class="btn primary" href="https://www.curtin.edu.au/study/prof-development/ai-for-professionals-building-everyday-capability/">AI for Professionals &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Dr Michael Borck</strong> &middot; Lecturer &amp; AI Facilitator &middot; School of Marketing and Management, Curtin University
+    <span class="proto">prototype</span>
+    <div class="flinks">
+      <a href="https://bigpicture.borck.dev">the big picture</a>
+      <a href="https://conversationnotdelegation.com">conversation, not delegation</a>
+      <a href="https://borck.education">borck.education</a>
+      <a href="mailto:michael.borck@curtin.edu.au">email</a>
+    </div>
+    <p class="fine">A companion to the Curtin Ignition session. Built in conversation with AI, of course. Direct it, don&rsquo;t delegate, never surrender.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- self-check quiz ----
+  const QUESTIONS = [
+    { q: "How often do you use an AI chat tool in your work?",
+      a: [["Rarely or never",0],["Now and then",1],["Most days",2],["It is in my daily workflow",3]] },
+    { q: "When you prompt AI, you mostly...",
+      a: [["Type a quick question and take what it gives",0],["Rephrase it if the answer misses",1],["Give it a role, context, and a format",2],["Reuse prompt templates you have saved",3]] },
+    { q: "Have you used AI on your actual venture (idea, pitch, customers)?",
+      a: [["Not yet",0],["Brainstorming only",1],["Drafted real materials with it",2],["It shapes decisions I act on",3]] },
+    { q: "Where does your data go when you use AI?",
+      a: [["Haven't really thought about it",0],["I know it goes to the cloud",1],["I avoid pasting anything sensitive",2],["I run some AI locally or privately",3]] },
+    { q: "Building AI into the product itself?",
+      a: [["No",0],["Curious and exploring",1],["Prototyping a feature",2],["Already shipping it",3]] },
+  ];
+
+  const BANDS = [
+    { min:0, max:4, badge:"Stage 1 of 4", title:"Curious",
+      lead:"You are right at the start, which is the best possible time to build good habits before bad ones set in.",
+      steps:["Try the RTCF method below on one real question about your business.","Install Msty and ask it something you would normally Google.","Read the idea behind all of this: conversation, not delegation."],
+      tool:"Start with: Msty. One install, ask it one real question today." },
+    { min:5, max:8, badge:"Stage 2 of 4", title:"Dabbler",
+      lead:"You use AI, now make it deliberate. Small changes in how you prompt will sharpen the output a lot.",
+      steps:["Adopt RTCF and notice the jump in quality.","Save the three prompts you find yourself reusing.","Try grounding an answer in one of your own documents."],
+      tool:"Start with: Msty, then load a real document and chat with it." },
+    { min:9, max:12, badge:"Stage 3 of 4", title:"Operator",
+      lead:"AI is in your workflow. Now protect what matters and systematise what works.",
+      steps:["Move sensitive work to a local model so your IP stays on your machine.","Build a small prompt library for the jobs you repeat.","Learn the handoff habit: summarise and restart when a session gets long."],
+      tool:"Start with: Jan or GPT4All for private, local, document-grounded work." },
+    { min:13, max:15, badge:"Stage 4 of 4", title:"Builder",
+      lead:"You are building with AI. The risk now is trusting it where you should not.",
+      steps:["Watch the failure modes: confidently-wrong output and the maintenance trap.","Keep human judgment at the boundary; the AI assists, you decide.","Consider local models for IP-sensitive features, and bring your own key when you need frontier power."],
+      tool:"Start with: a local model for private work, plus your own frontier key for the heavy lifting." },
+  ];
+
+  let current = 0, score = 0;
+  const qWrap = document.getElementById('questions');
+  const bar = document.getElementById('bar');
+
+  function render(){
+    qWrap.innerHTML = '';
+    QUESTIONS.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'q' + (i === current ? ' active' : '');
+      div.innerHTML = '<div class="qmeta">Question ' + (i+1) + ' of ' + QUESTIONS.length + '</div>' +
+        '<h3>' + item.q + '</h3><div class="opts"></div>';
+      const opts = div.querySelector('.opts');
+      item.a.forEach(([label, pts]) => {
+        const b = document.createElement('button');
+        b.className = 'opt'; b.textContent = label;
+        b.onclick = () => choose(pts);
+        opts.appendChild(b);
+      });
+      qWrap.appendChild(div);
+    });
+    bar.style.width = (current / QUESTIONS.length * 100) + '%';
+  }
+
+  function choose(pts){
+    score += pts; current++;
+    if (current < QUESTIONS.length){ render(); }
+    else { finish(); }
+  }
+
+  function finish(){
+    bar.style.width = '100%';
+    qWrap.style.display = 'none';
+    const band = BANDS.find(b => score >= b.min && score <= b.max);
+    document.getElementById('r-badge').textContent = band.badge;
+    document.getElementById('r-title').textContent = band.title;
+    document.getElementById('r-lead').textContent = band.lead;
+    const ul = document.getElementById('r-steps'); ul.innerHTML = '';
+    band.steps.forEach(s => { const li = document.createElement('li'); li.textContent = s; ul.appendChild(li); });
+    document.getElementById('r-tool').textContent = band.tool;
+    document.getElementById('result').classList.add('show');
+  }
+
+  function restart(){
+    current = 0; score = 0;
+    document.getElementById('result').classList.remove('show');
+    qWrap.style.display = 'block';
+    render();
+  }
+  render();
+
+  // ---- starter prompts ----
+  const PROMPTS = [
+    ["Pressure-test the idea",
+"Role: a skeptical seed investor who has seen 500 pitches.\nTask: find the three weakest assumptions in my idea and the one that would kill it.\nContext: [one sentence on what you are building and for whom].\nFormat: a short list, each with one question I must answer before I build."],
+    ["Find the competitor gap",
+"Role: a market analyst.\nTask: map who already solves this problem and where the gaps are.\nContext: [your product] for [your customer] in [your market].\nFormat: a table of competitors, what they miss, and the wedge I could take."],
+    ["Build a customer to argue with",
+"Role: my most skeptical potential customer, [describe them].\nTask: tell me honestly why you would not buy this, and what would change your mind.\nContext: [your product and price].\nFormat: a frank first-person reply, then three objections ranked by how common they are."],
+    ["Sharpen the one-liner",
+"Role: a sharp copywriter.\nTask: turn my rambling description into three tight one-line pitches.\nContext: [paste your current description].\nFormat: three options, each under 15 words, plus a note on who each one speaks to."],
+    ["Rehearse the investor Q&A",
+"Role: an investor in a pitch meeting.\nTask: ask me the ten hardest questions you would ask, one at a time, and react to each answer.\nContext: [your business, stage, and ask].\nFormat: start with question one and wait for my reply before the next."],
+    ["Plan the week, not the year",
+"Role: a startup operator who ships.\nTask: turn my goal into the smallest test I could run this week.\nContext: [your goal] with [your time and budget].\nFormat: one experiment, the steps, and what result would tell me to keep going or stop."],
+  ];
+
+  const pWrap = document.getElementById('prompts');
+  PROMPTS.forEach(([title, body]) => {
+    const card = document.createElement('div');
+    card.className = 'pcard';
+    const pre = document.createElement('pre'); pre.textContent = body;
+    const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = 'copy';
+    btn.onclick = () => {
+      navigator.clipboard.writeText(body).then(() => {
+        btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
+      });
+    };
+    const h = document.createElement('div'); h.className = 'ptitle'; h.textContent = title;
+    card.appendChild(h); card.appendChild(pre); card.appendChild(btn);
+    pWrap.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
