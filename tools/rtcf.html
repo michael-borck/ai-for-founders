@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTCF Prompt Analyser - AI for Founders</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .rtcf-overview {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .rtcf-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .rtcf-item {
+            text-align: center;
+            padding: 10px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+        }
+
+        .rtcf-letter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .rtcf-title {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-top: 5px;
+        }
+
+        .analyzer-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-section, .results-section {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #f1f5f9;
+            margin-bottom: 15px;
+        }
+
+        .prompt-input {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            background: #1e293b;
+            border: 2px solid #475569;
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        .prompt-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .analyze-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .analyze-btn:focus {
+            outline: 2px solid #10b981;
+            outline-offset: 2px;
+        }
+
+        .results-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .rtcf-result {
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .rtcf-result.present {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .rtcf-result.missing {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .rtcf-result.partial {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .result-icon {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .result-title {
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .result-status {
+            margin-left: auto;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-present {
+            background: #10b981;
+            color: white;
+        }
+
+        .status-partial {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .status-missing {
+            background: #ef4444;
+            color: white;
+        }
+
+        .result-feedback {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .overall-score {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .score-label {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .examples-section {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .example {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .example-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .example-label.weak { color: #fca5a5; }
+        .example-label.strong { color: #6ee7b7; }
+
+        .example-text {
+            font-family: 'Courier New', monospace;
+            color: #e2e8f0;
+            font-size: 13px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+
+        .try-example-btn {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .try-example-btn:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .try-example-btn:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .analyzer-section {
+                grid-template-columns: 1fr;
+            }
+
+            .rtcf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RTCF Prompt Analyser</h1>
+            <p class="subtitle">Analyse your prompts against the RTCF framework for better AI results</p>
+        </div>
+
+        <div class="rtcf-overview">
+            <h2 style="color: #f1f5f9; margin-bottom: 15px;">The RTCF Framework</h2>
+            <div class="rtcf-grid">
+                <div class="rtcf-item">
+                    <div class="rtcf-letter">R</div>
+                    <div class="rtcf-title">Role</div>
+                </div>
+                <div class="rtcf-item">
+                    <div class="rtcf-letter">T</div>
+                    <div class="rtcf-title">Task</div>
+                </div>
+                <div class="rtcf-item">
+                    <div class="rtcf-letter">C</div>
+                    <div class="rtcf-title">Context</div>
+                </div>
+                <div class="rtcf-item">
+                    <div class="rtcf-letter">F</div>
+                    <div class="rtcf-title">Format</div>
+                </div>
+            </div>
+            <p style="color: #94a3b8; font-size: 14px; text-align: center;">
+                Enter your prompt below to see how well it follows the RTCF framework
+            </p>
+        </div>
+
+        <div class="analyzer-section">
+            <div class="input-section">
+                <h2 class="section-title">Enter Your Prompt</h2>
+                <textarea
+                    class="prompt-input"
+                    id="prompt-input"
+                    placeholder="Paste your AI prompt here and click 'Analyse' to see how well it follows the RTCF framework...
+
+Example:
+You are an experienced food scientist. Analyse the fermentation data I've uploaded and identify key pH trends across treatments. This is from an oat milk study with 4 treatments over 48 hours. Present findings as a summary table."
+                ></textarea>
+                <button class="analyze-btn" onclick="analyzePrompt()">Analyse Prompt</button>
+            </div>
+
+            <div class="results-section">
+                <h2 class="section-title">RTCF Analysis</h2>
+                <div id="results-container">
+                    <p style="color: #94a3b8; text-align: center; padding: 40px;">
+                        Enter a prompt and click "Analyse" to see detailed RTCF feedback
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h2 class="section-title">Example Prompts</h2>
+
+            <div class="example">
+                <div class="example-label weak">Weak Prompt (Missing RTCF Elements)</div>
+                <div class="example-text">Is my startup idea any good?</div>
+                <button class="try-example-btn" onclick="tryExample('Is my startup idea any good?')">Try This Example</button>
+            </div>
+
+            <div class="example">
+                <div class="example-label strong">Strong RTCF Prompt (pressure-test an idea)</div>
+                <div class="example-text">You are a skeptical seed investor who has seen 500 pitches. Find the three weakest assumptions in my idea and the one that would kill it, then list the questions I must answer before I build. The idea: a booking app for solo tradespeople in WA, pre-revenue, two founders, no funding yet. Present as a short numbered list, each weakness with one question.</div>
+                <button class="try-example-btn" onclick="tryExample(`You are a skeptical seed investor who has seen 500 pitches. Find the three weakest assumptions in my idea and the one that would kill it, then list the questions I must answer before I build. The idea: a booking app for solo tradespeople in WA, pre-revenue, two founders, no funding yet. Present as a short numbered list, each weakness with one question.`)">Try This Example</button>
+            </div>
+
+            <div class="example">
+                <div class="example-label strong">Strong RTCF Prompt (board of directors)</div>
+                <div class="example-text">You are a panel of three: a cautious CFO, my most skeptical customer, and a growth-hungry marketer. Each gives an honest take, in their own voice, on whether I should charge a monthly subscription or a one-off fee, then stops so I can decide. Context: a 20-dollar-a-month tool for solo tradespeople, pre-revenue. Present each voice under its own heading.</div>
+                <button class="try-example-btn" onclick="tryExample(`You are a panel of three: a cautious CFO, my most skeptical customer, and a growth-hungry marketer. Each gives an honest take, in their own voice, on whether I should charge a monthly subscription or a one-off fee, then stops so I can decide. Context: a 20-dollar-a-month tool for solo tradespeople, pre-revenue. Present each voice under its own heading.`)">Try This Example</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function analyzePrompt() {
+            const prompt = document.getElementById('prompt-input').value.trim();
+
+            if (!prompt) {
+                document.getElementById('results-container').innerHTML = `
+                    <p style="color: #ef4444; text-align: center; padding: 40px;">
+                        Please enter a prompt to analyse
+                    </p>
+                `;
+                return;
+            }
+
+            const analysis = analyzeRTCF(prompt);
+            displayResults(analysis);
+        }
+
+        function analyzeRTCF(prompt) {
+            const lp = prompt.toLowerCase();
+
+            const roleKeywords = [
+                'you are', 'act as', 'assume the role', 'as a', 'as an',
+                'scientist', 'researcher', 'analyst', 'expert', 'specialist',
+                'advisor', 'consultant', 'reviewer', 'panel'
+            ];
+
+            const taskKeywords = [
+                'generate', 'create', 'write', 'analyse', 'analyze', 'summarise', 'summarize',
+                'explain', 'design', 'develop', 'identify', 'suggest', 'recommend',
+                'evaluate', 'compare', 'assess', 'review', 'examine', 'interview me',
+                'play devil', 'give me'
+            ];
+
+            const contextKeywords = [
+                'given', 'based on', 'considering', 'in the context of', 'for',
+                'dataset', 'data', 'research area', 'study', 'project', 'paper',
+                'masters', 'phd', 'undergraduate', 'postgraduate', 'fermentation',
+                'oat milk', 'plant-based', 'food', 'western australia'
+            ];
+
+            const formatKeywords = [
+                'present as', 'format as', 'structure as', 'organize as', 'organise as',
+                'list', 'table', 'bullet points', 'paragraphs', 'sections',
+                'numbered', 'structured', 'include:', 'abstract', 'summary',
+                'key points', '3-4', 'one at a time'
+            ];
+
+            function check(keywords, elementName) {
+                const matches = keywords.filter(k => lp.includes(k));
+                let status, feedback;
+
+                if (matches.length >= 2) {
+                    status = 'present';
+                    feedback = `Strong ${elementName.toLowerCase()} detected. Found indicators: ${matches.slice(0, 3).join(', ')}.`;
+                } else if (matches.length === 1) {
+                    status = 'partial';
+                    feedback = `Some ${elementName.toLowerCase()} present ("${matches[0]}"), but could be more specific.`;
+                } else {
+                    status = 'missing';
+                    feedback = `No clear ${elementName.toLowerCase()} detected. Consider adding explicit ${elementName.toLowerCase()} information.`;
+                }
+
+                return { status, feedback, matches };
+            }
+
+            const role = check(roleKeywords, 'Role');
+            const task = check(taskKeywords, 'Task');
+            const context = check(contextKeywords, 'Context');
+            const format = check(formatKeywords, 'Format');
+
+            const scores = { present: 2, partial: 1, missing: 0 };
+            const total = scores[role.status] + scores[task.status] + scores[context.status] + scores[format.status];
+            const percentage = Math.round((total / 8) * 100);
+
+            return {
+                role, task, context, format,
+                total, percentage,
+                feedback: getOverallFeedback(percentage)
+            };
+        }
+
+        function getOverallFeedback(pct) {
+            if (pct >= 80) return "Excellent! This is a well-structured RTCF prompt.";
+            if (pct >= 60) return "Good prompt with most RTCF elements. Small improvements could help.";
+            if (pct >= 40) return "Decent foundation, but missing key RTCF elements. Adding them will improve results.";
+            return "This prompt needs more structure. Adding RTCF elements will dramatically improve results.";
+        }
+
+        function displayResults(a) {
+            const c = document.getElementById('results-container');
+            c.innerHTML = `
+                <div class="overall-score">
+                    <div class="score-number">${a.percentage}%</div>
+                    <div class="score-label">RTCF Score</div>
+                    <p style="color: #cbd5e1; font-size: 14px; margin-top: 10px;">${a.feedback}</p>
+                </div>
+                <div class="results-grid">
+                    ${card('R', 'Role', a.role)}
+                    ${card('T', 'Task', a.task)}
+                    ${card('C', 'Context', a.context)}
+                    ${card('F', 'Format', a.format)}
+                </div>
+            `;
+        }
+
+        function card(letter, title, result) {
+            const icons = { present: 'Present', partial: 'Partial', missing: 'Missing' };
+            return `
+                <div class="rtcf-result ${result.status}">
+                    <div class="result-header">
+                        <span class="result-icon">${letter}</span>
+                        <span class="result-title">${title}</span>
+                        <span class="result-status status-${result.status}">${icons[result.status]}</span>
+                    </div>
+                    <div class="result-feedback">${result.feedback}</div>
+                </div>
+            `;
+        }
+
+        function tryExample(text) {
+            document.getElementById('prompt-input').value = text;
+            analyzePrompt();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('prompt-input');
+            input.addEventListener('input', function() {
+                clearTimeout(this.timeout);
+                this.timeout = setTimeout(() => {
+                    if (input.value.trim().length > 20) {
+                        analyzePrompt();
+                    }
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

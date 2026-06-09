@@ -78,6 +78,25 @@
   .ba .box pre{white-space:pre-wrap;font-family:var(--mono);font-size:.82rem;line-height:1.5;color:#c9c7c3;}
   .note{font-size:.86rem;color:var(--gray-1);font-style:italic;border-left:2px solid var(--gray-3);padding-left:.8rem;margin-top:1.2rem;}
 
+  /* strategies */
+  .strats{display:grid;gap:.9rem;}
+  .strat{background:var(--panel);border:1px solid var(--gray-3);border-radius:14px;padding:1.4rem;}
+  .strat .sidx{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-2);}
+  .strat h3{font-size:1.25rem;margin:.25rem 0 .5rem;}
+  .strat p.what{color:#b9b7b3;font-size:.96rem;margin-bottom:.2rem;}
+  .strat .why{font-size:.86rem;color:var(--gray-1);font-style:italic;border-left:2px solid var(--accent);padding-left:.8rem;margin:.9rem 0;}
+  .ex{margin-top:.7rem;}
+  .ex pre{white-space:pre-wrap;font-family:var(--mono);font-size:.81rem;line-height:1.5;color:#b9b7b3;background:var(--panel-2);border:1px solid var(--gray-3);border-radius:10px;padding:.9rem 1rem;margin-bottom:.6rem;}
+  .windows{display:grid;grid-template-columns:1fr auto 1fr;gap:.7rem;align-items:stretch;margin:.6rem 0;}
+  .win{background:var(--panel-2);border:1px solid var(--gray-3);border-radius:10px;padding:.9rem 1rem;}
+  .win .wt{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2);margin-bottom:.35rem;}
+  .win p{font-size:.85rem;color:#b9b7b3;}
+  .warrow{display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);font-size:1.2rem;line-height:1.2;}
+  .warrow small{font-size:.62rem;color:var(--gray-1);}
+  .nicebox{background:#0d0e12;border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem 1.3rem;color:var(--gray-1);font-size:.92rem;margin-top:1.1rem;}
+  .nicebox b{color:var(--text);}
+  @media(max-width:760px){ .windows{grid-template-columns:1fr;} .warrow{flex-direction:row;gap:.5rem;padding:.2rem 0;} }
+
   /* prompts */
   .prompts{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
   .pcard{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;}
@@ -126,7 +145,7 @@
     <div class="eyebrow">Curtin Ignition &middot; AI companion</div>
     <h1>AI for <span class="accent">Founders</span></h1>
     <div class="triad"><b>Conversation</b>, not <b>delegation</b>: a thinking partner you converse with, not a stand-in you hand the work to.</div>
-    <p class="lede">AI lets a team of one move like a team of ten, as long as you stay the one steering. This is the take-home from the session: a two-minute self-check, a prompting method, founder-ready prompts, and how to run it all privately on your own laptop.</p>
+    <p class="lede">AI lets a team of one move like a team of ten, as long as you stay the one steering. This is the take-home from the session: a two-minute self-check, simple strategies that keep you in charge, founder-ready prompts, and how to run it all privately on your own laptop.</p>
     <div class="cta">
       <button class="btn primary" onclick="document.getElementById('check').scrollIntoView()">Find your starting point &darr;</button>
       <a class="btn ghost" href="https://conversationnotdelegation.com">The idea behind it</a>
@@ -156,25 +175,52 @@
   </div>
 </section>
 
-<!-- RTCF -->
+<!-- STRATEGIES -->
 <section>
   <div class="wrap">
-    <div class="sechead"><h2>The method: RTCF</h2><span class="count">// turn a vague prompt into a sharp one</span></div>
-    <p class="secintro">Most weak AI answers come from weak prompts. Give the model four things and the quality jumps. Dial Role up when you run a small or local model, and let it go light on a frontier model where the others carry the weight.</p>
-    <div class="rtcf">
-      <div class="cell"><div class="k">Role</div><p>Who should it be? "A skeptical seed investor."</p></div>
-      <div class="cell"><div class="k">Task</div><p>What exactly do you want done?</p></div>
-      <div class="cell"><div class="k">Context</div><p>Your situation, stage, constraints, audience.</p></div>
-      <div class="cell"><div class="k">Format</div><p>How should the answer come back?</p></div>
+    <div class="sechead"><h2>Three strategies that keep you in charge</h2><span class="count">// it is the strokes, not the racquet</span></div>
+    <p class="secintro">Give a professional tennis player any racquet and they beat you. Give you the best racquet in the world and they still beat you. The tool barely matters; how you play does. These three ways of working keep the thinking, and the judgment, with you.</p>
+
+    <div class="strats">
+
+      <div class="strat">
+        <div class="sidx">Strategy 1</div>
+        <h3>Devil&rsquo;s advocate</h3>
+        <p class="what">Tell the AI to argue against you. It is far more useful as a critic than a cheerleader, so point it at your own idea and let it attack.</p>
+        <div class="why">It attacks, you decide what survives. You stay the judge, not the jury.</div>
+        <div class="ex">
+          <pre>Be a skeptical seed investor who has seen 500 pitches. Attack this idea: find the three weakest assumptions and the one that would kill it. Then list the questions I must answer before I build. Here it is: [your idea].</pre>
+          <button class="copy">copy</button>
+        </div>
+      </div>
+
+      <div class="strat">
+        <div class="sidx">Strategy 2</div>
+        <h3>Board of directors</h3>
+        <p class="what">Put the same question to a room, not a single voice. Ask for several people at once, each with their own job and their own bias, then weigh them yourself.</p>
+        <div class="why">You get perspectives, not an answer. The synthesis is yours.</div>
+        <div class="ex">
+          <pre>Answer as a panel, each in their own voice: (1) a cautious CFO, (2) my most skeptical customer, (3) a growth-hungry marketer. Each gives an honest take on this decision, then stops. I will decide. The decision: [your decision].</pre>
+          <button class="copy">copy</button>
+        </div>
+      </div>
+
+      <div class="strat">
+        <div class="sidx">Strategy 3 &middot; the important one</div>
+        <h3>Two windows: converse, then produce</h3>
+        <p class="what">Keep two chats open. One is for thinking: argue, explore, make a mess. The other is your actual work. The AI never writes into the second one. You hand-carry across only the lines worth keeping.</p>
+        <div class="windows">
+          <div class="win"><div class="wt">Window 1 &middot; converse</div><p>Think out loud. Challenge it. Try things. This one is allowed to be messy.</p></div>
+          <div class="warrow">&rarr;<small>you choose</small></div>
+          <div class="win"><div class="wt">Window 2 &middot; produce</div><p>Your real document. Only the lines you decided are good make it across.</p></div>
+        </div>
+        <div class="why">The copy-and-paste is the judgment. You are the human in the loop, choosing what crosses over. Conversation, not Delegation, made physical.</div>
+      </div>
+
     </div>
-    <div class="ba">
-      <div class="box before"><div class="tag">Vague</div><pre>Is my startup idea any good?</pre></div>
-      <div class="box after"><div class="tag">RTCF</div><pre>Role: a skeptical seed investor who has seen 500 pitches.
-Task: stress-test my idea and find the three weakest assumptions.
-Context: a booking tool for solo tradespeople in WA, pre-revenue, two founders, no funding yet.
-Format: a short list, each weakness with one question I should answer before I build.</pre></div>
-    </div>
-    <div class="note">RTCF is a dial, not a recipe. The point is judgment: you decide what good looks like, the model just drafts toward it. It gets a full chapter in the free book, <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>.</div>
+
+    <div class="nicebox"><b>Nice to know:</b> each prompt above quietly names a role, a task, some context, and a format. That pattern is called RTCF, the mechanics under the strategies. You do not have to memorise it (it gets a chapter in the free book <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>). To sharpen any prompt, paste it into the <a href="tools/rtcf.html">RTCF tool</a>.</div>
+
   </div>
 </section>
 
@@ -191,7 +237,7 @@ Format: a short list, each weakness with one question I should answer before I b
 <section>
   <div class="wrap">
     <div class="sechead"><h2>Run it private, on your own laptop</h2><span class="count">// no subscription, no data leaving the machine</span></div>
-    <p class="secintro">You can run capable AI locally for free. It is weaker than a frontier model at the hardest tasks, but more than enough for thinking, validating, and rehearsing, and it never sends your work to anyone.</p>
+    <p class="secintro">The tool is the racquet, not the strokes, so any of these will do. You can run capable AI locally for free. It is weaker than a frontier model at the hardest tasks, but more than enough for the strategies above, and it never sends your work to anyone.</p>
     <div class="tools">
       <div class="tool-c lead">
         <div class="badge2">start here</div>
@@ -269,15 +315,15 @@ Format: a short list, each weakness with one question I should answer before I b
   const BANDS = [
     { min:0, max:4, badge:"Stage 1 of 4", title:"Curious",
       lead:"You are right at the start, which is the best possible time to build good habits before bad ones set in.",
-      steps:["Try the RTCF method below on one real question about your business.","Install Msty and ask it something you would normally Google.","Read the idea behind all of this: conversation, not delegation."],
+      steps:["Try the devil's advocate strategy below on one real question about your business.","Install Msty and ask it something you would normally Google.","Read the idea behind all of this: conversation, not delegation."],
       tool:"Start with: Msty. One install, ask it one real question today." },
     { min:5, max:8, badge:"Stage 2 of 4", title:"Dabbler",
       lead:"You use AI, now make it deliberate. Small changes in how you prompt will sharpen the output a lot.",
-      steps:["Adopt RTCF and notice the jump in quality.","Save the three prompts you find yourself reusing.","Try grounding an answer in one of your own documents."],
+      steps:["Use the board of directors strategy to get three honest perspectives on a decision.","Save the three prompts you find yourself reusing.","Try grounding an answer in one of your own documents."],
       tool:"Start with: Msty, then load a real document and chat with it." },
     { min:9, max:12, badge:"Stage 3 of 4", title:"Operator",
       lead:"AI is in your workflow. Now protect what matters and systematise what works.",
-      steps:["Move sensitive work to a local model so your IP stays on your machine.","Build a small prompt library for the jobs you repeat.","Learn the handoff habit: summarise and restart when a session gets long."],
+      steps:["Move sensitive work to a local model so your IP stays on your machine.","Use the two-window method so the AI never writes your final document.","Build a small prompt library for the jobs you repeat."],
       tool:"Start with: Jan or GPT4All for private, local, document-grounded work." },
     { min:13, max:15, badge:"Stage 4 of 4", title:"Builder",
       lead:"You are building with AI. The risk now is trusting it where you should not.",
@@ -365,6 +411,16 @@ Format: a short list, each weakness with one question I should answer before I b
     const h = document.createElement('div'); h.className = 'ptitle'; h.textContent = title;
     card.appendChild(h); card.appendChild(pre); card.appendChild(btn);
     pWrap.appendChild(card);
+  });
+
+  // ---- copy buttons inside the strategy examples (static markup) ----
+  document.querySelectorAll('.strat .copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pre = btn.parentElement.querySelector('pre');
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
+      });
+    });
   });
 </script>
 
