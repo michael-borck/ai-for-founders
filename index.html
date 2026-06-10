@@ -97,13 +97,24 @@
   .nicebox b{color:var(--text);}
   @media(max-width:760px){ .windows{grid-template-columns:1fr;} .warrow{flex-direction:row;gap:.5rem;padding:.2rem 0;} }
 
-  /* prompts */
-  .prompts{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
-  .pcard{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;}
-  .pcard .ptitle{font-weight:600;margin-bottom:.5rem;}
-  .pcard pre{white-space:pre-wrap;font-family:var(--mono);font-size:.8rem;line-height:1.5;color:#b9b7b3;flex:1;margin-bottom:.8rem;}
-  .copy{align-self:flex-start;font-family:var(--mono);font-size:.74rem;color:var(--gray-1);background:none;border:1px solid var(--gray-3);border-radius:7px;padding:.35rem .7rem;cursor:pointer;}
+  /* prompts (accordion) */
+  .prompts{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;align-items:start;}
+  details.pcard{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;overflow:hidden;transition:border-color .15s;}
+  details.pcard:hover{border-color:var(--accent);}
+  details.pcard summary{cursor:pointer;list-style:none;padding:.9rem 1.1rem;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;gap:.6rem;}
+  details.pcard summary::-webkit-details-marker{display:none;}
+  details.pcard summary::after{content:"+";font-family:var(--mono);color:var(--accent-2);font-size:1.15rem;line-height:1;}
+  details.pcard[open] summary::after{content:"\2013";}
+  details.pcard[open] summary{border-bottom:1px solid var(--gray-3);}
+  .pbody{padding:1rem 1.1rem;}
+  .pbody pre{white-space:pre-wrap;font-family:var(--mono);font-size:.8rem;line-height:1.5;color:#b9b7b3;margin-bottom:.8rem;}
+  .copy{font-family:var(--mono);font-size:.74rem;color:var(--gray-1);background:none;border:1px solid var(--gray-3);border-radius:7px;padding:.35rem .7rem;cursor:pointer;}
   .copy:hover{border-color:var(--accent);color:var(--accent-2);}
+  /* strategy example (collapsible) */
+  details.ex summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.78rem;color:var(--accent-2);padding:.25rem 0;display:inline-block;}
+  details.ex summary::-webkit-details-marker{display:none;}
+  details.ex summary::before{content:"+ ";}
+  details.ex[open] summary::before{content:"\2013 ";}
 
   /* tools */
   .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.2rem;}
@@ -130,6 +141,15 @@
   .fine{font-size:.8rem;color:var(--gray-2);}
   .proto{display:inline-block;font-family:var(--mono);font-size:.68rem;color:var(--accent-2);border:1px solid var(--gray-3);border-radius:6px;padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle;}
 
+  /* tasks / deeper-dive exercises */
+  .tasks{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
+  .task{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.2rem;display:flex;flex-direction:column;}
+  .task .ttime{font-family:var(--mono);font-size:.7rem;color:var(--accent-2);text-transform:uppercase;letter-spacing:.05em;}
+  .task h3{font-size:1.1rem;margin:.3rem 0 .5rem;}
+  .task p{font-size:.9rem;color:#b9b7b3;margin-bottom:.8rem;flex:1;}
+  .task .meta{font-size:.78rem;color:var(--gray-1);border-top:1px solid var(--gray-3);padding-top:.6rem;}
+  .task .meta b{color:var(--text);font-weight:600;}
+
   /* modals (quiz + RTCF tool as overlays) */
   dialog.modal{border:none;padding:0;border-radius:16px;background:var(--panel-2);color:var(--text);
     max-width:640px;width:calc(100% - 2rem);box-shadow:0 30px 80px -20px rgba(0,0,0,.75);
@@ -143,7 +163,7 @@
   .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
 
   @media(max-width:760px){
-    .prompts,.tools,.phases{grid-template-columns:1fr;}
+    .prompts,.tools,.phases,.tasks{grid-template-columns:1fr;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
 </style>
@@ -187,10 +207,11 @@
         <h3>Devil&rsquo;s advocate</h3>
         <p class="what">Tell the AI to argue against you. It is far more useful as a critic than a cheerleader, so point it at your own idea and let it attack.</p>
         <div class="why">It attacks, you decide what survives. You stay the judge, not the jury.</div>
-        <div class="ex">
+        <details class="ex">
+          <summary>Show example prompt</summary>
           <pre>Be a skeptical seed investor who has seen 500 pitches. Attack this idea: find the three weakest assumptions and the one that would kill it. Then list the questions I must answer before I build. Here it is: [your idea].</pre>
           <button class="copy">copy</button>
-        </div>
+        </details>
       </div>
 
       <div class="strat">
@@ -198,10 +219,11 @@
         <h3>Board of directors</h3>
         <p class="what">Put the same question to a room, not a single voice. Ask for several people at once, each with their own job and their own bias, then weigh them yourself.</p>
         <div class="why">You get perspectives, not an answer. The synthesis is yours.</div>
-        <div class="ex">
+        <details class="ex">
+          <summary>Show example prompt</summary>
           <pre>Answer as a panel, each in their own voice: (1) a cautious CFO, (2) my most skeptical customer, (3) a growth-hungry marketer. Each gives an honest take on this decision, then stops. I will decide. The decision: [your decision].</pre>
           <button class="copy">copy</button>
-        </div>
+        </details>
       </div>
 
       <div class="strat">
@@ -258,6 +280,40 @@
       </div>
     </div>
     <div class="ipline"><b>Why bother going local?</b> Your unvalidated idea is often your only asset. Thinking it through with a local model means you are not posting it into someone else&rsquo;s cloud. On a modest laptop, start with a small model (3 to 4 billion parameters) and work up.</div>
+  </div>
+</section>
+
+<!-- TASKS / GO DEEPER -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Go deeper: self-paced exercises</h2><span class="count">// do these in your own time</span></div>
+    <p class="secintro">Four hands-on tasks from the workshop, each a self-contained hour or less. Pick one, use whatever AI tool you have, and produce something real.</p>
+    <div class="tasks">
+      <div class="task">
+        <div class="ttime">~40 min</div>
+        <h3>AI tool test drive</h3>
+        <p>Give the same real task to two or three AI tools and compare quality, tone, and gaps. Learn which tool suits which job.</p>
+        <div class="meta"><b>Framework:</b> AI Task Suitability Spectrum &middot; <b>Output:</b> your notes on tool strengths</div>
+      </div>
+      <div class="task">
+        <div class="ttime">~60 min</div>
+        <h3>Prompting in three rounds</h3>
+        <p>Take a workplace scenario through three rounds: a naive prompt, then the RTCF pattern, then advanced moves like chain-of-thought and iteration. Feel the jump.</p>
+        <div class="meta"><b>Framework:</b> RTCF &middot; <b>Output:</b> a personal prompt library</div>
+      </div>
+      <div class="task">
+        <div class="ttime">~45 min</div>
+        <h3>Data analysis challenge</h3>
+        <p>Hand a real dataset to your AI, answer three business questions, then verify its findings yourself. Trust, but check.</p>
+        <div class="meta"><b>Framework:</b> AI-Assisted Analysis Workflow &middot; <b>Output:</b> a one-page insight brief</div>
+      </div>
+      <div class="task">
+        <div class="ttime">~40 min</div>
+        <h3>Redesign your workflow</h3>
+        <p>Map a task you do every week, classify each step with the Opportunity Finder, and rebuild it with AI where it actually adds value. Test one step live.</p>
+        <div class="meta"><b>Framework:</b> AI Opportunity Finder &middot; <b>Output:</b> a before/after workflow</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -421,18 +477,21 @@
 
   const pWrap = document.getElementById('prompts');
   PROMPTS.forEach(([title, body]) => {
-    const card = document.createElement('div');
-    card.className = 'pcard';
+    const det = document.createElement('details');
+    det.className = 'pcard';
+    const sum = document.createElement('summary'); sum.textContent = title;
+    const pbody = document.createElement('div'); pbody.className = 'pbody';
     const pre = document.createElement('pre'); pre.textContent = body;
     const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = 'copy';
-    btn.onclick = () => {
+    btn.onclick = (e) => {
+      e.preventDefault();
       navigator.clipboard.writeText(body).then(() => {
         btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
       });
     };
-    const h = document.createElement('div'); h.className = 'ptitle'; h.textContent = title;
-    card.appendChild(h); card.appendChild(pre); card.appendChild(btn);
-    pWrap.appendChild(card);
+    pbody.appendChild(pre); pbody.appendChild(btn);
+    det.appendChild(sum); det.appendChild(pbody);
+    pWrap.appendChild(det);
   });
 
   // ---- modal open/close (quiz + RTCF tool overlays) ----
