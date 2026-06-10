@@ -130,8 +130,20 @@
   .fine{font-size:.8rem;color:var(--gray-2);}
   .proto{display:inline-block;font-family:var(--mono);font-size:.68rem;color:var(--accent-2);border:1px solid var(--gray-3);border-radius:6px;padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle;}
 
+  /* modals (quiz + RTCF tool as overlays) */
+  dialog.modal{border:none;padding:0;border-radius:16px;background:var(--panel-2);color:var(--text);
+    max-width:640px;width:calc(100% - 2rem);box-shadow:0 30px 80px -20px rgba(0,0,0,.75);
+    position:fixed;inset:0;margin:auto;max-height:calc(100vh - 3rem);overflow:auto;}
+  dialog.modal.wide{max-width:940px;}
+  dialog.modal::backdrop{background:rgba(6,7,10,.74);backdrop-filter:blur(3px);}
+  .modal-body{padding:1.8rem;}
+  .modal-close{position:absolute;top:.55rem;right:.7rem;background:rgba(20,21,28,.7);border:none;color:var(--gray-1);
+    font-size:1.6rem;line-height:1;cursor:pointer;padding:.1rem .5rem;border-radius:8px;z-index:3;}
+  .modal-close:hover{color:var(--text);background:var(--gray-3);}
+  .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
+
   @media(max-width:760px){
-    .rtcf,.ba,.prompts,.tools,.phases{grid-template-columns:1fr;}
+    .prompts,.tools,.phases{grid-template-columns:1fr;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
 </style>
@@ -147,7 +159,7 @@
     <div class="triad"><b>Conversation</b>, not <b>delegation</b>: a thinking partner you converse with, not a stand-in you hand the work to.</div>
     <p class="lede">AI lets a team of one move like a team of ten, as long as you stay the one steering. This is the take-home from the session: a two-minute self-check, simple strategies that keep you in charge, founder-ready prompts, and how to run it all privately on your own laptop.</p>
     <div class="cta">
-      <button class="btn primary" onclick="document.getElementById('check').scrollIntoView()">Find your starting point &darr;</button>
+      <button class="btn primary" onclick="openModal('quizModal')">Find your starting point &rarr;</button>
       <a class="btn ghost" href="https://conversationnotdelegation.com">The idea behind it</a>
     </div>
   </div>
@@ -158,20 +170,7 @@
   <div class="wrap">
     <div class="sechead"><h2>Where are you on your AI journey?</h2><span class="count">// two minutes, five questions</span></div>
     <p class="secintro">No right answers. This points you at the right next step, whether you have barely opened a chatbot or you are already building AI into your product.</p>
-
-    <div class="quiz">
-      <div class="progress"><i id="bar"></i></div>
-      <div id="questions"></div>
-
-      <div class="result" id="result">
-        <div class="badge" id="r-badge"></div>
-        <h3 id="r-title"></h3>
-        <p class="lead" id="r-lead"></p>
-        <ul id="r-steps"></ul>
-        <div class="tool" id="r-tool"></div>
-        <button class="restart" onclick="restart()">&#8635; start over</button>
-      </div>
-    </div>
+    <button class="btn primary" onclick="openModal('quizModal')">Take the 2-minute self-check &rarr;</button>
   </div>
 </section>
 
@@ -219,7 +218,7 @@
 
     </div>
 
-    <div class="nicebox"><b>Nice to know:</b> each prompt above quietly names a role, a task, some context, and a format. That pattern is called RTCF, the mechanics under the strategies. You do not have to memorise it (it gets a chapter in the free book <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>). To sharpen any prompt, paste it into the <a href="tools/rtcf.html">RTCF tool</a>.</div>
+    <div class="nicebox"><b>Nice to know:</b> each prompt above quietly names a role, a task, some context, and a format. That pattern is called RTCF, the mechanics under the strategies. You do not have to memorise it (it gets a chapter in the free book <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>). To sharpen any prompt, paste it into the <a href="tools/rtcf.html" onclick="return openModal('rtcfModal')">RTCF tool</a>.</div>
 
   </div>
 </section>
@@ -296,6 +295,29 @@
     <p class="fine">A companion to the Curtin Ignition session. Built in conversation with AI, of course. Conversation, not delegation: the founder stays the founder.</p>
   </div>
 </footer>
+
+<!-- OVERLAYS -->
+<dialog id="quizModal" class="modal">
+  <button class="modal-close" data-close aria-label="Close">&times;</button>
+  <div class="modal-body">
+    <div class="qmeta" style="color:var(--accent-2);margin-bottom:.6rem">Where are you on your AI journey?</div>
+    <div class="progress"><i id="bar"></i></div>
+    <div id="questions"></div>
+    <div class="result" id="result">
+      <div class="badge" id="r-badge"></div>
+      <h3 id="r-title"></h3>
+      <p class="lead" id="r-lead"></p>
+      <ul id="r-steps"></ul>
+      <div class="tool" id="r-tool"></div>
+      <button class="restart" onclick="restart()">&#8635; start over</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="rtcfModal" class="modal wide">
+  <button class="modal-close" data-close aria-label="Close">&times;</button>
+  <iframe class="toolframe" src="tools/rtcf.html" title="RTCF Prompt Analyser" loading="lazy"></iframe>
+</dialog>
 
 <script>
   // ---- self-check quiz ----
@@ -411,6 +433,18 @@
     const h = document.createElement('div'); h.className = 'ptitle'; h.textContent = title;
     card.appendChild(h); card.appendChild(pre); card.appendChild(btn);
     pWrap.appendChild(card);
+  });
+
+  // ---- modal open/close (quiz + RTCF tool overlays) ----
+  function openModal(id){
+    const d = document.getElementById(id);
+    if (d && typeof d.showModal === 'function'){ d.showModal(); return false; }
+    return true; // no <dialog> support: let the fallback href open the page
+  }
+  window.openModal = openModal;
+  document.querySelectorAll('dialog.modal').forEach(d => {
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
+    d.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => d.close()));
   });
 
   // ---- copy buttons inside the strategy examples (static markup) ----
