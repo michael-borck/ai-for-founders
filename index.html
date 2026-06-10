@@ -126,6 +126,8 @@
   .tool-c a{font-family:var(--mono);font-size:.78rem;}
   .ipline{background:#0d0e12;border:1px solid var(--gray-3);border-radius:12px;padding:1.1rem 1.3rem;color:#c9c7c3;font-size:1rem;}
   .ipline b{color:var(--text);}
+  .cloudtools{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+  .tool-c .muted{font-family:var(--mono);font-size:.74rem;color:var(--gray-1);font-style:italic;}
 
   /* next */
   .next{background:linear-gradient(135deg,#15131f,#101018);border:1px solid var(--gray-3);border-radius:16px;padding:1.8rem;}
@@ -163,7 +165,7 @@
   .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
 
   @media(max-width:760px){
-    .prompts,.tools,.phases,.tasks{grid-template-columns:1fr;}
+    .prompts,.tools,.phases,.tasks,.cloudtools{grid-template-columns:1fr;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
 </style>
@@ -251,6 +253,40 @@
     <div class="sechead"><h2>Starter prompts</h2><span class="count">// steal these, then make them yours</span></div>
     <p class="secintro">A founder&rsquo;s working set. Each makes the AI argue with you rather than flatter you. Copy, paste, edit the bits in brackets.</p>
     <div class="prompts" id="prompts"></div>
+  </div>
+</section>
+
+<!-- TOOLS TO EXPLORE -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><h2>Tools to explore</h2><span class="count">// the big names, and where it is heading</span></div>
+    <p class="secintro">If you are just starting, these are the tools most people reach for. Each has a free tier. Try the same task in two of them and see which voice suits you.</p>
+    <div class="cloudtools">
+      <div class="tool-c">
+        <div class="badge2">start here</div>
+        <h3>ChatGPT</h3>
+        <p>The default all-rounder. A great first stop for drafting, brainstorming, and asking almost anything.</p>
+        <a href="https://chatgpt.com">chatgpt.com &rarr;</a>
+      </div>
+      <div class="tool-c">
+        <div class="badge2">strong writer</div>
+        <h3>Claude</h3>
+        <p>Excellent at writing, analysis, and longer documents. A thoughtful thinking partner for the harder questions.</p>
+        <a href="https://claude.ai">claude.ai &rarr;</a>
+      </div>
+      <div class="tool-c">
+        <div class="badge2">your documents</div>
+        <h3>NotebookLM</h3>
+        <p>Upload your own files and ask questions grounded in them. It will even turn them into an audio overview.</p>
+        <a href="https://notebooklm.google">notebooklm.google &rarr;</a>
+      </div>
+      <div class="tool-c">
+        <div class="badge2">what&rsquo;s next</div>
+        <h3>Agents</h3>
+        <p>AI that takes actions, not just answers: searching, booking, multi-step work. Powerful, and the place to be most careful, because it is delegation.</p>
+        <span class="muted">direct it, don&rsquo;t hand it the keys</span>
+      </div>
+    </div>
   </div>
 </section>
 
