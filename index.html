@@ -240,7 +240,7 @@
 
     </div>
 
-    <div class="nicebox"><b>Nice to know:</b> each prompt above quietly names a role, a task, some context, and a format. That pattern is called RTCF, the mechanics under the strategies. You do not have to memorise it (it gets a chapter in the free book <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>). To sharpen any prompt, paste it into the <a href="tools/rtcf.html" onclick="return openModal('rtcfModal')">RTCF tool</a>.</div>
+    <div class="nicebox"><b>Nice to know:</b> each prompt above quietly names a role, a task, some context, and a format. That pattern is called RTCF, the mechanics under the strategies. You do not have to memorise it (it gets a chapter in the free book <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>). Two free tools to try: <a href="tools/rtcf-builder.html" onclick="return openModal('rtcfBuildModal')">build a prompt</a> from the four parts, or <a href="tools/rtcf.html" onclick="return openModal('rtcfModal')">check a prompt</a> you already have.</div>
 
   </div>
 </section>
@@ -368,6 +368,11 @@
       <button class="restart" onclick="restart()">&#8635; start over</button>
     </div>
   </div>
+</dialog>
+
+<dialog id="rtcfBuildModal" class="modal wide">
+  <button class="modal-close" data-close aria-label="Close">&times;</button>
+  <iframe class="toolframe" src="tools/rtcf-builder.html" title="RTCF Prompt Builder" loading="lazy"></iframe>
 </dialog>
 
 <dialog id="rtcfModal" class="modal wide">
