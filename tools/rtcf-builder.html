@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTCF Prompt Builder - AI for Founders</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,9 +13,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #e2e8f0;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0b 0%, #16171e 100%);
+            color: #e8e6e3;
             min-height: 100vh;
             padding: 20px;
         }
@@ -32,7 +33,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(135deg, #6366f1, #818cf8);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -40,7 +41,7 @@
 
         .subtitle {
             font-size: 1.2rem;
-            color: #94a3b8;
+            color: #9a9a9e;
             margin-bottom: 20px;
         }
 
@@ -53,11 +54,11 @@
         }
 
         .tab-button {
-            background: linear-gradient(135deg, #1e293b, #334155);
-            border: 2px solid #475569;
+            background: linear-gradient(135deg, #16171e, #2a2a30);
+            border: 2px solid #2a2a30;
             border-radius: 12px;
             padding: 15px 25px;
-            color: #e2e8f0;
+            color: #e8e6e3;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
@@ -65,19 +66,19 @@
         }
 
         .tab-button:hover {
-            border-color: #3b82f6;
+            border-color: #6366f1;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
 
         .tab-button:focus {
-            outline: 2px solid #3b82f6;
+            outline: 2px solid #6366f1;
             outline-offset: 2px;
         }
 
         .tab-button.active {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            border-color: #60a5fa;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border-color: #818cf8;
         }
 
         .tab-content {
@@ -96,16 +97,16 @@
         }
 
         .input-section, .output-section {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(22, 23, 30, 0.7);
             border-radius: 16px;
             padding: 30px;
-            border: 1px solid #334155;
+            border: 1px solid #2a2a30;
         }
 
         .section-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: #f1f5f9;
+            color: #e8e6e3;
         }
 
         .form-group {
@@ -116,13 +117,13 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #cbd5e1;
+            color: #c9c7c3;
         }
 
         .label-hint {
             font-weight: 400;
             font-size: 13px;
-            color: #94a3b8;
+            color: #9a9a9e;
             display: block;
             margin-top: 2px;
         }
@@ -130,18 +131,18 @@
         input, textarea, select {
             width: 100%;
             padding: 12px;
-            border: 2px solid #475569;
+            border: 2px solid #2a2a30;
             border-radius: 8px;
-            background: #1e293b;
-            color: #e2e8f0;
+            background: #16171e;
+            color: #e8e6e3;
             font-size: 14px;
             transition: border-color 0.3s ease;
         }
 
         input:focus, textarea:focus, select:focus {
-            outline: 2px solid #3b82f6;
+            outline: 2px solid #6366f1;
             outline-offset: 2px;
-            border-color: #3b82f6;
+            border-color: #6366f1;
         }
 
         textarea {
@@ -150,7 +151,7 @@
         }
 
         .generate-btn {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -164,29 +165,29 @@
 
         .generate-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
 
         .generate-btn:focus {
-            outline: 2px solid #10b981;
+            outline: 2px solid #6366f1;
             outline-offset: 2px;
         }
 
         .prompt-output {
-            background: #0f172a;
-            border: 2px solid #334155;
+            background: #0a0a0b;
+            border: 2px solid #2a2a30;
             border-radius: 12px;
             padding: 20px;
-            font-family: 'Courier New', monospace;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
             font-size: 14px;
             line-height: 1.6;
             min-height: 300px;
             white-space: pre-wrap;
-            color: #e2e8f0;
+            color: #e8e6e3;
         }
 
         .copy-btn {
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            background: linear-gradient(135deg, #818cf8, #4f46e5);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -199,11 +200,11 @@
 
         .copy-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 5px 20px rgba(129, 140, 248, 0.3);
         }
 
         .copy-btn:focus {
-            outline: 2px solid #8b5cf6;
+            outline: 2px solid #818cf8;
             outline-offset: 2px;
         }
 
@@ -215,8 +216,8 @@
         }
 
         .rtcf-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 2px solid #334155;
+            background: rgba(22, 23, 30, 0.7);
+            border: 2px solid #2a2a30;
             border-radius: 12px;
             padding: 20px;
             text-align: center;
@@ -225,46 +226,46 @@
         .rtcf-letter {
             font-size: 2rem;
             font-weight: bold;
-            color: #3b82f6;
+            color: #6366f1;
             margin-bottom: 10px;
         }
 
         .rtcf-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #f1f5f9;
+            color: #e8e6e3;
             margin-bottom: 8px;
         }
 
         .rtcf-description {
             font-size: 0.9rem;
-            color: #94a3b8;
+            color: #9a9a9e;
         }
 
         .example-box {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid #10b981;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid #6366f1;
             border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
         }
 
         .tips-section {
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid #8b5cf6;
+            background: rgba(129, 140, 248, 0.12);
+            border: 1px solid #818cf8;
             border-radius: 12px;
             padding: 20px;
             margin-top: 20px;
         }
 
         .tips-title {
-            color: #a78bfa;
+            color: #818cf8;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         .tips-list {
-            color: #cbd5e1;
+            color: #c9c7c3;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -276,20 +277,20 @@
         }
 
         .technique-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid #334155;
+            background: rgba(22, 23, 30, 0.7);
+            border: 1px solid #2a2a30;
             border-radius: 12px;
             padding: 25px;
         }
 
         .technique-card h3 {
-            color: #f1f5f9;
+            color: #e8e6e3;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
 
         .technique-card p {
-            color: #94a3b8;
+            color: #9a9a9e;
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 15px;
@@ -297,21 +298,21 @@
 
         .technique-card code {
             display: block;
-            background: #0f172a;
-            border: 1px solid #334155;
+            background: #0a0a0b;
+            border: 1px solid #2a2a30;
             border-radius: 8px;
             padding: 15px;
-            font-family: 'Courier New', monospace;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
             font-size: 13px;
-            color: #e2e8f0;
+            color: #e8e6e3;
             white-space: pre-wrap;
             line-height: 1.5;
         }
 
         .use-template-btn {
-            background: rgba(59, 130, 246, 0.2);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.3);
             padding: 8px 16px;
             border-radius: 6px;
             font-size: 13px;
@@ -321,11 +322,11 @@
         }
 
         .use-template-btn:hover {
-            background: rgba(59, 130, 246, 0.3);
+            background: rgba(99, 102, 241, 0.3);
         }
 
         .use-template-btn:focus {
-            outline: 2px solid #3b82f6;
+            outline: 2px solid #6366f1;
             outline-offset: 2px;
         }
 
@@ -423,7 +424,7 @@
 
         <!-- RTCF Framework Tab -->
         <div class="tab-content" id="rtcf-tab">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #f1f5f9;">The RTCF Framework</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #e8e6e3;">The RTCF Framework</h2>
 
             <div class="rtcf-grid">
                 <div class="rtcf-card">
@@ -449,14 +450,14 @@
             </div>
 
             <div class="example-box">
-                <h3 style="color: #10b981; margin-bottom: 15px;">Before and After</h3>
+                <h3 style="color: #6366f1; margin-bottom: 15px;">Before and After</h3>
                 <div style="background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
                     <strong style="color: #fca5a5;">Weak Prompt:</strong><br>
-                    <em style="color: #cbd5e1;">"Is my startup idea any good?"</em>
+                    <em style="color: #c9c7c3;">"Is my startup idea any good?"</em>
                 </div>
-                <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px;">
-                    <strong style="color: #6ee7b7;">RTCF Prompt:</strong><br>
-                    <em style="color: #cbd5e1;">"You are a skeptical seed investor who has seen 500 pitches <strong>(R)</strong>. Find the three weakest assumptions in my idea and the one that would kill it <strong>(T)</strong>. The idea: a booking app for solo tradespeople in WA, pre-revenue, two founders, no funding yet <strong>(C)</strong>. Present as a short numbered list, each weakness with one question I must answer before I build <strong>(F)</strong>."</em>
+                <div style="background: rgba(99, 102, 241, 0.12); padding: 15px; border-radius: 8px;">
+                    <strong style="color: #818cf8;">RTCF Prompt:</strong><br>
+                    <em style="color: #c9c7c3;">"You are a skeptical seed investor who has seen 500 pitches <strong>(R)</strong>. Find the three weakest assumptions in my idea and the one that would kill it <strong>(T)</strong>. The idea: a booking app for solo tradespeople in WA, pre-revenue, two founders, no funding yet <strong>(C)</strong>. Present as a short numbered list, each weakness with one question I must answer before I build <strong>(F)</strong>."</em>
                 </div>
             </div>
 
@@ -474,13 +475,13 @@
 
         <!-- Advanced Techniques Tab -->
         <div class="tab-content" id="techniques-tab">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #f1f5f9;">Advanced Conversation Techniques</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #e8e6e3;">Advanced Conversation Techniques</h2>
 
             <div class="technique-cards">
                 <div class="technique-card">
                     <h3>Reverse Prompting</h3>
                     <p>Let AI interview you to build context before giving recommendations. Surfaces assumptions you didn't know you had.</p>
-                    <code>I'm researching food preservation techniques for plant-based dairy products.
+                    <code>I'm launching a booking app for solo tradespeople.
 
 Before giving me any advice, interview me first. Ask me questions one at a time to understand my specific context, constraints, and goals.
 
@@ -490,15 +491,15 @@ Start with your first question.</code>
 
                 <div class="technique-card">
                     <h3>Multi-Perspective Analysis</h3>
-                    <p>Get expert viewpoints from different disciplines on your research question. Catches blind spots.</p>
-                    <code>I'm investigating [your research question].
+                    <p>Get honest takes from different roles on your decision. Catches blind spots.</p>
+                    <code>I'm weighing [your decision].
 
 Act as my advisory panel and analyse this from multiple perspectives:
 
-1. As a food scientist: Technical feasibility?
-2. As a statistician: Best experimental design?
-3. As an industry partner: Commercial viability?
-4. As an ethics reviewer: Any concerns?
+1. As a cautious CFO: does the money work?
+2. As a skeptical customer: why would I not buy?
+3. As a growth marketer: how would we reach people?
+4. As an operator: what breaks at scale?
 
 For each, give me 3-4 key points.</code>
                     <button class="use-template-btn" onclick="useTemplate('multi')">Use This Template</button>
@@ -507,14 +508,14 @@ For each, give me 3-4 key points.</code>
                 <div class="technique-card">
                     <h3>Devil's Advocate</h3>
                     <p>Force AI to argue against your position. Overcomes confirmation bias and reveals hidden assumptions.</p>
-                    <code>I believe that [your hypothesis].
+                    <code>I'm planning to [your plan].
 
 Play devil's advocate. Give me the strongest possible arguments against this. Be harsh but fair. I want to know:
 
 1. Why might this fail?
 2. What am I probably not thinking about?
 3. What alternative explanations exist?
-4. What would a sceptical reviewer say?
+4. What would a skeptical investor say?
 
 Don't hold back.</code>
                     <button class="use-template-btn" onclick="useTemplate('devil')">Use This Template</button>
@@ -523,7 +524,7 @@ Don't hold back.</code>
                 <div class="technique-card">
                     <h3>Conversational Data Analysis</h3>
                     <p>Upload data and explore it through conversation rather than a single prompt.</p>
-                    <code>I've uploaded a [type] dataset from a [description] study.
+                    <code>I've uploaded a [type] dataset from [your business].
 
 What patterns do you see? Give me an initial overview of the data.
 
@@ -531,7 +532,7 @@ What patterns do you see? Give me an initial overview of the data.
 - Why might [observation] occur?
 - Are there any unexpected trends?
 - Create a visualisation of [specific aspect]
-- What statistical tests would be appropriate?</code>
+- What should I check before I trust this?</code>
                     <button class="use-template-btn" onclick="useTemplate('data')">Use This Template</button>
                 </div>
 
@@ -548,15 +549,15 @@ Help me VET this:
                 </div>
 
                 <div class="technique-card">
-                    <h3>Literature Synthesis (NotebookLM)</h3>
-                    <p>After uploading papers to NotebookLM, use these prompts for synthesis.</p>
-                    <code>Based on the uploaded papers:
+                    <h3>Source Synthesis (NotebookLM)</h3>
+                    <p>After uploading documents to NotebookLM, use these prompts for synthesis.</p>
+                    <code>Based on the uploaded documents:
 
-1. What are the main findings across these papers?
-2. Where do the authors disagree?
-3. What gaps exist in this literature?
-4. What methodological approaches are most common?
-5. Suggest 3 research questions that emerge from these gaps.</code>
+1. What are the main points across these documents?
+2. Where do they disagree?
+3. What gaps or open questions remain?
+4. What assumptions do they share?
+5. Suggest 3 questions I should dig into next.</code>
                     <button class="use-template-btn" onclick="useTemplate('lit')">Use This Template</button>
                 </div>
             </div>
@@ -617,25 +618,25 @@ Help me VET this:
         const templates = {
             reverse: {
                 role: '',
-                task: "I'm researching [YOUR TOPIC HERE].\n\nBefore giving me any advice, interview me first. Ask me questions one at a time to understand my specific context, constraints, and goals.\n\nStart with your first question.",
+                task: "I'm working on [YOUR TOPIC HERE].\n\nBefore giving me any advice, interview me first. Ask me questions one at a time to understand my specific context, constraints, and goals.\n\nStart with your first question.",
                 context: '',
                 format: ''
             },
             multi: {
                 role: '',
-                task: "I'm investigating [YOUR RESEARCH QUESTION HERE].\n\nAct as my advisory panel and analyse this from multiple perspectives:\n\n1. As a food scientist: Technical feasibility and expected outcomes?\n2. As a statistician: What experimental design would be most rigorous?\n3. As an industry partner: Commercial viability and scalability?\n4. As an ethics reviewer: Any concerns with this research?\n\nFor each perspective, give me 3-4 key points.",
+                task: "I'm weighing [YOUR DECISION HERE].\n\nAct as my board of directors and weigh in from different angles:\n\n1. As a cautious CFO: does the money work?\n2. As my most skeptical customer: why would I not buy?\n3. As a growth marketer: how would we reach people?\n4. As an operator: what breaks at scale?\n\nFor each voice, give me 3-4 key points, then stop so I can decide.",
                 context: '',
                 format: ''
             },
             devil: {
                 role: '',
-                task: "I believe that [YOUR HYPOTHESIS HERE].\n\nPlay devil's advocate. Give me the strongest possible arguments against this hypothesis. Be harsh but fair.",
+                task: "I'm planning to [YOUR PLAN HERE].\n\nPlay devil's advocate. Give me the strongest possible arguments against this plan. Be harsh but fair.",
                 context: '',
-                format: "I want to know:\n1. Why might this experimental design fail?\n2. What am I probably not thinking about?\n3. What alternative explanations could undermine my results?\n4. What would a sceptical reviewer say?\n\nDon't hold back --- I need to hear the hard truths."
+                format: "I want to know:\n1. Why might this fail?\n2. What am I probably not thinking about?\n3. What would have to be true for this to work?\n4. What would a skeptical investor say?\n\nDon't hold back --- I need to hear the hard truths."
             },
             data: {
                 role: 'You are an experienced data analyst with expertise in small-business and startup metrics.',
-                task: "I've uploaded a [TYPE] dataset from a [DESCRIPTION] study. What patterns do you see? Give me an initial overview of the data.",
+                task: "I've uploaded a [TYPE] dataset from [your business]. What patterns do you see? Give me an initial overview of the data.",
                 context: '',
                 format: ''
             },
@@ -647,7 +648,7 @@ Help me VET this:
             },
             lit: {
                 role: '',
-                task: "Based on the uploaded papers:\n\n1. What are the main findings across these papers?\n2. Where do the authors disagree?\n3. What gaps exist in this literature?\n4. What methodological approaches are most common?\n5. Suggest 3 research questions that emerge from these gaps.",
+                task: "Based on the uploaded documents:\n\n1. What are the main points across these documents?\n2. Where do they disagree?\n3. What gaps or open questions remain?\n4. What assumptions do they share?\n5. Suggest 3 questions I should dig into next.",
                 context: '',
                 format: ''
             }
