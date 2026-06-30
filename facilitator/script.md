@@ -44,13 +44,13 @@ Everyone opens their chat. You run the volunteer's idea on the projector; they r
 
 ### Move 1 — Validate (RTCF, two-pass) · 12 min
 
-**Pass 1 — naive (generic):**
+**Pass 1 — naive (undirected):**
 
 ```
 Help me validate my startup idea: [one-line idea].
 ```
 
-Watch it produce a slick, sensible, *anyone-got-this* answer. Point at it: *"This is good. Every founder in the room got this same good answer. Where's the edge?"*
+Watch it produce an enthusiastic, over-long love-fest — "genuinely brilliant," hundreds of words of praise, tailwinds, and a ready-made plan. Point at it: *"This just told a stranger their idea is brilliant — the sycophancy trap we named ten minutes ago, live. It is useful, but it is managing my feelings, and it would say it to every founder in this room."*
 
 **Pass 2 — with edge (RTCF):** layer in what only the volunteer holds. Role · Task · **Context** · Format.
 
@@ -61,9 +61,11 @@ My idea: [one line]. What only I know: [specific customer / contrarian bet / dom
 Give me: the three load-bearing assumptions, ranked by risk, one line each (Format).
 ```
 
-Watch the output get a soul.
+Watch it drop the cheerleader act. Same model, same idea — now a sceptical investor returning three assumptions ranked by risk, the scariest one ("unproven demand") named first. *The AI did not get smarter. You directed it.* That is the edge.
 
 > The Context line is the whole session in one box. No model supplies it. That's the edge, injected one prompt at a time.
+
+> **Dry-run note (hold this thought).** The same model that called this idea "genuinely brilliant" here will, by move 2, call it a **PIVOT** and prescribe a \$50 experiment. That arc — cheerleader to honest critic to cheap test — is the whole session in one thread. Name it explicitly when you reach move 2.
 
 ### Move 2 — Pressure-test (past the flattery) · 12 min
 
