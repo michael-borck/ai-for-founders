@@ -129,6 +129,15 @@
   .tt-own{border-left-color:#fbbf24;} .tt-own .act{color:#fbbf24;}
   .tt-rule{font-size:.98rem;color:#c9c7c3;background:#0d0e12;border:1px solid var(--gray-3);border-radius:12px;padding:1rem 1.2rem;margin-top:1rem;}
   .tt-rule b{color:var(--text);}
+  /* cognitive traps */
+  .traps{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;}
+  .trap{background:var(--panel);border:1px solid var(--gray-3);border-left:3px solid #f87171;border-radius:14px;padding:1.4rem;}
+  .trap .tidx{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#f87171;}
+  .trap h3{font-size:1.25rem;margin:.25rem 0 .5rem;}
+  .trap p.what{color:#b9b7b3;font-size:.96rem;}
+  .trap .cost{font-size:.86rem;color:var(--gray-1);font-style:italic;border-left:2px solid #f87171;padding-left:.8rem;margin:.9rem 0;}
+  .trap .def{font-size:.9rem;color:#c9c7c3;margin-top:.6rem;}
+  .trap .def b{color:var(--text);}
   /* tools */
   .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.2rem;}
   .tool-c{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.2rem;}
@@ -178,7 +187,7 @@
   .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
 
   @media(max-width:760px){
-    .prompts,.tools,.phases,.tasks,.cloudtools,.tt-grid{grid-template-columns:1fr;}
+    .prompts,.tools,.phases,.tasks,.cloudtools,.tt-grid,.traps{grid-template-columns:1fr;}
     .tt-h{text-align:left;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
@@ -207,6 +216,34 @@
     <div class="sechead"><h2>Where are you on your AI journey?</h2><span class="count">// two minutes, five questions</span></div>
     <p class="secintro">No right answers. This points you at the right next step, whether you have barely opened a chatbot or you are already building AI into your product.</p>
     <button class="btn primary" onclick="openModal('quizModal')">Take the 2-minute self-check &rarr;</button>
+  </div>
+</section>
+
+<!-- COGNITIVE TRAPS -->
+<section id="traps">
+  <div class="wrap">
+    <div class="sechead"><h2>Two traps that catch every founder</h2><span class="count">// human problems, not technical ones</span></div>
+    <p class="secintro">AI does not fail by being stupid. It fails in two predictable ways that exploit how <em>we</em> think. Name them and they lose most of their power &mdash; the strategies below are, partly, your defence against both.</p>
+
+    <div class="traps">
+      <div class="trap">
+        <div class="tidx">Trap 1 &middot; the pitch-killer</div>
+        <h3>Sycophancy</h3>
+        <p class="what">The model tells you what you want to hear. Ask &ldquo;what do you think of my pitch?&rdquo; and you get praise first, gentle critique second. It is managing your feelings, not assessing your work &mdash; and it is not a bug that will be fixed next release; it is baked into how these models are trained.</p>
+        <div class="cost">This is the trap that makes founders stop iterating. If the AI says your idea is great, you stop improving &mdash; because you have been told there is nothing to improve.</div>
+        <p class="def"><b>The defence &mdash; prompt past it.</b> Never ask &ldquo;what do you think?&rdquo; Ask &ldquo;what are the three weakest points?&rdquo; or &ldquo;tell me why this fails.&rdquo; Be blunt: <i>&ldquo;Do not flatter me. I need honest, critical feedback.&rdquo;</i></p>
+      </div>
+
+      <div class="trap">
+        <div class="tidx">Trap 2 &middot; the one that costs money</div>
+        <h3>Gell-Mann amnesia</h3>
+        <p class="what">You catch the AI&rsquo;s errors in your own domain &mdash; then trust it blindly on the market, the regulations, the numbers, the bits you cannot check. The physicist Murray Gell-Mann named the pattern after noticing it in himself.</p>
+        <div class="cost">Smooth prose feels authoritative. Smoothness and accuracy are unrelated. This is the trap that costs founders real money: the confident market size, the plausible legal claim, the slick citation that turns out to be invented.</div>
+        <p class="def"><b>The defence &mdash; stay sceptical where you know least.</b> Apply the same scrutiny you would on your home turf. If anything, be <i>more</i> sceptical, because you have fewer tools to catch the errors.</p>
+      </div>
+    </div>
+
+    <div class="note">Both traps are human problems, not technical ones &mdash; awareness is the first defence. A third, the <i>dismissal fallacy</i> (rejecting an idea just because AI touched it), matters less for founders and is covered in the wider body of work.</div>
   </div>
 </section>
 
