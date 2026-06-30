@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI for Founders &middot; Where Your Edge Lives</title>
+<meta name="description" content="A 60-minute session deck: when generic competence stops being an advantage, where does a founder's edge live? Direct it, don't delegate, never surrender." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129302;</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#0a0a0b; --panel:#121318; --panel-2:#16171e; --gray-3:#2a2a30;
+    --gray-2:#5e5e63; --gray-1:#9a9a9e; --text:#e8e6e3; --accent:#6366f1; --accent-2:#818cf8;
+    --go:#34d399; --own:#fbbf24; --warn:#f87171;
+    --font:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{background:var(--black);color:var(--text);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased;overflow:hidden;}
+
+  /* slide frame */
+  .slide{display:none;position:fixed;inset:0;align-items:center;justify-content:center;padding:5rem 2rem 4rem;}
+  .slide.active{display:flex;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .inner{width:100%;max-width:1000px;}
+
+  /* progress + counter */
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;transition:width .3s;z-index:20;}
+  .counter{position:fixed;bottom:1.1rem;right:1.5rem;font-family:var(--mono);font-size:.78rem;color:var(--gray-2);z-index:20;}
+  .brand{position:fixed;bottom:1.1rem;left:1.5rem;font-family:var(--mono);font-size:.74rem;color:var(--gray-2);z-index:20;}
+  .brand .ac{color:var(--accent);}
+
+  /* nav arrows */
+  .nav{position:fixed;top:50%;transform:translateY(-50%);z-index:20;background:rgba(20,21,28,.6);border:1px solid var(--gray-3);
+       color:var(--gray-1);width:42px;height:42px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+  .nav:hover{color:var(--text);border-color:var(--accent);background:var(--panel);}
+  .nav.prev{left:1.2rem;} .nav.next{right:1.2rem;}
+  @media(max-width:720px){ .nav{top:auto;bottom:1rem;transform:none;} .nav.prev{left:1rem;} .nav.next{right:1rem;} .counter{bottom:1rem;right:50%;transform:translateX(50%);} .brand{display:none;} }
+
+  /* typography */
+  .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1.3rem;}
+  .eyebrow.warn{color:var(--warn);}
+  .eyebrow.go{color:var(--go);}
+  h1.title{font-size:clamp(2.8rem,7vw,4.6rem);font-weight:700;letter-spacing:-.035em;line-height:1.02;margin-bottom:.4rem;}
+  h1.title .ac{color:var(--accent);}
+  h1.title .sub{display:block;font-size:clamp(1.1rem,2.4vw,1.6rem);font-weight:500;color:var(--gray-1);letter-spacing:0;margin-top:.6rem;}
+  h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:1.4rem;}
+  p.lead{font-size:clamp(1.15rem,2.4vw,1.5rem);color:#cfcdc9;max-width:52rem;}
+  p.lead + p.lead{margin-top:1.1rem;}
+  strong{color:var(--text);font-weight:600;}
+  em{font-style:italic;color:#cfcdc9;}
+
+  /* quote block */
+  .quote{font-family:var(--font);font-size:clamp(1.25rem,2.8vw,1.7rem);font-weight:500;line-height:1.35;color:var(--text);
+         background:var(--panel);border:1px solid var(--gray-3);border-left:4px solid var(--accent);border-radius:14px;padding:1.5rem 1.8rem;margin:1.4rem 0;}
+  .quote.warn{border-left-color:var(--warn);}
+  .quote.go{border-left-color:var(--go);}
+
+  /* cue (italic stage direction) */
+  .cue{font-family:var(--mono);font-size:.95rem;color:var(--gray-1);font-style:italic;margin-top:1.3rem;}
+
+  /* stacked statements */
+  .stack{display:grid;gap:1rem;margin-top:.4rem;}
+  .stack .row{font-size:clamp(1.15rem,2.4vw,1.5rem);color:#cfcdc9;padding-left:1.6rem;position:relative;}
+  .stack .row::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-family:var(--mono);}
+
+  /* defence tag */
+  .defence{display:inline-block;font-family:var(--mono);font-size:.85rem;color:var(--accent-2);border:1px solid var(--gray-3);
+           border-radius:8px;padding:.4rem .8rem;margin-top:1.4rem;}
+
+  /* three-card row */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:.6rem;}
+  .card{background:var(--panel);border:1px solid var(--gray-3);border-radius:14px;padding:1.5rem 1.4rem;}
+  .card .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-2);}
+  .card h3{font-size:1.3rem;margin:.4rem 0 .5rem;font-weight:700;}
+  .card p{font-size:.95rem;color:var(--gray-1);}
+  @media(max-width:720px){ .cards{grid-template-columns:1fr;} }
+
+  /* two-pass compare */
+  .passes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.4rem;}
+  .pass{background:var(--panel);border:1px solid var(--gray-3);border-radius:14px;padding:1.4rem;}
+  .pass .tag{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;color:var(--gray-2);}
+  .pass.after{border-color:var(--accent);} .pass.after .tag{color:var(--accent-2);}
+  .pass .what{font-size:1.05rem;color:#cfcdc9;}
+  @media(max-width:720px){ .passes{grid-template-columns:1fr;} }
+
+  /* pills (Scale / Pivot / Kill) */
+  .pills{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem;}
+  .pill{font-family:var(--mono);font-size:.95rem;font-weight:700;padding:.5rem 1rem;border-radius:10px;border:1px solid var(--gray-3);color:var(--text);}
+  .pill.s{border-color:var(--go);color:var(--go);} .pill.p{border-color:var(--accent-2);color:var(--accent-2);} .pill.k{border-color:var(--warn);color:var(--warn);}
+
+  /* trust mini-grid */
+  .tt{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.6rem;}
+  .tt .col{background:var(--panel);border:1px solid var(--gray-3);border-left:3px solid var(--gray-3);border-radius:14px;padding:1.4rem;}
+  .tt .col.lean{border-left-color:var(--go);} .tt .col.own{border-left-color:var(--own);}
+  .tt .col .h{font-weight:700;font-size:1.2rem;margin-bottom:.7rem;}
+  .tt .col.lean .h{color:var(--go);} .tt .col.own .h{color:var(--own);}
+  .tt .col ul{list-style:none;display:grid;gap:.4rem;font-size:1rem;color:#cfcdc9;}
+  .tt .col li{padding-left:1.2rem;position:relative;}
+  .tt .col li::before{content:"\2022";position:absolute;left:0;color:var(--gray-2);}
+  @media(max-width:720px){ .tt{grid-template-columns:1fr;} }
+
+  /* numbered method */
+  .method{display:grid;gap:.9rem;margin-top:.3rem;counter-reset:m;}
+  .method .step{display:flex;gap:1.1rem;align-items:baseline;font-size:clamp(1.15rem,2.4vw,1.45rem);color:#cfcdc9;}
+  .method .step .num{font-family:var(--mono);font-size:.95rem;color:var(--accent-2);min-width:2rem;}
+
+  /* takeaways list */
+  .take{list-style:none;display:grid;gap:.8rem;margin-top:.3rem;}
+  .take li{font-size:clamp(1.15rem,2.4vw,1.45rem);color:#cfcdc9;padding-left:1.6rem;position:relative;}
+  .take li::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-family:var(--mono);}
+  .triad{margin-top:1.8rem;font-family:var(--mono);font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:700;color:var(--text);letter-spacing:.01em;}
+  .triad .sep{color:var(--gray-2);margin:0 .4rem;}
+
+  /* hint */
+  .hint{position:fixed;top:1rem;right:1.2rem;font-family:var(--mono);font-size:.68rem;color:var(--gray-2);z-index:20;opacity:.7;}
+
+  /* print -> handout (one slide per page) */
+  @media print{
+    body{overflow:visible;background:#fff;}
+    .nav,.counter,.brand,.progress,.hint{display:none!important;}
+    .slide{display:flex!important;position:relative;inset:auto;page-break-after:always;break-after:page;padding:2rem;height:100vh;}
+    .slide.active{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="bar"></div>
+<div class="brand">AI for <span class="ac">Founders</span></div>
+<div class="counter" id="counter">1 / 11</div>
+<div class="hint">&larr; &rarr; space &middot; f fullscreen</div>
+<button class="nav prev" aria-label="Previous" onclick="prev()">&lsaquo;</button>
+<button class="nav next" aria-label="Next" onclick="next()">&rsaquo;</button>
+
+<!-- 1 · HOOK -->
+<section class="slide active">
+  <div class="inner">
+    <div class="eyebrow">Curtin Ignition &middot; 60 minutes</div>
+    <h1 class="title">AI for <span class="ac">Founders</span><span class="sub">Where your edge lives</span></h1>
+    <div class="quote">When a capability becomes universal, generic competence stops being an advantage. So where does your edge actually live?</div>
+    <div class="cue">Show of hands &mdash; who&rsquo;s used AI on their idea this week?</div>
+  </div>
+</section>
+
+<!-- 2 · THESIS -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">02 &middot; The thesis</div>
+    <h2>The same tool, every room.</h2>
+    <div class="stack">
+      <div class="row">A capability that drafts your copy, models your numbers, and rehearses your pitch can do the same for <strong>every other founder in the room</strong>.</div>
+      <div class="row">Generic competence is the <strong>baseline</strong> &mdash; not the advantage.</div>
+      <div class="row">The edge lives in your <strong>judgement</strong>: taste, context, and the variation no rival&rsquo;s identical model can reproduce.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · TRAP 1 -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow warn">03 &middot; Trap one &middot; the pitch-killer</div>
+    <h2>Sycophancy</h2>
+    <p class="lead">The model tells you what you <em>want</em> to hear. Ask &ldquo;what do you think of my pitch?&rdquo; and you get praise first, gentle critique second.</p>
+    <p class="lead">It&rsquo;s managing your feelings, not assessing your work.</p>
+    <span class="defence">Defence: prompt past it &rarr; move 2</span>
+  </div>
+</section>
+
+<!-- 4 · TRAP 2 -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow warn">04 &middot; Trap two &middot; the one that costs money</div>
+    <h2>Gell-Mann amnesia</h2>
+    <p class="lead">You catch its errors in <em>your</em> domain &mdash; then trust it on the market, the regs, the numbers, the bits you can&rsquo;t check.</p>
+    <div class="quote warn">Smooth prose feels authoritative. <strong>Smoothness &ne; accuracy.</strong></div>
+  </div>
+</section>
+
+<!-- 5 · THREE MOVES -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">05 &middot; Live &middot; one idea, three moves</div>
+    <h2>Free chat. No subscription, nothing to install.</h2>
+    <div class="cards">
+      <div class="card"><div class="n">Move 1</div><h3>Validate</h3><p>RTCF, two-pass.</p></div>
+      <div class="card"><div class="n">Move 2</div><h3>Pressure-test</h3><p>Past the flattery.</p></div>
+      <div class="card"><div class="n">Move 3</div><h3>Sharpen the pitch</h3><p>Two-pass, in your voice.</p></div>
+    </div>
+    <div class="cue">Run each on YOUR idea, in parallel with the volunteer&rsquo;s.</div>
+  </div>
+</section>
+
+<!-- 6 · MOVE 1 -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">06 &middot; Move 1 &middot; validate</div>
+    <h2>The two-pass reveal.</h2>
+    <div class="passes">
+      <div class="pass before"><div class="tag">Pass 1 &middot; naive</div><div class="what">Slick, generic, <em>everyone-got-this</em>.</div></div>
+      <div class="pass after"><div class="tag">Pass 2 &middot; with edge</div><div class="what">Role &middot; Task &middot; <strong>Context</strong> &middot; Format.</div></div>
+    </div>
+    <div class="quote go">Context is where your edge enters. No model supplies it.</div>
+  </div>
+</section>
+
+<!-- 7 · MOVE 2 -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">07 &middot; Move 2 &middot; pressure-test</div>
+    <h2>Past the flattery.</h2>
+    <div class="quote">&ldquo;Do not flatter me. Three reasons this fails. Name the load-bearing assumption.&rdquo;</div>
+    <p class="lead">Then make the call:</p>
+    <div class="pills"><span class="pill s">Scale</span><span class="pill p">Pivot</span><span class="pill k">Kill</span></div>
+    <div class="cue">And the single cheapest experiment that moves it up a notch. Killing is a good outcome.</div>
+  </div>
+</section>
+
+<!-- 8 · MOVE 3 -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">08 &middot; Move 3 &middot; sharpen the pitch</div>
+    <h2>Generic vs. yours.</h2>
+    <div class="passes">
+      <div class="pass before"><div class="tag">Pass 1</div><div class="what">Generic 60-word pitch. Forgettable.</div></div>
+      <div class="pass after"><div class="tag">Pass 2</div><div class="what">In <em>your</em> voice, leading with the one thing only <strong>you</strong> would say.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · TRUST TOOL -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow go">09 &middot; The trust tool</div>
+    <h2>Average / Precise &times; Small / Large.</h2>
+    <div class="tt">
+      <div class="col lean"><div class="h">Lean in</div><ul><li>Competitor scans</li><li>Brainstorming</li><li>First drafts</li></ul></div>
+      <div class="col own"><div class="h">Human owns it</div><ul><li>The go/no-go</li><li>The customer</li><li>Any number in a pitch</li></ul></div>
+    </div>
+    <div class="cue">Where it hurts to be wrong, you stay in charge.</div>
+  </div>
+</section>
+
+<!-- 10 · METHOD -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">10 &middot; The method, in three sentences</div>
+    <div class="method">
+      <div class="step"><span class="num">01</span><span><strong>Add context</strong> &mdash; the specifics only you hold.</span></div>
+      <div class="step"><span class="num">02</span><span><strong>Prompt past the flattery</strong> &mdash; ask &ldquo;why does this fail?&rdquo;, not &ldquo;what do you think?&rdquo;</span></div>
+      <div class="step"><span class="num">03</span><span><strong>Stay sceptical</strong> where you know least.</span></div>
+    </div>
+    <div class="quote">AI as a thinking partner, not a stand-in.</div>
+  </div>
+</section>
+
+<!-- 11 · TAKEAWAYS -->
+<section class="slide">
+  <div class="inner">
+    <div class="eyebrow">11 &middot; Takeaways</div>
+    <ul class="take">
+      <li>The <strong>companion site</strong> &mdash; RTCF builder, prompt library, trust tool.</li>
+      <li>The <strong>starter prompts</strong> &mdash; copy-paste, from today.</li>
+      <li><strong>Tonight:</strong> run move 1 on your real idea.</li>
+    </ul>
+    <div class="triad">Direct it.<span class="sep">/</span>Don&rsquo;t delegate.<span class="sep">/</span>Never surrender.</div>
+  </div>
+</section>
+
+<noscript>
+  <style>.slide{display:flex;position:relative;inset:auto;page-break-after:always;padding:2rem;}</style>
+</noscript>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const counter=document.getElementById('counter');
+  const bar=document.getElementById('bar');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+    counter.textContent=(i+1)+' / '+slides.length;
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    if(location.hash.slice(1)!=String(i+1)){history.replaceState(null,'','#'+(i+1));}
+  }
+  function next(){show(i+1);}
+  function prev(){show(i-1);}
+  function toggleFs(){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();}else{document.exitFullscreen&&document.exitFullscreen();}}
+  document.addEventListener('keydown',e=>{
+    switch(e.key){
+      case 'ArrowRight':case ' ':case 'PageDown':e.preventDefault();next();break;
+      case 'ArrowLeft':case 'PageUp':e.preventDefault();prev();break;
+      case 'Home':e.preventDefault();show(0);break;
+      case 'End':e.preventDefault();show(slides.length-1);break;
+      case 'f':case 'F':toggleFs();break;
+    }
+  });
+  document.addEventListener('click',e=>{if(e.target.closest('button,a'))return;next();});
+  let tx=0;
+  document.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+  document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){dx<0?next():prev();}});
+  const initial=parseInt(location.hash.slice(1),10)-1;
+  show(isNaN(initial)?0:initial);
+</script>
+</body>
+</html>
