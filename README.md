@@ -15,8 +15,11 @@ docs/                PUBLIC companion site (GitHub Pages serves /docs)
 facilitator/         run-the-session materials (NOT published)
   run-of-show.md     the 60-min spine, minute by minute
   script.md          talk track + exact prompts for the three live moves
+  dry-run-log.md     the prompts run against a real model — evidence the contrasts land
+  closer-options.md  the Ben fork: pure live vs NotebookLM horizon closer
 slides/              the deck
-  deck.md            slide source (render target: self-contained HTML)
+  deck.html          rendered self-contained deck (open in a browser to present)
+  deck.md            slide source
 README.md
 ```
 
