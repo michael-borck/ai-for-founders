@@ -116,6 +116,19 @@
   details.ex summary::before{content:"+ ";}
   details.ex[open] summary::before{content:"\2013 ";}
 
+  /* trust tool */
+  .tt-grid{display:grid;grid-template-columns:minmax(110px,.6fr) 1fr 1fr;gap:.6rem;align-items:stretch;}
+  .tt-h{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-1);padding:.45rem .5rem .25rem;text-align:center;border-bottom:1px solid var(--gray-3);}
+  .tt-h span{display:block;font-family:var(--font);text-transform:none;letter-spacing:0;font-size:.72rem;color:var(--gray-2);margin-top:.15rem;}
+  .tt-r{font-weight:700;font-size:.92rem;color:var(--text);padding:.4rem .2rem;display:flex;flex-direction:column;justify-content:center;}
+  .tt-r span{display:block;font-weight:400;font-size:.72rem;color:var(--gray-1);margin-top:.2rem;font-family:var(--mono);}
+  .tt-cell{background:var(--panel);border:1px solid var(--gray-3);border-left:3px solid var(--gray-3);border-radius:12px;padding:1rem 1.05rem;}
+  .tt-cell .act{font-weight:700;font-size:1rem;margin-bottom:.3rem;}
+  .tt-cell .ex{font-size:.86rem;color:#b9b7b3;line-height:1.5;}
+  .tt-lean{border-left-color:#34d399;} .tt-lean .act{color:#34d399;}
+  .tt-own{border-left-color:#fbbf24;} .tt-own .act{color:#fbbf24;}
+  .tt-rule{font-size:.98rem;color:#c9c7c3;background:#0d0e12;border:1px solid var(--gray-3);border-radius:12px;padding:1rem 1.2rem;margin-top:1rem;}
+  .tt-rule b{color:var(--text);}
   /* tools */
   .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.2rem;}
   .tool-c{background:var(--panel);border:1px solid var(--gray-3);border-radius:12px;padding:1.2rem;}
@@ -165,7 +178,8 @@
   .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
 
   @media(max-width:760px){
-    .prompts,.tools,.phases,.tasks,.cloudtools{grid-template-columns:1fr;}
+    .prompts,.tools,.phases,.tasks,.cloudtools,.tt-grid{grid-template-columns:1fr;}
+    .tt-h{text-align:left;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
 </style>
@@ -250,6 +264,43 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- TRUST TOOL -->
+<section id="trust">
+  <div class="wrap">
+    <div class="sechead"><h2>The trust tool: when to lean in, when to stay in charge</h2><span class="count">// two questions, four corners</span></div>
+    <p class="secintro">AI gives you a convincing <em>average</em> &mdash; fluent, usually about right, but &ldquo;about right&rdquo; and &ldquo;exactly right&rdquo; are not the same thing. Two questions sort any task into one of four corners: do you need an <b>average</b> or <b>precision</b>, and are the stakes <b>small</b> or <b>large</b>?</p>
+
+    <div class="tt-grid">
+      <div></div>
+      <div class="tt-h">Small <span>reversible, cheap to get wrong</span></div>
+      <div class="tt-h">Large <span>money, reputation, the relationship</span></div>
+
+      <div class="tt-r">Average is fine <span>ballpark is enough</span></div>
+      <div class="tt-cell tt-lean">
+        <div class="act">Lean in.</div>
+        <p class="ex">Brainstorm names, draft a post, generate customer-discovery questions, list competitor angles, rewrite for clarity. This is its home turf.</p>
+      </div>
+      <div class="tt-cell tt-lean">
+        <div class="act">Lean in, with a glance.</div>
+        <p class="ex">Summarise 20 customer calls for themes &mdash; but skim the raw notes before you act, or it smooths away the one that matters. The pitch <i>story</i>, not its numbers.</p>
+      </div>
+
+      <div class="tt-r">Precision required <span>close is the same as wrong</span></div>
+      <div class="tt-cell tt-own">
+        <div class="act">Use, then verify.</div>
+        <p class="ex">A code snippet (run it). A cited stat for a casual deck &mdash; check the source before it leaves your laptop.</p>
+      </div>
+      <div class="tt-cell tt-own">
+        <div class="act">Human owns it.</div>
+        <p class="ex">Every number in your financial model. Legal and compliance claims. The go/no-go. Pricing. What you promise a customer.</p>
+      </div>
+    </div>
+
+    <div class="tt-rule">Rule of thumb: <b>where it hurts to be wrong &mdash; money, reputation, the relationship &mdash; you stay in charge.</b></div>
+    <div class="note">The bottom-right corner is where your edge lives: the judgement, taste, and relationships no tool can replicate. Drawn from the free companion book, <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>.</div>
   </div>
 </section>
 
