@@ -130,9 +130,11 @@ Name the tool as you leave: what we just ran is the *devil's advocate* — the f
 
 ## Slide 9 — Move 3: Sharpen the pitch (36:00–45:00)
 
+**First: accept the pivot, out loud — the human decides.** *"The verdict said pivot. I accept it — my call, not its."* Then paste prompt 5 with ONE line swapped to the idea as it now stands (*"a zero-UI receipt service for Australian tradies — text a photo of any receipt to a WhatsApp number, GST extracted, BAS-ready summary to your bookkeeper monthly"*), and say why: *"I'm changing one line of the handout prompt — because the idea changed, and I decided to accept that. The prompts are the method; the idea is always yours."* Room instruction: *"pitch YOUR idea as it now stands — Scale, pitch it proudly; Pivot, pitch the new shape; Kill — pitch your next idea."*
+
 Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"Would you remember this tomorrow? Neither would an investor."* Then cash slide 2's promise: *"This is the average, live — the centre of the distribution. Every founder who asks gets this pitch."*
 
-Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accent it deserves — "they don't hate tax, they hate the chair" gets a laugh and *earns* the contrast. The room pastes their own writing via the template.
+Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accent it deserves — "they don't hate tax, they hate the chair" gets a laugh and *earns* the contrast. The room pastes their own writing via the template. Bonus if it fits: Dave's sample was already pitching the pivot — *"one photo at the servo, snap it, chuck it, drive off"* IS the WhatsApp pipeline. *"His own words found it before the model did."*
 
 Put both pitches side by side — they're two consecutive replies in the same thread; copy the two 60-worders into a blank doc (or scroll between them) so the room sees both at once — and shut up for five seconds. Then: *"Nothing changed except whose words went in. The difference is the edge."* (If pass 1 came out edge-aware because the thread already holds Dave's context, narrow the caption to voice: *"competent — but it could be anyone's. Now listen to Dave's."*)
 
