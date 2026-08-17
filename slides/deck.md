@@ -12,6 +12,8 @@ Slide source for the 60-minute session. Render target: a single self-contained H
 
 *Show of hands: who's used AI on their idea this week?*
 
+**Slides are signposts — the companion site is the handout.** QR + link on this slide (and again on slides 5 and 12): prompts, tools, and this deck all live at michael-borck.github.io/ai-for-founders. *(Poll QR joins this slide once the form exists.)*
+
 ---
 
 ## Slide 2 — The thesis

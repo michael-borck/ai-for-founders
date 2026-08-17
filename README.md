@@ -11,6 +11,7 @@ The session builds one answer: the edge lives in your **judgement** — taste, c
 ```
 docs/                PUBLIC companion site (GitHub Pages serves /docs)
   index.html         the take-home: self-check, RTCF method, prompt library, tools
+  deck.html          the session deck, also published (copy of slides/deck.html — re-copy after edits)
   tools/             in-browser RTCF builder + analyser (no AI, runs on the page)
 facilitator/         run-the-session materials (NOT published)
   run-of-show.md     the 60-min spine, minute by minute

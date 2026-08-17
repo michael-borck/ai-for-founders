@@ -205,10 +205,23 @@
     <p class="lede">AI lets a team of one move like a team of ten, as long as you stay the one steering. This is the take-home from the session: a two-minute self-check, simple strategies that keep you in charge, founder-ready prompts, and how to run it all privately on your own laptop.</p>
     <div class="cta">
       <button class="btn primary" onclick="openModal('quizModal')">Find your starting point &rarr;</button>
+      <a class="btn ghost" href="#session">In the room? Today&rsquo;s prompts &darr;</a>
       <a class="btn ghost" href="https://conversationnotdelegation.com">The idea behind it</a>
     </div>
   </div>
 </header>
+
+<!-- SESSION PROMPTS -->
+<section id="session">
+  <div class="wrap">
+    <div class="sechead"><h2>In the room? Follow along</h2><span class="count">// the six prompts from today, in order</span></div>
+    <p class="secintro">Run them in one chat, in order &mdash; each builds on the last. Swap the bits in brackets for your own idea. No idea you want to paste? Work the session&rsquo;s example and run yours tonight.</p>
+    <div class="prompts" id="session-prompts"></div>
+    <div class="nicebox" style="margin-top:1.2rem">
+      <b>Think before you paste.</b> A free chatbot is someone else&rsquo;s cloud: what you type goes to that company. If your idea is commercially sensitive, work the session&rsquo;s example today and run <i>your</i> idea tonight on a local model &mdash; one install, nothing leaves your laptop (see <i>Run it private</i>, below). The trade &mdash; frontier power in the cloud versus a weaker-but-private model on your own machine &mdash; is a founder decision, and it never goes away.
+    </div>
+  </div>
+</section>
 
 <!-- SELF-CHECK QUIZ -->
 <section id="check">
@@ -484,6 +497,8 @@
     <strong>Dr Michael Borck</strong> &middot; Lecturer &amp; AI Facilitator &middot; School of Marketing and Management, Curtin University
     <span class="proto">prototype</span>
     <div class="flinks">
+      <a href="deck.html">the session deck</a>
+      <a href="https://trusttool.borck.education/">play the trust tool</a>
       <a href="https://bigpicture.borck.dev">the big picture</a>
       <a href="https://conversationnotdelegation.com">conversation, not delegation</a>
       <a href="https://michael-borck.github.io/conversation-not-delegation">the book (free)</a>
@@ -608,6 +623,22 @@
   }
   render();
 
+  // ---- session prompts (the live six, in run order) ----
+  const SESSION = [
+    ["1 · Validate, naively",
+"Help me validate my startup idea: [your one-line idea]."],
+    ["2 · Validate, with your edge",
+"You are a sceptical, experienced pre-seed investor (Role).\nPressure-test this idea and tell me the three things that would have to be true for it to work (Task).\nMy idea: [one line]. What only I know: [your specific customer / contrarian bet / domain insight] (Context).\nGive me: the three load-bearing assumptions, ranked by risk, one line each (Format)."],
+    ["3 · Pressure-test (devil's advocate)",
+"Do not flatter me. I need honest, critical feedback.\nYou are a sceptical pre-seed investor. Tell me the three strongest reasons this idea will fail.\nBe specific, blunt, and name the single load-bearing assumption most likely to be wrong."],
+    ["4 · Make the call: Scale / Pivot / Kill",
+"Given those three failure modes, apply Scale / Pivot / Kill to this idea as it stands today.\nState which one, and the single cheapest experiment that would move it up a notch."],
+    ["5 · Pitch, generically",
+"Write a 60-word pitch for this idea: [one line]."],
+    ["6 · Pitch, in your voice",
+"Here is ~100 words of my own writing: [paste something you actually wrote].\nNow rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet."],
+  ];
+
   // ---- starter prompts ----
   const PROMPTS = [
     ["Pressure-test the idea",
@@ -630,24 +661,28 @@
 "Here is ~100 words of my own writing: [paste an email or post you actually wrote].\n1. Rewrite this in my voice: [the pitch or text you want rewritten].\n2. Then distil a one-page style brief — my tone, sentence length, the words I reach for and avoid — that I can paste into my AI's custom instructions, so everything it drafts sounds like me."],
   ];
 
-  const pWrap = document.getElementById('prompts');
-  PROMPTS.forEach(([title, body]) => {
-    const det = document.createElement('details');
-    det.className = 'pcard';
-    const sum = document.createElement('summary'); sum.textContent = title;
-    const pbody = document.createElement('div'); pbody.className = 'pbody';
-    const pre = document.createElement('pre'); pre.textContent = body;
-    const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = 'copy';
-    btn.onclick = (e) => {
-      e.preventDefault();
-      navigator.clipboard.writeText(body).then(() => {
-        btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
-      });
-    };
-    pbody.appendChild(pre); pbody.appendChild(btn);
-    det.appendChild(sum); det.appendChild(pbody);
-    pWrap.appendChild(det);
-  });
+  function renderPrompts(arr, elId){
+    const pWrap = document.getElementById(elId);
+    arr.forEach(([title, body]) => {
+      const det = document.createElement('details');
+      det.className = 'pcard';
+      const sum = document.createElement('summary'); sum.textContent = title;
+      const pbody = document.createElement('div'); pbody.className = 'pbody';
+      const pre = document.createElement('pre'); pre.textContent = body;
+      const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = 'copy';
+      btn.onclick = (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(body).then(() => {
+          btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
+        });
+      };
+      pbody.appendChild(pre); pbody.appendChild(btn);
+      det.appendChild(sum); det.appendChild(pbody);
+      pWrap.appendChild(det);
+    });
+  }
+  renderPrompts(SESSION, 'session-prompts');
+  renderPrompts(PROMPTS, 'prompts');
 
   // ---- modal open/close (quiz + RTCF tool overlays) ----
   function openModal(id){

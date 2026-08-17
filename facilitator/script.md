@@ -14,7 +14,11 @@ Open with the provocation, verbatim:
 
 Show of hands: *"Who's used AI on their idea this week?"* Don't dwell — you'll answer it over the next 55 minutes.
 
-**Pick the volunteer now.** One founder, one real idea, carried through all three moves. Pre-arranged if possible; otherwise take the boldest hand.
+**Housekeeping (20 seconds, while the title slide is up):**
+
+> One thing before we start: the slides are signposts, not the handout. The companion site is the handout — every prompt we run today, the tools, and this deck itself all live there. Scan the QR or type the link; it's also on the follow-along slide when we go live, and again at the end.
+
+**The volunteer question.** Offer the live-idea seat — *"who's got an idea they'd be happy to have pressure-tested in front of the room?"* Bold hand → carry their idea through all three moves. No hand → the tradie stand-in carries (prompts are idea-agnostic; you supply the edge). Either way, everyone else runs the same prompts on *their own* idea in parallel.
 
 ---
 
@@ -41,6 +45,12 @@ This is the trap that makes founders stop iterating. **The defence is to prompt 
 ## 12–45 · LIVE: one idea, three moves
 
 Everyone opens their chat. You run the volunteer's idea on the projector; they run their own.
+
+**The IP beat — say it before anyone pastes:**
+
+> A free chatbot is someone else's cloud — what you paste goes to that company. If your idea is commercially sensitive, don't paste it today: work the tradie example with us now, and run *your* idea tonight on a local model. One install — Msty — and nothing leaves your laptop; it's on the companion site. Cloud models are the strongest; local models are weaker but yours. That trade — frontier power versus privacy — is a founder decision, and it never goes away.
+
+This gives the uncomfortable permission to watch rather than paste — and it turns the "why local?" question into a pull before it gets asked.
 
 ### Move 1 — Validate (RTCF, two-pass) · 12 min
 
