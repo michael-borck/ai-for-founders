@@ -152,6 +152,8 @@ Thesis, third landing: thinking partner, not stand-in.
 
 Make it one action, not four bullets: *"Tonight, before you lose the nerve: run move 1 on your real idea. Naive first, then with your edge. When you feel the difference — that feeling is the method."* Everything else — the builder, the library, Notebook, Msty — is on the site, and the site is bookmarked.
 
+**Q&A deflection, whenever a tool question comes** ("which one should I use?", "what about Grok Bot?"): *"The names change monthly. AI literacy isn't about the tool — it's about how you converse with it. Everything you watched today works in any of them."* One sentence, back to the method.
+
 Close on the line, then stop talking: *"Direct it. Don't delegate. Never surrender."*
 
 **Do:** leave the slide up as they pack — the QR keeps working.
