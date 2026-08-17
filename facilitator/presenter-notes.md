@@ -154,7 +154,11 @@ One-line nod: the style-brief trick makes this permanent — it's linked on the 
 
 The slide lists them; you only connect and locate. Devil's advocate — *"you just watched it."* Board of directors — one colour line: *"the CFO in that room will hate your pricing; better to hear it from a fake CFO for free."* VET — point forward: *"that one earns its keep in two minutes."* All three prompts on the site.
 
-**Planned stretch #1 lives here (likely needed — an operator room runs the live block fast):** if you're at this slide before ~45:00, run the board of directors live on Dave's idea — starter prompt from the site, same chat thread. Three voices come back; point at the disagreement: *"Notice they don't agree. That's the point — they advise, you decide. An answer machine gives you one answer; a board gives you a decision to make."* 3–4 minutes, and it's the beat the organisers loved.
+**Planned stretch #1 lives here (likely needed — an operator room runs the live block fast):** if you're at this slide before ~45:00, run the board of directors live in the same thread, using the adapted prompt (site version stays generic): *"Answer as a panel, each in their own voice: (1) a cautious CFO, (2) my most skeptical customer, (3) a growth-hungry marketer. Each gives an honest take on this WhatsApp receipt photo idea, then stops. I will decide."* Point at your own last line before sending: *"the whole hour in five words."* 3–4 minutes, and it's the beat the organisers loved.
+
+**Three beats in the output (dry-run confirmed):** (1) they disagree — CFO "not venture-backable", customer "I'll stick to the glovebox", marketer "pure gold" — *"an answer machine gives you one answer; a board gives you a decision to make."* (2) The cheerleader took a seat: the marketer IS trap 1, relocated — you weigh that voice, not obey it. (3) The customer surfaces failure modes nothing else found (grease, dropout at the trade desk, faded thermal paper).
+
+**VET: discuss by pointing at this very output — no extra prompt.** The board just made three smooth, specific, unverified claims (per-message API costs, thermal fade, "$100k ARR on referrals"). *"Which do you VET first? The one your next decision leans on — the API cost, inside the CFO's kill argument. Verify the source, Explain it back, Test the edges. Tonight's homework; prompts on the site."*
 
 **Advance:** briskly. This slide is a landing, not a lecture.
 
