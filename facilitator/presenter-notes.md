@@ -128,7 +128,7 @@ Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"W
 
 Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accent it deserves — "they don't hate tax, they hate the chair" gets a laugh and *earns* the contrast. The room pastes their own writing via the template.
 
-Put both pitches side by side and shut up for five seconds. Then: *"Nothing changed except whose words went in. The difference is the edge."*
+Put both pitches side by side — they're two consecutive replies in the same thread; copy the two 60-worders into a blank doc (or scroll between them) so the room sees both at once — and shut up for five seconds. Then: *"Nothing changed except whose words went in. The difference is the edge."* (If pass 1 came out edge-aware because the thread already holds Dave's context, narrow the caption to voice: *"competent — but it could be anyone's. Now listen to Dave's."*)
 
 **Then the meta-beat — once, here, nowhere else:** *"And notice what just happened in the silence. Nobody told you the second one was better. No model ranked them. You judged it — instantly. That comparison you just made in your head is the one thing that never went to the cloud. That's the human in the loop — and it's the part you can't delegate."* The room just proved the thesis on themselves; caption it and move on.
 
