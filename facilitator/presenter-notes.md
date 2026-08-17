@@ -6,7 +6,9 @@ Rule: **the slide says it, so you don't.** These notes carry only what is NOT on
 
 **Timing, honestly.** The scripted material alone is ~35 minutes. The other ~25 live in the accordion: model generation time, the room running prompts in parallel (always slower than you expect), walking the floor between passes, and questions — an operator-heavy room asks more of them. If the hour runs short, the levers, in priority order for this crowd: **stretch** = expand the one-line nods into real segments (style brief → custom instructions; board of directors run live on a room idea; VET worked on a real claim; Msty demo), then the NotebookLM horizon closer (3 min, see closer-options.md). **Cut** = move 3's second pass, then the trio to one line. Never cut the two-pass reveal.
 
-Windows: the deck, the companion site (bookmarked, `#session`), a fresh logged-out chat. Slides 6–9 are backdrops — you live in the browser there.
+Windows: the deck, the companion site (bookmarked, `#session`), a fresh Gemini chat. Slides 6–9 are backdrops — you live in the browser there.
+
+**Tech setup (do the night before, not in the room):** dedicated Chrome profile ("Demo") — not incognito (session dies if the window closes) — logged into a burner Google account. Smoke-test it in advance: fresh accounts can hit phone-verification challenges, and first Gemini use shows consent dialogs — click through everything, run one throwaway prompt, delete that chat so the sidebar is clean. Demo in the clean account (your real account's history could steer answers via personalisation, and its sidebar stays off the projector). Fallback: the dry-run thread exported as screenshots/PDF on the desktop — don't account-switch live. Expect live outputs to differ from the dry run; the beats survive any reasonable answer. Browser zoom ~125–150% for the back row.
 
 ## Slide 1 — Hook (0:00–2:30)
 
