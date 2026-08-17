@@ -14,8 +14,8 @@ Say it at the open, after the two-pass reveal, and at the close.
 | 5–12 | **The average + two traps** | Sycophancy (sets up move 2) + Gell-Mann. Skip Dismissal Fallacy. |
 | 12–24 | **Move 1 — Validate (RTCF, two-pass)** | Naive → generic. Add edge → soul. |
 | 24–36 | **Move 2 — Pressure-test (past the flattery)** | Devil's-advocate prompt + Scale/Pivot/Kill. |
-| 36–45 | **Move 3 — Sharpen the pitch (two-pass)** | Generic pitch vs. pitch with edge + voice. |
-| 45–53 | **The trust tool** | Average/Precise × Small/Large, founder examples. |
+| 36–45 | **Move 3 — Sharpen the pitch (two-pass)** | Generic pitch vs. pitch with edge + voice. Name the push-back trio: devil's advocate, board of directors, VET. |
+| 45–53 | **The trust tool** | Average/Precise × Small/Large, founder examples. VET = the *how* of the verify column. |
 | 53–58 | **The method, distilled** | Three sentences. |
 | 58–60 | **Takeaways** | Companion site + prompt library + "tonight" nudge. |
 

@@ -337,6 +337,15 @@
     </div>
 
     <div class="tt-rule">Rule of thumb: <b>where it hurts to be wrong &mdash; money, reputation, the relationship &mdash; you stay in charge.</b></div>
+    <div class="nicebox">
+      <b>When the grid says verify &mdash; VET it.</b> The grid tells you <i>when</i> to check; VET is <i>how</i>. Three questions for any claim you can&rsquo;t check yourself:
+      <b>V</b>erify &mdash; what sources support this, and can you find them independently? &middot;
+      <b>E</b>xplain &mdash; can the AI break it down until you could explain it to someone else? &middot;
+      <b>T</b>est &mdash; what edge cases or conditions would make it wrong?
+      The copy-paste version is in the starter prompts below (&ldquo;VET the claim&rdquo;).
+    </div>
+    <p class="secintro" style="margin-top:1.6rem">Now make it muscle memory: ten scenarios, drag each into its quadrant, and see whether your instincts match the grid.</p>
+    <div class="cta"><a class="btn primary" href="https://trusttool.borck.education/">Play the trust tool &rarr;</a></div>
     <div class="note">The bottom-right corner is where your edge lives: the judgement, taste, and relationships no tool can replicate. The grid is drawn from <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation</a>; the discipline of <i>proving</i> a solution belongs in that corner is the whole of <a href="https://michael-borck.github.io/prove-dont-persuade/">Prove, Don&rsquo;t Persuade</a>.</div>
   </div>
 </section>
@@ -346,6 +355,9 @@
   <div class="wrap">
     <div class="sechead"><h2>Starter prompts</h2><span class="count">// steal these, then make them yours</span></div>
     <p class="secintro">A founder&rsquo;s working set. Each makes the AI argue with you rather than flatter you. Copy, paste, edit the bits in brackets.</p>
+    <div class="nicebox" style="margin-bottom:1.2rem">
+      <b>Do this tonight, in ten minutes:</b> run the naive prompt &mdash; <i>&ldquo;Help me validate my startup idea: [your one-liner]&rdquo;</i> &mdash; then run &ldquo;Pressure-test the idea&rdquo; below, adding the specifics only you hold. Same model, same idea, two outputs. The difference you feel is the whole method.
+    </div>
     <div class="prompts" id="prompts"></div>
   </div>
 </section>
@@ -610,6 +622,12 @@
 "Role: an investor in a pitch meeting.\nTask: ask me the ten hardest questions you would ask, one at a time, and react to each answer.\nContext: [your business, stage, and ask].\nFormat: start with question one and wait for my reply before the next."],
     ["Plan the week, not the year",
 "Role: a startup operator who ships.\nTask: turn my goal into the smallest test I could run this week.\nContext: [your goal] with [your time and budget].\nFormat: one experiment, the steps, and what result would tell me to keep going or stop."],
+    ["VET the claim",
+"You just told me: [paste the AI's claim].\n\nHelp me VET this:\n- VERIFY: What sources support this claim? Can I find it independently?\n- EXPLAIN: Break it down until I can explain it in my own words.\n- TEST: What edge cases or conditions might make it wrong?"],
+    ["Make the call: Scale / Pivot / Kill",
+"Role: a sceptical pre-seed investor.\nTask: apply Scale / Pivot / Kill to my idea as it stands today, and say which one.\nContext: [your idea] — and the reasons it might fail: [paste the failure modes, if you have them].\nFormat: the call, a one-line rationale, and the single cheapest experiment that would move it up a notch."],
+    ["Make it sound like you",
+"Here is ~100 words of my own writing: [paste an email or post you actually wrote].\n1. Rewrite this in my voice: [the pitch or text you want rewritten].\n2. Then distil a one-page style brief — my tone, sentence length, the words I reach for and avoid — that I can paste into my AI's custom instructions, so everything it drafts sounds like me."],
   ];
 
   const pWrap = document.getElementById('prompts');

@@ -86,6 +86,8 @@ State which one, and the single cheapest experiment that would move it up a notc
 
 **Normalise killing as a good outcome** — a fast, cheap kill beats a slow expensive one. The room should hear you say it.
 
+> **Name it when you land it:** what you just did is the *devil's advocate* — the first of three named push-back tools. The other two get one line each after move 3 (next block).
+
 ### Move 3 — Sharpen the pitch (two-pass on the pitch) · 9 min
 
 **Pass 1 — generic pitch:**
@@ -107,6 +109,8 @@ Compare the two side by side on the projector. The difference *is* the edge.
 
 > One-line nod: you can make this permanent — generate a 1–2 page "style brief" from your writing and paste it into your AI's custom instructions (the two-page voice method, linked on the companion site).
 
+**Name the push-back trio (~1 min, slide 9).** What move 2 did has a name — the *devil's advocate*. Two more, one line each: the *board of directors* — put the same question to a room (cautious CFO, sceptical customer, growth marketer), not one voice; they advise, you decide. And *VET* — Verify the source, Explain it back, Test the edges — the habit for any claim you can't check. Prompts for all three are on the companion site; VET earns its keep in the next block.
+
 ---
 
 ## 45–53 · The trust tool (founder-flavoured)
@@ -124,6 +128,8 @@ Founder examples:
 - **Human owns it:** the go/no-go, the customer relationship, the positioning taste-call, any number that goes in a pitch or a contract.
 
 One sentence for them to keep: *Where it hurts to be wrong, you stay in charge.*
+
+**And the how of the verify column:** VET — **V**erify the source (can you find it independently?), **E**xplain (have it break the claim down until *you* could explain it), **T**est (what edge cases make it wrong?). It's in the starter prompts on the site as "VET the claim."
 
 ---
 

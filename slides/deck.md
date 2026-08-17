@@ -60,7 +60,7 @@ Working in **free chat** — no subscription, nothing to install.
 
 ## Slide 6 — Move 1: Validate (two-pass)
 
-**Pass 1 (naive):** slick, generic, *everyone-got-this*.
+**Pass 1 (naive):** an enthusiastic, over-long love-fest. *Sycophancy, live.*
 
 **Pass 2 (with edge):** Role · Task · **Context** · Format.
 
@@ -86,18 +86,28 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 9 — The trust tool
+## Slide 9 — Push back: three ways
+
+1. **Devil's advocate** — make it attack your idea; you decide what survives. *(You just did this in move 2.)*
+2. **Board of directors** — a room of voices (CFO, sceptical customer, growth marketer), not one answer. You weigh them.
+3. **VET** — Verify the source · Explain it back · Test the edges. For any claim you can't check.
+
+*Prompts for all three are on the companion site.*
+
+---
+
+## Slide 10 — The trust tool
 
 **Average / Precise × Small / Large.**
 
 - **Lean in:** competitor scans, brainstorming, first drafts.
 - **Human owns it:** the go/no-go, the customer, the positioning call, any number in a pitch.
 
-*Where it hurts to be wrong, you stay in charge.*
+*Where it hurts to be wrong, you stay in charge — and when the grid says verify, VET it.*
 
 ---
 
-## Slide 10 — The method, in three sentences
+## Slide 11 — The method, in three sentences
 
 1. **Add context** — the specifics only you hold.
 2. **Prompt past the flattery** — ask "why does this fail?", not "what do you think?"
@@ -107,9 +117,9 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 11 — Takeaways
+## Slide 12 — Takeaways
 
-- **The companion site** — RTCF builder, prompt library, trust tool.
+- **The companion site** — RTCF builder, prompt library, trust tool + VET.
 - **The starter prompts** — copy-paste, from today.
 - **Tonight:** run move 1 on your real idea.
 
