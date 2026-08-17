@@ -1,131 +1,145 @@
 # Presenter notes — slide by slide
 
-The talk track from `script.md`, cut to the 13 slides. Each slide: **Say** (talk track), **Do** (windows, prompts, site), **Advance** (the cue to move on). `build.py` bakes these into `slides/deck-presenter.pptx` as speaker notes — present from that file (or the HTML deck with this doc on a second screen); the organiser's `deck.pptx` stays clean.
+Rule: **the slide says it, so you don't.** These notes carry only what is NOT on the slide — the story, the reason behind each line, the window choreography, and the transition into the next slide. Point at the slide; talk about what's behind it. `build.py` bakes these into `slides/deck-presenter.pptx` as speaker notes; the organiser's `deck.pptx` stays clean.
 
-Windows you juggle: the deck, the companion site (bookmarked, `#session` at the top), and a fresh logged-out free-chat tab. Slides 6–9 are signposts behind the live work — most of that stretch you're in the browser, not the deck.
+**Timing, honestly.** The scripted material alone is ~35 minutes. The other ~25 live in the accordion: model generation time, the room running prompts in parallel (always slower than you expect), walking the floor between passes, and questions. If the room is quiet the hour can run short, so know the levers: **stretch** = debrief the poll result out loud (2 min), take a room idea through prompt 3 as a second example (5 min), the NotebookLM horizon closer (3 min, see closer-options.md). **Cut** = move 3's second pass, then the trio to one line. Never cut the two-pass reveal.
 
-## Slide 1 — Hook (0:00–2:00)
+Windows: the deck, the companion site (bookmarked, `#session`), a fresh logged-out chat. Slides 6–9 are backdrops — you live in the browser there.
 
-**Before you start:** this slide up as people arrive; poll QR live. Point at it once: *"While you arrive — one question."*
+## Slide 1 — Hook (0:00–2:30)
 
-**Say:** the provocation, verbatim: *"AI can now draft your copy, model your numbers, and rehearse your pitch — which means it can do the same for every other founder in the room. When a capability becomes universal, generic competence stops being an advantage. So where does your edge actually live?"*
+Slide is up as people arrive, poll QR live. Point once: *"While you arrive — one question."*
 
-Show of hands: *"Who's used AI on their idea this week?"* Don't dwell.
+**Cold open — tell Dave's story, don't welcome anyone yet.** *"Picture a sparkie — call him Dave. Sole trader out of Midland, turns over about $300k. Somewhere in his ute is a glovebox stuffed with receipts, and he's a full BAS quarter behind. Here's the thing — Dave doesn't hate tax. He hates the chair: the sitting-down-at-9pm-with-a-laptop part. He'll do a 12-hour day in 40-degree heat, no worries; ask him to file a receipt and he'll find literally anything else to do."*
 
-Housekeeping (20 s): *"The slides are signposts, not the handout. The companion site is the handout — every prompt we run today lives there. Scan it now; it comes back on screen when we go live."*
+Then the turn: *"In about ten minutes, we're going to pitch an app that rescues Dave to an AI — live — and you're going to watch that AI lie to us. Then we're going to fix it."*
 
-**Do:** glance at the poll histogram — mostly A/B → slow the follow-along instruction later; mostly C/D → push the parallel work harder.
+Now the provocation — deliver it as your own claim, don't read the quote block. The question at the end ("where does your edge actually live?") is the whole hour; let it hang for two seconds.
 
-**Advance:** after the housekeeping line.
+Show of hands (who's used AI this week) — count it, don't discuss it. Housekeeping: slides are signposts, the site is the handout, scan now or later.
 
-## Slide 2 — The thesis (2:00–3:30)
+**Do:** glance at the poll histogram. Mostly A/B → slow the follow-along later. Mostly C/D → push the parallel work harder.
 
-**Say:** walk the three rows top to bottom — same capability, every founder in the room; generic competence is the baseline, not the advantage; the edge lives in your judgement: taste, context, variation no rival's identical model reproduces.
+**Advance:** off the hanging question.
 
-**Advance:** when the judgement line lands. You'll return to this thesis twice more — after the two-pass reveal, and at the close.
+## Slide 2 — The thesis (2:30–4:00)
 
-## Slide 3 — Walk the talk (3:30–4:30)
+The slide states the claim; your job is to make it personal. Land it with the room, not the abstract: *"While you've been sitting here, everyone else in this room could ask the same model for the same market scan, the same pitch, the same plan — and get the same good answer. If you all have the same brilliant assistant, none of you has an advantage."*
 
-**Say (30 s, dry understatement):** ~30 tools shipped solo, in conversation with AI. AI taught at undergrad, postgrad, exec ed. Then the line that matters: *"the deck you're watching, the site you scanned, and the poll you just answered were all built in conversation with AI."* Move on.
+Don't read the three rows — point at the last one and slow down on **judgement**: taste, context, the thing no identical model can copy. This claim comes back twice more (after the two-pass reveal, and at the close); it earns belief in the demo, not here.
 
-**Then name the demo idea (one line, before you advance):** *"We're going to take one idea through three moves, live — a receipt-scanning app for Australian tradies — and you'll run the same moves on your own idea at the same time."*
+**Advance:** as soon as "judgement" lands. Don't linger — this slide is a promise, not a proof.
 
-**Advance:** straight into the traps.
+## Slide 3 — Walk the talk (4:00–4:45)
 
-## Slide 4 — Trap 1: Sycophancy (4:30–8:00)
+The slide shows the résumé; you supply the tone — dry, fast, almost throwaway. The unspoken question you're answering: "has this person actually done it, or do they just lecture about it?"
 
-**Say:** *"The model tells you what you want to hear. Ask 'what do you think of my idea?' and you get praise first, gentle criticism second. It's managing your feelings, not assessing your work. It's not a bug — it's how the model was trained."* This is the trap that makes founders stop iterating.
+The one line to deliver with a beat of silence after: *"the deck you're watching, the site you scanned, and the poll you just answered were all built in conversation with AI."* Don't elaborate. Understatement is the credibility.
 
-**Plant the defence:** *"The defence is to prompt past it — and that's exactly what move 2 does."*
+**Transition:** *"So — Dave's app. Let's find out what it's up against first."*
 
-**Advance:** once the defence is planted.
+**Advance:** on that line.
+
+## Slide 4 — Trap 1: Sycophancy (4:45–8:00)
+
+The slide names the trap; you supply the *why* and the *cost*. Why it happens: the model was trained on human approval — agreeable answers score better. It's not lying, it's people-pleasing at scale.
+
+The cost, for founders specifically: praise stops iteration. *"The most dangerous thing a founder can hear in month one is 'great idea' — because you stop stress-testing exactly when stress-testing is cheapest."*
+
+Tease, don't teach, the defence: *"You can prompt straight past this — you'll watch it happen in about twenty minutes."*
+
+**Advance:** on the tease.
 
 ## Slide 5 — Trap 2: Gell-Mann amnesia (8:00–11:30)
 
-**Say:** *"You catch the AI's errors in your own domain, then trust it blindly on the market, the regulations, the numbers — the bits you can't check. Smooth prose feels authoritative. Smoothness and accuracy are unrelated."*
+Tell the origin story — it's not on the slide and it's why the name sticks. *"Michael Crichton named this after his friend, the physicist Murray Gell-Mann. You open the newspaper, read an article on something you actually know, and it's riddled with errors. Then you turn the page to the finance section — and read it as if it's gospel. Same paper. Same journalists. You knew they got your field wrong, and you forgot it one page later."*
 
-Defence: the same scepticism where you know least — more, if anything, because you have fewer tools to catch the errors.
+Then map it: your domain = the trade, the product. The page you turn to = the market size, the regs, the numbers. AI writes every page with the same confident fluency.
 
-(Dismissal Fallacy is deliberately skipped — don't mention it.)
+Defence in one line: be *most* sceptical where you know *least* — inverted from what feels natural.
 
-**Advance:** into the live block. This is the minute-12 mark.
+(Dismissal Fallacy is deliberately cut — don't mention it.)
+
+**Transition:** *"Right. Everyone open a chat window — we're going to Dave's rescue."* This is the minute-12 mark.
+
+**Advance:** as laptops open.
 
 ## Slide 6 — LIVE: one idea, three moves (12:00)
 
-**Say first — the IP beat, before anyone pastes:** *"A free chatbot is someone else's cloud — what you paste goes to that company. If your idea is commercially sensitive, don't paste it today: work the tradie example with us now, and run your idea tonight on a local model — one install, Msty, nothing leaves your laptop; it's on the site. Cloud models are the strongest; local models are weaker but yours. That trade never goes away."*
+Choreography slide — almost everything here is Do, not Say.
 
-**Then the instruction:** open one of the free chats on the slide. Run each move on YOUR idea in parallel with the tradie demo — or just watch. Both work. Follow-along QR is on this slide.
+**Say the IP beat first, before anyone pastes** (verbatim, it's rehearsed): free chat is someone else's cloud; sensitive idea → work the tradie example now, run yours tonight in Msty; frontier power vs privacy is a founder decision that never goes away. This gives permission to watch instead of paste — some of the room needs that permission.
 
-**Do:** open the companion site on the projector, scroll to the session prompts (`#session`) — the room sees the handout being used. Open the fresh chat tab beside it.
+**Do, in order:** (1) companion site on the projector, scroll to the session prompts — say *"everything I paste today comes from your handout, in order — nothing up my sleeve."* (2) Fresh chat tab beside it. (3) Confirm the room is in: *"One of the three free chats on screen — you run your idea in parallel, or just watch. Both work."*
 
-**Advance:** to slide 7 as you copy session prompt 1.
+**Advance:** to slide 7 as you copy prompt 1. From here to slide 10 the deck is a backdrop.
 
 ## Slide 7 — Move 1: Validate (12:00–24:00)
 
-Slide is the backdrop; the work happens in the browser.
+**Pass 1:** paste prompt 1. While it generates, narrate the dead air: *"Watch how happy it's about to be."* Let the love-fest scroll in silence for a few seconds — the scrolling IS the joke. Then: *"It just told a stranger their idea is brilliant. That's the trap from slide four, live — and it would say it to every founder in this room."*
 
-**Do — pass 1:** paste session prompt 1 (naive validate) into the chat. Let the love-fest scroll.
+**Pass 2:** back to the site — prompt 2. Before sending, point at the slide's Role · Task · **Context** · Format and say what the pasted version doesn't: Context is the only part the model can't invent. Dave's context — the $150–400k sole trader, the bookkeeper-shaped competitors, the penalties-not-deductions bet — took a founder to know.
 
-**Say:** *"This just told a stranger their idea is brilliant — the sycophancy trap we named ten minutes ago, live. It's useful, but it's managing my feelings, and it would say it to every founder in this room."*
+When it returns, the reveal, slowly: *"Same model. Same idea. Sixty seconds apart. The AI did not get smarter — I directed it."* Thesis, second landing.
 
-**Do — pass 2:** back to the site, copy session prompt 2 (with edge). Before sending, walk its parts against the slide: Role · Task · **Context** · Format — the paste-as-is version has no tags; the labels are on the slide and in the site's template.
+**Hold in your head:** this same model calls the idea a PIVOT with a $50 experiment in move 2. Don't foreshadow it to the room — the surprise is the payoff.
 
-**Say when it returns:** same model, same idea — now a sceptical investor, three assumptions ranked by risk, the scariest first. *"The AI did not get smarter. I directed it."* Then the thesis, second landing: *"The Context line is the whole session in one box. No model supplies it."*
-
-**Hold this thought:** the same model that just said "genuinely brilliant" will call this a PIVOT with a $50 experiment by move 2. Name that arc when you get there.
-
-**Advance:** to slide 8 as you copy session prompt 3.
+**Advance:** to slide 8 as you copy prompt 3.
 
 ## Slide 8 — Move 2: Pressure-test (24:00–36:00)
 
-**Do:** paste session prompt 3 (do not flatter me / three reasons this fails). Read the failures out. Then session prompt 4 (Scale / Pivot / Kill + cheapest experiment).
+Paste prompt 3. Read the three failure reasons out loud — slower than feels natural; this is the room hearing an AI be genuinely useful for the first time today. Then prompt 4.
 
-**Say — name the arc:** *"Ten minutes ago this model called the idea genuinely brilliant. Now it says PIVOT and prescribes a $50 experiment. Cheerleader to honest critic to cheap test — that's the whole session in one thread."*
+**The arc — name it the moment the verdict lands:** *"Twenty minutes ago this model said 'genuinely brilliant.' Now it says PIVOT and prescribes a fifty-dollar experiment. Cheerleader, honest critic, cheap test — same thread. That arc is the entire session."*
 
-**Normalise killing, out loud:** a fast, cheap kill beats a slow, expensive one.
+Normalise the kill — the room needs to hear a lecturer say it: *"If it had said Kill, that's a win. A fast cheap kill is the best deal in startups; the expensive version of this lesson costs eighteen months."*
 
-**Name it:** what we just did is the *devil's advocate* — first of three push-back tools; the other two get one line each after move 3.
+Name the tool as you leave: what we just ran is the *devil's advocate* — the first of three; the other two get one line each later.
 
-**Advance:** to slide 9 as you copy session prompt 5. (Time check: behind at minute 36? Cut move 3's second pass — never the two-pass reveal.)
+**Time check at 36:** behind → cut move 3's pass 2, never the reveal.
+
+**Advance:** to slide 9 as you copy prompt 5.
 
 ## Slide 9 — Move 3: Sharpen the pitch (36:00–45:00)
 
-**Do — pass 1:** paste session prompt 5 (generic 60-word pitch). **Say:** slick, forgettable, the average.
+Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"Would you remember this tomorrow? Neither would an investor."*
 
-**Do — pass 2:** paste session prompt 6 — the ~100-word tradie voice sample is baked in ("they don't hate tax — they hate the chair"). The room uses the template with their *own* writing.
+Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accent it deserves — "they don't hate tax, they hate the chair" gets a laugh and *earns* the contrast. The room pastes their own writing via the template.
 
-**Say:** compare the two pitches side by side on the projector. The difference *is* the edge. One-line nod: make it permanent with a style brief in your custom instructions — the two-page voice method, linked on the site.
+Put both pitches side by side and shut up for five seconds. Then: *"Nothing changed except whose words went in. The difference is the edge."*
 
-**Advance:** to slide 10 for the trio.
+One-line nod, no more: the style-brief trick makes this permanent — it's linked on the site.
+
+**Advance:** to slide 10, energy up — the live block is done, stick the landing.
 
 ## Slide 10 — Push back: three ways (45:00, ~1 min)
 
-**Say, one line each:** the *devil's advocate* — you just did it in move 2. The *board of directors* — same question to a room of voices (cautious CFO, sceptical customer, growth marketer); they advise, you decide. And *VET* — Verify the source, Explain it back, Test the edges — for any claim you can't check. Prompts for all three on the site.
+The slide lists them; you only connect and locate. Devil's advocate — *"you just watched it."* Board of directors — one colour line: *"the CFO in that room will hate your pricing; better to hear it from a fake CFO for free."* VET — point forward: *"that one earns its keep in two minutes."* All three prompts on the site.
 
-**Advance:** into the trust tool; VET earns its keep there.
+**Advance:** briskly. This slide is a landing, not a lecture.
 
 ## Slide 11 — The trust tool (45:00–53:00)
 
-**Say:** one grid, taught once — Average/Precise × Small/Large. Walk the founder examples on the slide: lean in for competitor scans, brainstorming, first drafts; human owns the go/no-go, the customer, any number in a pitch or contract.
+The grid is on the slide; you supply the sorting exercise. Give the room two concrete calls to make: *"Market-sizing first pass — which box?"* (lean in, verify lightly). *"The revenue number in your pitch deck?"* (human owns it, full stop). Let them answer out loud; correcting a wrong answer teaches the grid better than presenting it.
 
-The keeper sentence: *"Where it hurts to be wrong, you stay in charge."*
+The keeper line, verbatim, once: *"Where it hurts to be wrong, you stay in charge."*
 
-And the how of the verify column: VET — it's in the starter prompts as "VET the claim."
+Close the loop from slide 10: VET is *how* you do the verify column — it's in the starter prompts as "VET the claim."
 
-**Advance:** at the 53-minute mark.
+**Advance:** at ~53:00.
 
 ## Slide 12 — The method, in three sentences (53:00–58:00)
 
-**Say, slowly — this is what they repeat Monday morning:** Add context — the specifics only you hold. Prompt past the flattery — never "what do you think?", always "why does this fail?". Stay sceptical where you know least.
+Everything is on the slide. Your only job: connect each line to the moment they watched it happen — context → pass 2 of move 1; past the flattery → move 2's verdict; sceptical where you know least → the Gell-Mann page-turn. *"You didn't learn a theory today. You watched all three."*
 
-Thesis, third landing: *"AI as a thinking partner, not a stand-in."*
+Thesis, third landing: thinking partner, not stand-in.
 
-**Advance:** into takeaways.
+**Advance:** into the close.
 
 ## Slide 13 — Takeaways (58:00–60:00)
 
-**Say:** the site is the handout — RTCF builder, prompt library, trust tool, all of today's prompts. Tonight: run move 1 on your real idea — naive first, then with your edge; feel the difference. Tools beyond free chat — Gemini Notebook for your documents, Msty for private local AI — all linked.
+Make it one action, not four bullets: *"Tonight, before you lose the nerve: run move 1 on your real idea. Naive first, then with your edge. When you feel the difference — that feeling is the method."* Everything else — the builder, the library, Notebook, Msty — is on the site, and the site is bookmarked.
 
-**Close on the line:** *"Direct it. Don't delegate. Never surrender."*
+Close on the line, then stop talking: *"Direct it. Don't delegate. Never surrender."*
 
-**Do:** leave this slide up as they go — the QR keeps working.
+**Do:** leave the slide up as they pack — the QR keeps working.
