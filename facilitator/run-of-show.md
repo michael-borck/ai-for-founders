@@ -47,4 +47,4 @@ Let the room shout the "edge" inputs. This is where the thesis lands in the gut,
 
 ## Stretch / fast-finisher
 
-If the room races ahead, add a 3-minute horizon closer: drop the volunteer's one-pager into NotebookLM and generate a podcast / infographic in front of them — pure "see how easy this is getting." Keep it to a showcase, never the spine.
+If the room races ahead, add a 3-minute horizon closer: drop the volunteer's one-pager into Gemini Notebook (formerly NotebookLM) and generate a podcast / infographic in front of them — pure "see how easy this is getting." Keep it to a showcase, never the spine.

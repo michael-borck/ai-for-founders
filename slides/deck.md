@@ -64,7 +64,7 @@ Working in **free chat** — no subscription, nothing to install.
 2. **Pressure-test** — past the flattery
 3. **Sharpen the pitch** — two-pass on the pitch
 
-*Run each on YOUR idea, in parallel with the volunteer's. Sensitive idea? Work the tradie example today — run yours tonight on a local model.*
+*Run each on YOUR idea, in parallel with the volunteer's. Sensitive idea? Work the tradie example today — run yours tonight in Msty (one install, nothing leaves your laptop).*
 
 ![Follow along — today's prompts, top of the site](qr-companion.png){width=1.1in}
 
@@ -134,6 +134,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 - **The companion site** — RTCF builder, prompt library, trust tool + VET.
 - **The starter prompts** — copy-paste, from today.
 - **Tonight:** run move 1 on your real idea.
+- The tools: today's free chat, **Gemini Notebook** for your documents, **Msty** for private local AI — all linked on the site.
 
 ### Direct it. Don't delegate. Never surrender.
 

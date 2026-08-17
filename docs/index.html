@@ -29,8 +29,6 @@
   .navlinks::-webkit-scrollbar{display:none;}
   .navlinks a{font-family:var(--mono);font-size:.74rem;color:var(--gray-1);padding:.35rem .6rem;border-radius:7px;white-space:nowrap;}
   .navlinks a:hover{color:var(--text);background:var(--panel-2);}
-  .navout{font-family:var(--mono);font-size:.74rem;color:var(--gray-2);white-space:nowrap;}
-  @media(max-width:760px){ .navout{display:none;} }
   section{scroll-margin-top:3.4rem;}
   .corner{position:fixed;top:1.3rem;left:1.6rem;z-index:10;font-family:var(--mono);font-size:.76rem;font-weight:700;color:var(--gray-2);}
   .corner a{color:var(--gray-2);} .corner a:hover{color:var(--text);} .corner .tld{color:var(--accent);}
@@ -121,6 +119,8 @@
   details.pcard[open] summary{border-bottom:1px solid var(--gray-3);}
   .pbody{padding:1rem 1.1rem;}
   .pbody pre{white-space:pre-wrap;font-family:var(--mono);font-size:.8rem;line-height:1.5;color:#b9b7b3;margin-bottom:.8rem;}
+  .pbody .plabel{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2);margin-bottom:.35rem;}
+  .pbody .plabel:not(:first-child){margin-top:1rem;}
   .copy{font-family:var(--mono);font-size:.74rem;color:var(--gray-1);background:none;border:1px solid var(--gray-3);border-radius:7px;padding:.35rem .7rem;cursor:pointer;}
   .copy:hover{border-color:var(--accent);color:var(--accent-2);}
   /* strategy example (collapsible) */
@@ -200,7 +200,7 @@
   .toolframe{width:100%;height:82vh;border:none;display:block;background:#0b1020;}
 
   @media(max-width:760px){
-    .prompts,.tools,.phases,.tasks,.cloudtools,.tt-grid,.traps{grid-template-columns:1fr;}
+    .prompts,.tools,.phases,.tasks,.cloudtools,.tt-grid,.traps,.rtcf{grid-template-columns:1fr;}
     .tt-h{text-align:left;}
     .hero{padding:5.5rem 0 2.5rem;}
   }
@@ -222,7 +222,6 @@
       <a href="#private">Private</a>
       <a href="#deeper">Go deeper</a>
     </div>
-    <a href="https://bigpicture.borck.dev" class="navout">&larr; the big picture</a>
   </div>
 </nav>
 
@@ -235,7 +234,7 @@
     <div class="cta">
       <button class="btn primary" onclick="openModal('quizModal')">Find your starting point &rarr;</button>
       <a class="btn ghost" href="#session">In the room? Today&rsquo;s prompts &darr;</a>
-      <a class="btn ghost" href="https://conversationnotdelegation.com">The idea behind it</a>
+      <button class="btn ghost" onclick="openModal('ideaModal')">The idea behind it</button>
     </div>
   </div>
 </header>
@@ -424,8 +423,8 @@
       </div>
       <div class="tool-c">
         <div class="badge2">your documents</div>
-        <h3>NotebookLM</h3>
-        <p>Upload your own files and ask questions grounded in them. It will even turn them into an audio overview.</p>
+        <h3>Gemini Notebook</h3>
+        <p>Upload your own files and ask questions grounded in them. It will even turn them into an audio overview. <i>(Formerly NotebookLM.)</i></p>
         <a href="https://notebooklm.google">notebooklm.google &rarr;</a>
       </div>
       <div class="tool-c">
@@ -528,7 +527,6 @@
     <div class="flinks">
       <a href="deck.html">the session deck</a>
       <a href="https://trusttool.borck.education/">play the trust tool</a>
-      <a href="https://bigpicture.borck.dev">the big picture</a>
       <a href="https://conversationnotdelegation.com">conversation, not delegation</a>
       <a href="https://michael-borck.github.io/conversation-not-delegation">the book (free)</a>
       <a href="https://michael-borck.github.io/prove-dont-persuade/">prove, don&rsquo;t persuade</a>
@@ -555,6 +553,26 @@
       <div class="tool" id="r-tool"></div>
       <button class="restart" onclick="restart()">&#8635; start over</button>
     </div>
+  </div>
+</dialog>
+
+<dialog id="ideaModal" class="modal">
+  <button class="modal-close" data-close aria-label="Close">&times;</button>
+  <div class="modal-body">
+    <div class="qmeta" style="color:var(--accent-2);margin-bottom:.6rem">The idea behind it</div>
+    <h3 style="font-size:1.6rem;letter-spacing:-.02em;margin-bottom:1rem">Conversation, not delegation.</h3>
+    <p class="secintro" style="max-width:none">Most AI use is <b>delegation</b>: a problem arrives, the work is handed to the model, a polished result comes back. The output is often serviceable. The cost is what stops happening in the head of the person who used to do the work &mdash; the small, quiet, judgment-forming activity between problem and answer. That activity <i>is</i> the work.</p>
+    <p class="secintro" style="max-width:none"><b>Conversation</b> is the other posture: brainstorm with it, ideate against it, push back when it produces something plausible but wrong. The judgment stays with you; the model is a counterpart, not a substitute.</p>
+    <p class="secintro" style="max-width:none"><b>Conversation preserves judgment. Delegation outsources it.</b> For a founder, that judgment is the edge &mdash; the thing no rival&rsquo;s identical model can reproduce.</p>
+    <div class="qmeta" style="color:var(--gray-2);margin:1.4rem 0 .7rem">The conversation loop</div>
+    <div class="rtcf" style="margin-bottom:.8rem">
+      <div class="cell"><div class="k">01 &middot; Brainstorm</div><p>Arrive with a problem worth thinking about, not a task to outsource.</p></div>
+      <div class="cell"><div class="k">02 &middot; Ideate</div><p>Explore angles you hadn&rsquo;t considered. Don&rsquo;t stop at the first interesting output.</p></div>
+      <div class="cell"><div class="k">03 &middot; Iterate</div><p>Push back, redirect, disagree on substance. Stay here longer than feels necessary.</p></div>
+      <div class="cell"><div class="k">04 &middot; Amplify</div><p>Edit, restructure, cut &mdash; until it&rsquo;s in your voice, at your standard.</p></div>
+    </div>
+    <p class="secintro" style="max-width:none;font-size:.9rem">Most good work loops more than once. The sign you&rsquo;re done isn&rsquo;t that the AI stopped producing output &mdash; it&rsquo;s that your thinking has landed somewhere solid.</p>
+    <p class="secintro" style="max-width:none;font-size:.9rem;margin-bottom:0">The framework in detail is a free book: <a href="https://michael-borck.github.io/conversation-not-delegation">Conversation, Not Delegation &rarr;</a></p>
   </div>
 </dialog>
 
@@ -653,18 +671,25 @@
   render();
 
   // ---- session prompts (the live six, in run order) ----
+  // [title, live version (tradies receipt-scanner, paste as-is), template (brackets, for your own idea)]
   const SESSION = [
     ["1 · Validate, naively",
+"Help me validate my startup idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt on your phone, the app extracts the GST and categories, and keeps you BAS-ready so tax time is already done.",
 "Help me validate my startup idea: [your one-line idea]."],
     ["2 · Validate, with your edge",
+"You are a sceptical, experienced pre-seed investor (Role).\nPressure-test this idea and tell me the three things that would have to be true for it to work (Task).\nMy idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year. What only I know: my customer is the sole-trader tradie turning over $150–400k with a glovebox full of receipts, often a BAS quarter behind; my contrarian bet is that Dext, Hubdoc and Xero are built for bookkeepers, not tradies — they only adopt if the whole job is one photo at the servo; and the real pain is ATO late-lodgement penalties, not missed deductions (Context).\nGive me: the three load-bearing assumptions, ranked by risk, one line each (Format).",
 "You are a sceptical, experienced pre-seed investor (Role).\nPressure-test this idea and tell me the three things that would have to be true for it to work (Task).\nMy idea: [one line]. What only I know: [your specific customer / contrarian bet / domain insight] (Context).\nGive me: the three load-bearing assumptions, ranked by risk, one line each (Format)."],
     ["3 · Pressure-test (devil's advocate)",
-"Do not flatter me. I need honest, critical feedback.\nYou are a sceptical pre-seed investor. Tell me the three strongest reasons this idea will fail.\nBe specific, blunt, and name the single load-bearing assumption most likely to be wrong."],
+"Do not flatter me. I need honest, critical feedback.\nYou are a sceptical pre-seed investor. Tell me the three strongest reasons this idea will fail.\nBe specific, blunt, and name the single load-bearing assumption most likely to be wrong.",
+null],
     ["4 · Make the call: Scale / Pivot / Kill",
-"Given those three failure modes, apply Scale / Pivot / Kill to this idea as it stands today.\nState which one, and the single cheapest experiment that would move it up a notch."],
+"Given those three failure modes, apply Scale / Pivot / Kill to this idea as it stands today.\nState which one, and the single cheapest experiment that would move it up a notch.",
+null],
     ["5 · Pitch, generically",
+"Write a 60-word pitch for this idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year.",
 "Write a 60-word pitch for this idea: [one line]."],
     ["6 · Pitch, in your voice",
+"Here is ~100 words of my own writing: \"Look, I've spent enough time on job sites to know tradies don't hate tax — they hate the chair. The sitting-down-at-9pm-with-a-laptop part. They'll do a 12-hour day in 40-degree heat no worries, but ask them to photograph a receipt and file it and they'll find literally anything else to do. So the whole job has to be one photo at the servo — snap it, chuck it, drive off. No folders, no tags, no reconciling. If it's harder than that, the glovebox wins. Everything else flows from that one thing.\"\nNow rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.",
 "Here is ~100 words of my own writing: [paste something you actually wrote].\nNow rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet."],
   ];
 
@@ -710,7 +735,33 @@
       pWrap.appendChild(det);
     });
   }
-  renderPrompts(SESSION, 'session-prompts');
+
+  function renderSession(){
+    const sWrap = document.getElementById('session-prompts');
+    SESSION.forEach(([title, live, template]) => {
+      const det = document.createElement('details');
+      det.className = 'pcard';
+      const sum = document.createElement('summary'); sum.textContent = title;
+      const pbody = document.createElement('div'); pbody.className = 'pbody';
+      const addBlock = (label, body) => {
+        if (label){ const s = document.createElement('div'); s.className = 'plabel'; s.textContent = label; pbody.appendChild(s); }
+        const pre = document.createElement('pre'); pre.textContent = body;
+        const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = 'copy';
+        btn.onclick = (e) => {
+          e.preventDefault();
+          navigator.clipboard.writeText(body).then(() => {
+            btn.textContent = 'copied'; setTimeout(() => btn.textContent = 'copy', 1400);
+          });
+        };
+        pbody.appendChild(pre); pbody.appendChild(btn);
+      };
+      addBlock('Live — paste as-is to follow along', live);
+      if (template && template !== live) addBlock('Template — for your own idea', template);
+      det.appendChild(sum); det.appendChild(pbody);
+      sWrap.appendChild(det);
+    });
+  }
+  renderSession();
   renderPrompts(PROMPTS, 'prompts');
 
   // ---- modal open/close (quiz + RTCF tool overlays) ----

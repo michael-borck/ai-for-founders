@@ -110,6 +110,8 @@ Slick. Forgettable. The average.
 
 **Pass 2 — pitch with edge + voice:** have the volunteer paste ~100 words of something *they* actually wrote, then:
 
+*(Running the stand-in? The app-flavoured tradie voice sample is baked into session prompt 6 on the companion site — copy it from there. It keeps the "hate the chair" voice but fits the app.)*
+
 ```
 Here is ~100 words of my own writing: [paste].
 Now rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.
