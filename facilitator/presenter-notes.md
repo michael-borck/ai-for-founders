@@ -130,6 +130,8 @@ Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accen
 
 Put both pitches side by side and shut up for five seconds. Then: *"Nothing changed except whose words went in. The difference is the edge."*
 
+**Then the meta-beat — once, here, nowhere else:** *"And notice what just happened in the silence. Nobody told you the second one was better. No model ranked them. You judged it — instantly. That comparison you just made in your head is the one thing that never went to the cloud. That's the human in the loop — and it's the part you can't delegate."* The room just proved the thesis on themselves; caption it and move on.
+
 One-line nod: the style-brief trick makes this permanent — it's linked on the site. **(Stretch lever for an advanced room: make this a 3-minute segment — generate a style brief live from the voice sample and paste it into custom instructions. Daily users use AI constantly and almost never systematise this.)**
 
 **Advance:** to slide 10, energy up — the live block is done, stick the landing.
