@@ -29,7 +29,10 @@ DECK = HERE / "deck.html"
 PPTX_OUT = HERE / "deck.pptx"
 PDF_OUT = HERE / "deck.pdf"
 
-VIEW_W, VIEW_H = 1920, 1080          # CSS px used for layout + link rects
+# 1280x720 CSS px matches Chrome's print layout for a 13.33in page, so the
+# PPTX images fill the frame the same way the PDF pages do (at 1920 the
+# 1000px content column + clamp()ed type float small in the middle).
+VIEW_W, VIEW_H = 1280, 720           # CSS px used for layout + link rects
 SLIDE_W_IN, SLIDE_H_IN = 40 / 3, 7.5  # 16:9 PowerPoint slide, inches
 
 
@@ -38,7 +41,7 @@ def render(tmpdir: Path):
     with sync_playwright() as p:
         browser = p.chromium.launch(channel="chrome")
         page = browser.new_page(
-            viewport={"width": VIEW_W, "height": VIEW_H}, device_scale_factor=2
+            viewport={"width": VIEW_W, "height": VIEW_H}, device_scale_factor=3
         )
         page.goto(DECK.as_uri())
         page.evaluate("document.fonts.ready")
