@@ -130,7 +130,7 @@ Name the tool as you leave: what we just ran is the *devil's advocate* — the f
 
 ## Slide 9 — Move 3: Sharpen the pitch (36:00–45:00)
 
-**First: accept the pivot, out loud — the human decides.** *"The verdict said pivot. I accept it — my call, not its."* Then paste prompt 5 with ONE line swapped to the idea as it now stands (*"a zero-UI receipt service for Australian tradies — text a photo of any receipt to a WhatsApp number, GST extracted, BAS-ready summary to your bookkeeper monthly"*), and say why: *"I'm changing one line of the handout prompt — because the idea changed, and I decided to accept that. The prompts are the method; the idea is always yours."* Room instruction: *"pitch YOUR idea as it now stands — Scale, pitch it proudly; Pivot, pitch the new shape; Kill — pitch your next idea."*
+**First: accept the pivot, out loud — the human decides.** *"The verdict said pivot. I accept it — my call, not its."* The site carries BOTH versions of prompt 5 (pivoted = the paste-as-is; original = the labelled alternative): *"Your handout has two versions of this one — the original idea, and the idea as it now stands after the pivot. I'm taking the pivot version, because I accepted the verdict. Take whichever matches your call. The prompts are the method; the idea is always yours."* Room instruction: *"pitch YOUR idea as it now stands — Scale, pitch it proudly; Pivot, pitch the new shape; Kill — pitch your next idea."*
 
 Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"Would you remember this tomorrow? Neither would an investor."* Then cash slide 2's promise: *"This is the average, live — the centre of the distribution. Every founder who asks gets this pitch."*
 

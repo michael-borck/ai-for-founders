@@ -710,8 +710,10 @@ null],
 "Given those three failure modes, apply Scale / Pivot / Kill to this idea as it stands today.\nState which one, and the single cheapest experiment that would move it up a notch.",
 null],
     ["5 · Pitch, generically",
-"Write a 60-word pitch for this idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year.",
-"Write a 60-word pitch for this idea: [one line]."],
+"Write a 60-word pitch for this idea: a zero-UI receipt service for Australian tradies — text a photo of any receipt to a WhatsApp number, GST and categories extracted, and a BAS-ready summary goes to your bookkeeper every month.",
+"Write a 60-word pitch for this idea: [one line — your idea as it now stands, after your Scale / Pivot / Kill call].",
+[["Alternative — the original idea (if yours didn't pivot)",
+"Write a 60-word pitch for this idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year."]]],
     ["6 · Pitch, in your voice",
 "Here is ~100 words of my own writing: \"Look, I've spent enough time on job sites to know tradies don't hate tax — they hate the chair. The sitting-down-at-9pm-with-a-laptop part. They'll do a 12-hour day in 40-degree heat no worries, but ask them to photograph a receipt and file it and they'll find literally anything else to do. So the whole job has to be one photo at the servo — snap it, chuck it, drive off. No folders, no tags, no reconciling. If it's harder than that, the glovebox wins. Everything else flows from that one thing.\"\nNow rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.",
 "Here is ~100 words of my own writing: [paste something you actually wrote].\nNow rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet."],
@@ -762,7 +764,7 @@ null],
 
   function renderSession(){
     const sWrap = document.getElementById('session-prompts');
-    SESSION.forEach(([title, live, template]) => {
+    SESSION.forEach(([title, live, template, alts]) => {
       const det = document.createElement('details');
       det.className = 'pcard';
       const sum = document.createElement('summary'); sum.textContent = title;
@@ -780,6 +782,7 @@ null],
         pbody.appendChild(pre); pbody.appendChild(btn);
       };
       addBlock('Live — paste as-is to follow along', live);
+      (alts || []).forEach(([alabel, abody]) => addBlock(alabel, abody));
       if (template && template !== live) addBlock('Template — for your own idea', template);
       det.appendChild(sum); det.appendChild(pbody);
       sWrap.appendChild(det);
