@@ -126,6 +126,8 @@ One-line nod: the style-brief trick makes this permanent — it's linked on the 
 
 The slide lists them; you only connect and locate. Devil's advocate — *"you just watched it."* Board of directors — one colour line: *"the CFO in that room will hate your pricing; better to hear it from a fake CFO for free."* VET — point forward: *"that one earns its keep in two minutes."* All three prompts on the site.
 
+**Planned stretch #1 lives here (likely needed — an operator room runs the live block fast):** if you're at this slide before ~45:00, run the board of directors live on Dave's idea — starter prompt from the site, same chat thread. Three voices come back; point at the disagreement: *"Notice they don't agree. That's the point — they advise, you decide. An answer machine gives you one answer; a board gives you a decision to make."* 3–4 minutes, and it's the beat the organisers loved.
+
 **Advance:** briskly. This slide is a landing, not a lecture.
 
 ## Slide 11 — The trust tool (45:00–53:00)
