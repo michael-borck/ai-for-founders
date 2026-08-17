@@ -19,16 +19,19 @@ facilitator/         run-the-session materials (NOT published)
   dry-run-log.md     the prompts run against a real model — evidence the contrasts land
   closer-options.md  the Ben fork: pure live vs NotebookLM horizon closer
 slides/              the deck
-  deck.html          rendered self-contained deck (open in a browser to present)
-  deck.md            slide source (with qr-poll.png / qr-companion.png for the PPTX)
-  deck.pptx          organiser fallback export
+  deck.html          the deck itself — single source of truth (open in a browser to present)
+  deck.md            slide outline/content notes (deck.html is authored from it by hand)
+  build.py           renders deck.html -> deck.pptx + deck.pdf (Playwright + python-pptx)
+  deck.pptx          organiser export: one image per slide, pixel-identical to deck.html,
+                     invisible click-through rectangles keep the QR/site links live
+  deck.pdf           Chrome print-to-PDF of deck.html: vector text, links live
 README.md
 ```
 
-Regenerate the PPTX after editing `deck.md`:
+Regenerate the PPTX + PDF after editing `deck.html` (then re-copy deck.html to docs/):
 
 ```bash
-cd slides && awk '/^## Slide 1/{f=1} f' deck.md | sed 's/^## Slide [0-9]* — /## /' | pandoc - --slide-level=2 --resource-path=. -t pptx -o deck.pptx
+python3 slides/build.py
 ```
 
 The companion is the **only** thing published to the Pages URL. Facilitator and slide materials live in the repo but are not served — attendees can't browse to the run-of-show mid-session.

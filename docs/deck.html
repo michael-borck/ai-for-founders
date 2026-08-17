@@ -20,6 +20,10 @@
 
   /* slide frame */
   .slide{display:none;position:fixed;inset:0;align-items:center;justify-content:center;padding:5rem 2rem 4rem;}
+  /* bookend glow (hook + takeaways): accent radial, subtle enough to sit behind type */
+  .slide.glow{background:
+    radial-gradient(ellipse 55% 65% at 85% 90%, rgba(99,102,241,.16), transparent 70%),
+    radial-gradient(ellipse 45% 50% at 8% -10%, rgba(99,102,241,.07), transparent 70%);}
   .slide.active{display:flex;animation:fade .3s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   .inner{width:100%;max-width:1000px;}
@@ -124,11 +128,12 @@
   .qrrow .qrt a{color:var(--accent-2);}
   .qrpairs{display:flex;gap:2.4rem;flex-wrap:wrap;}
 
-  /* print -> handout (one slide per page) */
+  /* print -> handout (one slide per page, keeps the dark theme) */
+  @page{size:13.333in 7.5in;margin:0;}
   @media print{
-    body{overflow:visible;background:#fff;}
+    body{overflow:visible;background:var(--black);print-color-adjust:exact;-webkit-print-color-adjust:exact;}
     .nav,.counter,.brand,.progress,.hint{display:none!important;}
-    .slide{display:flex!important;position:relative;inset:auto;page-break-after:always;break-after:page;padding:2rem;height:100vh;}
+    .slide{display:flex!important;position:relative;inset:auto;page-break-after:always;break-after:page;padding:2rem;height:100vh;background:var(--black);print-color-adjust:exact;-webkit-print-color-adjust:exact;}
     .slide.active{animation:none;}
   }
 </style>
@@ -143,7 +148,7 @@
 <button class="nav next" aria-label="Next" onclick="next()">&rsaquo;</button>
 
 <!-- 1 · HOOK -->
-<section class="slide active">
+<section class="slide glow active">
   <div class="inner">
     <div class="eyebrow">Curtin Ignition &middot; 60 minutes</div>
     <h1 class="title">AI for <span class="ac">Founders</span><span class="sub">Where your edge lives</span></h1>
@@ -308,7 +313,7 @@
 </section>
 
 <!-- 13 · TAKEAWAYS -->
-<section class="slide">
+<section class="slide glow">
   <div class="inner">
     <div class="eyebrow">13 &middot; Takeaways</div>
     <ul class="take">
