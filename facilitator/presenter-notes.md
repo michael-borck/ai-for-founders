@@ -88,11 +88,13 @@ Choreography slide — almost everything here is Do, not Say.
 
 ## Slide 7 — Move 1: Validate (12:00–24:00)
 
-**Pass 1 — frame it as the control, not a lesson.** An operator will bristle at "here's how you might prompt" (*I'd never prompt like that*). So say it straight: *"None of you would paste a prompt this lazy. But this is the baseline the whole market is producing — listen to what everyone else's pitch deck sounds like."* While it generates, narrate the dead air: *"Watch how happy it's about to be."* Let the love-fest scroll in silence — the scrolling IS the joke. Then: *"It just told a stranger their idea is brilliant. That's the trap from slide four, live — and it says it to every founder who asks."*
+**Pass 1 — frame it as the control, not a lesson.** An operator will bristle at "here's how you might prompt" (*I'd never prompt like that*). So say it straight: *"None of you would paste a prompt this lazy. But this is the baseline — watch what the market gets."*
+
+**Don't promise flattery — promise sameness.** Dry run on Gemini (18 Aug): the naive prompt returned no love-fest but a competent, critical consultant's report — competitors, risks, a validation plan. Current models often skip sycophancy on task-asks ("help me validate"); it still shows on opinion-asks ("what do you think?"). So the reveal line must work for either outcome, and it does: *"Notice the one thing this answer can't be: specific to me. If it flatters me — everyone gets flattered. If it's this market report — everyone gets this exact report; its 'how to win' section is the conventional wisdom of the space, and if we all followed it we'd all build the same app. Either way: the average, live."* (If it DOES gush: name trap 1 from slide four, live — a gift, take it.)
 
 **Pass 2 — the point is strategy, not prompt technique.** Half this room knows RTCF mechanically; almost none of them treat their context as the moat. Before sending, point at the slide's Role · Task · **Context** · Format and land it at that altitude: *"Context is the only line the model can't invent — and the only line your competitor can't copy. It's your defensible asset; the discipline is injecting it every single time."* Dave's context — the $150–400k sole trader, the bookkeeper-shaped competitors, the penalties-not-deductions bet — took a founder to know.
 
-When it returns, the reveal, slowly: *"Same model. Same idea. Sixty seconds apart. The AI did not get smarter — I directed it."* Thesis, second landing.
+When it returns, show the aiming — the three assumptions are the three context lines handed back as testable risks, one for one (dry run confirms Gemini does this): servo photo → will they open an app at the pump; bookkeeper bet → standalone value vs churn back to full accounting; penalties bet → will saved fines be attributed and paid for. Then the reveal, slowly: *"Same model. Same idea. Sixty seconds apart. The AI did not get smarter — I aimed it."* Thesis, second landing.
 
 **Hold in your head:** this same model calls the idea a PIVOT with a $50 experiment in move 2. Don't foreshadow it to the room — the surprise is the payoff.
 
@@ -102,7 +104,7 @@ When it returns, the reveal, slowly: *"Same model. Same idea. Sixty seconds apar
 
 Paste prompt 3. Read the three failure reasons out loud — slower than feels natural; this is the room hearing an AI be genuinely useful for the first time today. Then prompt 4.
 
-**The arc — name it the moment the verdict lands:** *"Twenty minutes ago this model said 'genuinely brilliant.' Now it says PIVOT and prescribes a fifty-dollar experiment. Cheerleader, honest critic, cheap test — same thread. That arc is the entire session."*
+**The arc — name it the moment the verdict lands, using whatever pass 1 actually was:** *"Twenty minutes ago this model gave me [the everyone-gets-it market report / a round of applause]. Now it's naming the single assumption most likely to kill this, and the cheapest experiment to test it. Generic, to aimed, to a decision — that arc is the entire session in one thread."*
 
 Normalise the kill — the room needs to hear a lecturer say it: *"If it had said Kill, that's a win. A fast cheap kill is the best deal in startups; the expensive version of this lesson costs eighteen months."*
 
