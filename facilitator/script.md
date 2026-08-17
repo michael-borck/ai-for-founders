@@ -1,6 +1,6 @@
 # Facilitator script — AI for Founders
 
-Talk track + the exact prompts for the three live moves. The room runs each prompt on *their own* idea in parallel; you run it on the volunteer's, on the projector.
+Talk track + the exact prompts for the three live moves. You run the tradie receipt-scanner on the projector — session prompts 1–6, copied verbatim from the top of the companion site — while the room runs the same moves on *their own* idea in parallel, using the bracketed template beside each prompt on the site.
 
 **Working surface:** free chat — Gemini (gemini.google.com), ChatGPT (chatgpt.com), Claude (claude.ai), or Google AI Studio (aistudio.google.com). No subscription, nothing to install.
 
@@ -20,7 +20,7 @@ Show of hands: *"Who's used AI on their idea this week?"* Don't dwell — you'll
 
 **Walk the talk (30 seconds, slide 3).** One academic, in conversation with AI: ~30 tools shipped solo; AI taught at undergrad, postgrad, and exec ed. Then the line that matters: *"the deck you're watching, the site you scanned, and the poll you just answered were all built in conversation with AI."* Dry understatement, move on. Answers the unspoken "has this person actually done it?" — and it is the thesis, demonstrated.
 
-**The volunteer question.** Offer the live-idea seat — *"who's got an idea they'd be happy to have pressure-tested in front of the room?"* Bold hand → carry their idea through all three moves. No hand → the tradie stand-in carries (prompts are idea-agnostic; you supply the edge). Either way, everyone else runs the same prompts on *their own* idea in parallel.
+**The demo idea (no volunteer).** One line as you leave the hook: *"We're going to take one idea through three moves, live — a receipt-scanning app for Australian tradies — and you'll run the same moves on your own idea at the same time."* You paste the prompts from the companion site on the projector, so the room watches the handout being used. The tradie idea carries the whole session: its edge is baked into the prompts, the dry-run transcripts prove every beat lands, and there is no cold-start or time risk.
 
 ---
 
@@ -46,7 +46,7 @@ This is the trap that makes founders stop iterating. **The defence is to prompt 
 
 ## 12–45 · LIVE: one idea, three moves
 
-Everyone opens their chat. You run the volunteer's idea on the projector; they run their own.
+Everyone opens their chat. You paste session prompts 1–6 from the companion site, in order, on the projector; the room runs their own idea in parallel — or just watches. Both work.
 
 **The IP beat — say it before anyone pastes:**
 
@@ -56,22 +56,24 @@ This gives the uncomfortable permission to watch rather than paste — and it tu
 
 ### Move 1 — Validate (RTCF, two-pass) · 12 min
 
-**Pass 1 — naive (undirected):**
+**Pass 1 — naive (undirected)** — session prompt 1:
 
 ```
-Help me validate my startup idea: [one-line idea].
+Help me validate my startup idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt on your phone, the app extracts the GST and categories, and keeps you BAS-ready so tax time is already done.
 ```
 
 Watch it produce an enthusiastic, over-long love-fest — "genuinely brilliant," hundreds of words of praise, tailwinds, and a ready-made plan. Point at it: *"This just told a stranger their idea is brilliant — the sycophancy trap we named ten minutes ago, live. It is useful, but it is managing my feelings, and it would say it to every founder in this room."*
 
-**Pass 2 — with edge (RTCF):** layer in what only the volunteer holds. Role · Task · **Context** · Format.
+**Pass 2 — with edge (RTCF):** layer in what only this founder holds. Role · Task · **Context** · Format — session prompt 2:
 
 ```
-You are a sceptical, experienced pre-seed investor (Role).
-Pressure-test this idea and tell me the three things that would have to be true for it to work (Task).
-My idea: [one line]. What only I know: [specific customer / contrarian bet / domain insight — the volunteer supplies this live] (Context).
-Give me: the three load-bearing assumptions, ranked by risk, one line each (Format).
+You are a sceptical, experienced pre-seed investor.
+Pressure-test this idea and tell me the three things that would have to be true for it to work.
+My idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year. What only I know: my customer is the sole-trader tradie turning over $150–400k with a glovebox full of receipts, often a BAS quarter behind; my contrarian bet is that Dext, Hubdoc and Xero are built for bookkeepers, not tradies — they only adopt if the whole job is one photo at the servo; and the real pain is ATO late-lodgement penalties, not missed deductions.
+Give me: the three load-bearing assumptions, ranked by risk, one line each.
 ```
+
+*(The paste-as-is version has no RTCF tags — you name the structure off slide 7 as you walk the prompt; the site's template version keeps the (Role)/(Task)/(Context)/(Format) labels for the room.)*
 
 Watch it drop the cheerleader act. Same model, same idea — now a sceptical investor returning three assumptions ranked by risk, the scariest one ("unproven demand") named first. *The AI did not get smarter. You directed it.* That is the edge.
 
@@ -102,20 +104,18 @@ State which one, and the single cheapest experiment that would move it up a notc
 
 ### Move 3 — Sharpen the pitch (two-pass on the pitch) · 9 min
 
-**Pass 1 — generic pitch:**
+**Pass 1 — generic pitch** — session prompt 5:
 
 ```
-Write a 60-word pitch for this idea: [one line].
+Write a 60-word pitch for this idea: a receipt-scanning app for Australian tradies — snap a photo of each receipt, GST and categories extracted, BAS-ready all year.
 ```
 
 Slick. Forgettable. The average.
 
-**Pass 2 — pitch with edge + voice:** have the volunteer paste ~100 words of something *they* actually wrote, then:
-
-*(Running the stand-in? The app-flavoured tradie voice sample is baked into session prompt 6 on the companion site — copy it from there. It keeps the "hate the chair" voice but fits the app.)*
+**Pass 2 — pitch with edge + voice** — session prompt 6, the ~100-word tradie voice sample baked in ("they don't hate tax — they hate the chair"); the room pastes ~100 words of something *they* actually wrote, via the template version on the site:
 
 ```
-Here is ~100 words of my own writing: [paste].
+Here is ~100 words of my own writing: "Look, I've spent enough time on job sites to know tradies don't hate tax — they hate the chair. The sitting-down-at-9pm-with-a-laptop part. They'll do a 12-hour day in 40-degree heat no worries, but ask them to photograph a receipt and file it and they'll find literally anything else to do. So the whole job has to be one photo at the servo — snap it, chuck it, drive off. No folders, no tags, no reconciling. If it's harder than that, the glovebox wins. Everything else flows from that one thing."
 Now rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.
 ```
 

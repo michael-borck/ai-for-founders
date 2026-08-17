@@ -23,7 +23,7 @@ One question, four options, plus the two prep nudges. Ask Ben/Nicole/Genevieve t
 ## How to read the result
 
 - **Mostly A/B** → lean projector-led. Slow down the "everyone runs the prompt" instruction; expect fewer parallel typers; spend the saved energy on the two-pass reveal.
-- **Mostly C/D** → push the parallel follow-along harder; skip basics; the volunteer's idea can carry more nuance.
+- **Mostly C/D** → push the parallel follow-along harder; skip basics; the tradie demo can carry more nuance.
 - **Either way**, the spine doesn't change — only your pacing does.
 
 ## The two nudges (include in the same message)

@@ -25,21 +25,21 @@ The 60 minutes are already fully allocated:
 
 ## Option A — Pure live (60 min)
 
-Every minute on the volunteer's idea through the three moves, ending on the method + takeaways. The horizon is mentioned only as a take-home nudge ("tonight, drop your one-pager into NotebookLM — free — and generate a podcast of your own idea").
+Every minute on the tradie demo idea through the three moves, ending on the method + takeaways. The horizon is mentioned only as a take-home nudge ("tonight, drop your one-pager into NotebookLM — free — and generate a podcast of your own idea").
 
 - **Pro:** maximum thesis depth; ends on the active method ("you direct it, don't delegate it"); zero live-demo risk.
 - **Con:** no visceral "press button → podcast" moment in the room; the "where it's heading" promise is homework, not spectacle.
 
 ## Option B — Live (55 min) + NotebookLM closer (5 min)
 
-Cut 5 minutes from the live work (recommend: trim the traps to **one** named live — Sycophancy — since move 1 demonstrates it anyway; Gell-Mann gets a 30-second mention). Use the freed 5 minutes for a live NotebookLM showcase on the volunteer's one-pager.
+Cut 5 minutes from the live work (recommend: trim the traps to **one** named live — Sycophancy — since move 1 demonstrates it anyway; Gell-Mann gets a 30-second mention). Use the freed 5 minutes for a live NotebookLM showcase on the tradie one-pager.
 
 - **Pro:** the horizon lands live and is genuinely memorable; NotebookLM is *grounded RAG* (it sticks to the founder's document, not the average) — which is quietly on-thesis (the "precise" column of the trust tool vs free chat's "average").
 - **Con:** 5 minutes less depth; a context switch to a new tool; passive (attendees watch you); ends on a button-press, slightly undercutting "thinking partner, not stand-in" if it's the final beat.
 
 ### If B: what the closer shows
 
-- **NotebookLM (recommended closer):** paste the volunteer's idea as a source → generate a **Briefing Doc**, **FAQ**, or the two-person **Audio Overview (podcast)** in ~60 seconds. Frame it as: *"This isn't the average — it's grounded in her document. Same model family, different placement on the trust tool."* Most founder-relevant; most reliable.
+- **NotebookLM (recommended closer):** paste the tradie idea as a source → generate a **Briefing Doc**, **FAQ**, or the two-person **Audio Overview (podcast)** in ~60 seconds. Frame it as: *"This isn't the average — it's grounded in the founder's document. Same model family, different placement on the trust tool."* Most founder-relevant; most reliable.
 - **Teachable Machine (alternative closer):** train an image classifier live in 90 seconds (e.g., "tool vs. receipt"). Shows working ML from scratch — the "anyone can build this" beat. Less founder-relevant, more "how the sausage is made."
 
 ## Option C — the middle ground (free)

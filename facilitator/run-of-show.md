@@ -10,7 +10,7 @@ Say it at the open, after the two-pass reveal, and at the close.
 
 | Min | Block | Key move |
 |---|---|---|
-| 0–5 | **Hook + thesis** | Land the provocation. Housekeeping: *the site is the handout* (QR + link on the title slide). Show of hands; offer the live-idea seat — else the tradie stand-in. Walk-the-talk slide: 30 s, dry understatement. |
+| 0–5 | **Hook + thesis** | Land the provocation. Housekeeping: *the site is the handout* (QR + link on the title slide). Show of hands; name the demo idea — the tradie receipt-scanner, one line. Walk-the-talk slide: 30 s, dry understatement. |
 | 5–12 | **The average + two traps** | Sycophancy (sets up move 2) + Gell-Mann. Skip Dismissal Fallacy. |
 | 12–24 | **Move 1 — Validate (RTCF, two-pass)** | Naive → generic. Add edge → soul. |
 | 24–36 | **Move 2 — Pressure-test (past the flattery)** | Devil's-advocate prompt + Scale/Pivot/Kill. |
@@ -19,7 +19,7 @@ Say it at the open, after the two-pass reveal, and at the close.
 | 53–58 | **The method, distilled** | Three sentences. |
 | 58–60 | **Takeaways** | Companion site + prompt library + "tonight" nudge. |
 
-The spine is **12–45**: one founder's real idea carried through three moves. Everyone else runs the same prompts on *their own* idea in parallel.
+The spine is **12–45**: the tradie receipt-scanner carried through three moves, session prompts 1–6 pasted verbatim from the companion site. Everyone else runs the same moves on *their own* idea in parallel.
 
 **The cut plan — decide now, not on stage.** If you're behind at minute 36, cut move 3's second pass (the voice sample). Moves 1 and 2 carry the thesis; move 3 is the bonus. Never cut the two-pass reveal.
 
@@ -32,11 +32,11 @@ Let the room shout the "edge" inputs. This is where the thesis lands in the gut,
 
 ## Facilitation principles
 
-- **Hands-on from minute one.** Everyone opens a free chat (Gemini / ChatGPT / Claude free, or Google AI Studio) and runs the prompts on *their own* idea in parallel with the volunteer's. The six session prompts, in order, are at the top of the companion site (`#session`).
+- **Hands-on from minute one.** Everyone opens a free chat (Gemini / ChatGPT / Claude free, or Google AI Studio) and runs the prompts on *their own* idea in parallel with the tradie demo. The six session prompts, in order, are at the top of the companion site (`#session`).
 - **No subscription, nothing to install.** Free-tier chat only — this is a hard promise in the blurb.
 - **IP comfort before anyone pastes.** Say it plainly: a free chatbot is someone else's cloud. Anyone with a sensitive idea works the tradie example today and runs their own tonight on a local model. Permission to watch, not paste.
 - **Honesty builds trust.** Be upfront about sycophancy and confidently-wrong output. Show the model being wrong, on purpose.
-- **The stand-in is the spine.** Default to the tradie idea (dry-run transcripts ready); upgrade to a live volunteer only if a bold hand goes up at minute 5.
+- **The tradie idea is the spine.** No volunteer — too much time risk. The prompts are pasted verbatim from the companion site (dry-run transcripts ready), so every beat is rehearsed and the room watches the handout being used.
 - **Return to the thesis.** After the two-pass reveal, and at the close. Three landings, not one.
 
 ## Materials checklist
@@ -44,9 +44,8 @@ Let the room shout the "edge" inputs. This is where the thesis lands in the gut,
 - This run-of-show + the script (`script.md`)
 - Slide deck (`slides/deck.md`, rendered to HTML)
 - Live free-chat window on the projector (logged out, fresh chat)
-- One volunteer with a real idea (pre-arranged if possible)
 - Companion site live and bookmarked: `https://michael-borck.github.io/ai-for-founders/` (session prompts at `#session`; the deck itself at `/deck.html`)
 
 ## Stretch / fast-finisher
 
-If the room races ahead, add a 3-minute horizon closer: drop the volunteer's one-pager into Gemini Notebook (formerly NotebookLM) and generate a podcast / infographic in front of them — pure "see how easy this is getting." Keep it to a showcase, never the spine.
+If the room races ahead, add a 3-minute horizon closer: drop the tradie one-pager into Gemini Notebook (formerly NotebookLM) and generate a podcast / infographic in front of them — pure "see how easy this is getting." Keep it to a showcase, never the spine.

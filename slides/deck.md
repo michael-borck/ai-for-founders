@@ -72,7 +72,7 @@ Working in **free chat** — no subscription, nothing to install.
 2. **Pressure-test** — past the flattery
 3. **Sharpen the pitch** — two-pass on the pitch
 
-*Run each on YOUR idea, in parallel with the volunteer's — or just watch. Both work.*
+*Run each on YOUR idea, in parallel with the tradie demo — or just watch. Both work.*
 
 *Open one: gemini.google.com · chatgpt.com · claude.ai*
 
