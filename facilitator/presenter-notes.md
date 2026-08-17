@@ -42,6 +42,8 @@ The slide shows the résumé; you supply the tone — dry, fast, almost throwawa
 
 The one line to deliver with a beat of silence after: *"the deck you're watching, the site you scanned, and the poll you just answered were all built in conversation with AI."* Don't elaborate. Understatement is the credibility.
 
+**Then set expectations — the credibility earns this refusal:** *"So yes — you can build real software in conversation with AI; that's where those thirty tools came from. But I'm not here to show you how clever I am with AI — and in one hour I couldn't make you clever with it either. The tool is the easy part, and everyone in this room has the same one. I'm here for the other part: the judgement you bring to the conversation. That's the only part that's yours."* Keep it this short — longer reads as apology. (This also pre-plants the literacy line for the close.)
+
 **Transition:** *"So — Dave's app. Let's find out what it's up against first."*
 
 **Advance:** on that line.
