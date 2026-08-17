@@ -116,8 +116,10 @@ Slick. Forgettable. The average.
 
 ```
 Here is ~100 words of my own writing: "Look, I've spent enough time on job sites to know tradies don't hate tax — they hate the chair. The sitting-down-at-9pm-with-a-laptop part. They'll do a 12-hour day in 40-degree heat no worries, but ask them to photograph a receipt and file it and they'll find literally anything else to do. So the whole job has to be one photo at the servo — snap it, chuck it, drive off. No folders, no tags, no reconciling. If it's harder than that, the glovebox wins. Everything else flows from that one thing."
-Now rewrite the 60-word pitch in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.
+Now rewrite the 60-word pitch for the pivoted idea — the text-a-photo service — in my voice, and lead with the one thing only I would say — my specific customer and my contrarian bet.
 ```
+
+*(Prompts 5 and 6 on the site each carry two versions — pivoted (paste-as-is, shown above for 6) and the original idea as a labelled alternative. Take the pair matching the verdict you accepted.)*
 
 Compare the two side by side on the projector. The difference *is* the edge.
 
