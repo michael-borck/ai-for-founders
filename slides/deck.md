@@ -38,9 +38,7 @@ The edge lives in your judgement: taste, context, and the variation no rival's i
 
 - One academic, in conversation with AI: **~30 tools** designed, built, and shipped solo — bigpicture.borck.dev
 - AI taught at **undergraduate, postgraduate, and executive** levels (Curtin) — the books are free at books.borck.education
-- This deck, the companion site, and the poll you just answered were **built in conversation with AI**. That is the point.
-
-*Thirty seconds, dry understatement, move on.*
+- This deck, the companion site, and the poll you just answered were **built in conversation with AI**
 
 ---
 
