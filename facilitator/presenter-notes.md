@@ -28,11 +28,13 @@ Show of hands (who's used AI this week) — count it, don't discuss it. Housekee
 
 ## Slide 2 — The thesis (2:30–4:00)
 
-The slide states the claim; your job is to make it personal. Land it with the room, not the abstract: *"While you've been sitting here, everyone else in this room could ask the same model for the same market scan, the same pitch, the same plan — and get the same good answer. If you all have the same brilliant assistant, none of you has an advantage."*
+Slide 1 was the competition angle (everyone has it). This slide is the capability angle — don't restate, change the question. Ask the room: *"Why can't I just ask AI to write me the next viral app, or the next bestseller? It has read every bestseller ever written. It knows every app that ever went viral. So — why can't it?"* Let it hang. If someone offers an answer, take it and build on it, don't correct it.
 
-Don't read the three rows — point at the last one and slow down on **judgement**: taste, context, the thing no identical model can copy. This claim comes back twice more (after the two-pass reveal, and at the close); it earns belief in the demo, not here.
+The answer plants the hour's key word: it gives you the **average**. It's a machine for the centre of the distribution — the most plausible next thing, synthesised from everything everyone has already done. Fluent, usually right, and identical for whoever asks. But a bestseller lives in the *tail*: a taste call, a timing bet, a contrarian read the average disagrees with. The tail isn't in the model. It's in you.
 
-**Advance:** as soon as "judgement" lands. Don't linger — this slide is a promise, not a proof.
+Now point at the slide's last row and give the tail its name: **judgement** — taste, context, the variation no identical model can reproduce. "The average" comes back twice, on purpose: the generic pitch in move 3 *is* the average, live — and the trust tool's first axis is literally named for it.
+
+**Advance:** the moment "the tail is in you" lands. Don't linger — this slide is a promise, not a proof.
 
 ## Slide 3 — Walk the talk (4:00–4:45)
 
@@ -112,7 +114,7 @@ Name the tool as you leave: what we just ran is the *devil's advocate* — the f
 
 ## Slide 9 — Move 3: Sharpen the pitch (36:00–45:00)
 
-Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"Would you remember this tomorrow? Neither would an investor."*
+Pass 1 (prompt 5): when the generic pitch appears, ask the room, don't tell: *"Would you remember this tomorrow? Neither would an investor."* Then cash slide 2's promise: *"This is the average, live — the centre of the distribution. Every founder who asks gets this pitch."*
 
 Pass 2 (prompt 6): before sending, read Dave's voice sample aloud with the accent it deserves — "they don't hate tax, they hate the chair" gets a laugh and *earns* the contrast. The room pastes their own writing via the template.
 
@@ -131,6 +133,8 @@ The slide lists them; you only connect and locate. Devil's advocate — *"you ju
 **Advance:** briskly. This slide is a landing, not a lecture.
 
 ## Slide 11 — The trust tool (45:00–53:00)
+
+**Open with the callback — it makes the grid click instantly:** *"Remember the question from the start — why can't AI write the next bestseller? Because it gives you the average. That's this axis. Where the average is good enough — drafts, scans, brainstorms — lean in. Where you need the tail — the call, the number, the bet — that's yours."* The grid stops being a framework and becomes the answer to the opening question.
 
 The grid is on the slide; you supply the sorting exercise. Give the room two concrete calls to make: *"Market-sizing first pass — which box?"* (lean in, verify lightly). *"The revenue number in your pitch deck?"* (human owns it, full stop). Let them answer out loud; correcting a wrong answer teaches the grid better than presenting it.
 
