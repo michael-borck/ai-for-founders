@@ -17,6 +17,8 @@ docs/                PUBLIC companion site (GitHub Pages serves /docs)
 facilitator/         run-the-session materials (NOT published)
   run-of-show.md     the 60-min spine, minute by minute
   script.md          talk track + exact prompts for the three live moves
+  presenter-notes.md the talk track cut slide-by-slide (say / do / advance);
+                     build.py bakes it into deck-presenter.pptx speaker notes
   dry-run-log.md     the prompts run against a real model — evidence the contrasts land
   closer-options.md  the Ben fork: pure live vs NotebookLM horizon closer
 slides/              the deck
@@ -26,6 +28,8 @@ slides/              the deck
   deck.pptx          organiser export: one image per slide, pixel-identical to deck.html,
                      invisible click-through rectangles keep the QR/site links live
   deck.pdf           Chrome print-to-PDF of deck.html: vector text, links live
+  deck-presenter.pptx  facilitator copy: same slides + speaker notes from
+                     facilitator/presenter-notes.md — never send to the organiser
 README.md
 ```
 

@@ -10,11 +10,15 @@ headless Chrome (via Playwright):
   deck.pdf  — Chrome print-to-PDF of the same file: vector text, selectable,
               links live, one slide per page (uses the deck's @page/@media
               print rules).
+  deck-presenter.pptx — same slides plus speaker notes from
+              facilitator/presenter-notes.md (## Slide N sections).
+              Facilitator's copy — never send this one to the organiser.
 
 Usage:  python3 slides/build.py
 Needs:  playwright + Google Chrome, python-pptx.
 """
 
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -27,7 +31,9 @@ from pptx.util import Emu, Inches
 HERE = Path(__file__).resolve().parent
 DECK = HERE / "deck.html"
 PPTX_OUT = HERE / "deck.pptx"
+PPTX_PRESENTER_OUT = HERE / "deck-presenter.pptx"
 PDF_OUT = HERE / "deck.pdf"
+NOTES_MD = HERE.parent / "facilitator" / "presenter-notes.md"
 
 # 1280x720 CSS px matches Chrome's print layout for a 13.33in page, so the
 # PPTX images fill the frame the same way the PDF pages do (at 1920 the
@@ -71,7 +77,15 @@ def render(tmpdir: Path):
     return pngs, links
 
 
-def build_pptx(pngs, links):
+def load_notes():
+    """Map slide number -> notes text from presenter-notes.md, {} if absent."""
+    if not NOTES_MD.exists():
+        return {}
+    parts = re.split(r"^## Slide (\d+)[^\n]*\n", NOTES_MD.read_text(), flags=re.M)
+    return {int(parts[i]): parts[i + 1].strip() for i in range(1, len(parts), 2)}
+
+
+def build_pptx(pngs, links, out, notes=None):
     prs = Presentation()
     prs.slide_width = Inches(SLIDE_W_IN)
     prs.slide_height = Inches(SLIDE_H_IN)
@@ -83,8 +97,10 @@ def build_pptx(pngs, links):
     def emu_y(px):
         return Emu(int(px / VIEW_H * prs.slide_height))
 
-    for png, slide_links in zip(pngs, links):
+    for n, (png, slide_links) in enumerate(zip(pngs, links), start=1):
         slide = prs.slides.add_slide(blank)
+        if notes and n in notes:
+            slide.notes_slide.notes_text_frame.text = notes[n]
         slide.shapes.add_picture(
             str(png), 0, 0, width=prs.slide_width, height=prs.slide_height
         )
@@ -98,16 +114,19 @@ def build_pptx(pngs, links):
             shp.shadow.inherit = False
             shp.click_action.hyperlink.address = a["href"]
 
-    prs.save(PPTX_OUT)
+    prs.save(out)
 
 
 def main():
     with tempfile.TemporaryDirectory() as td:
         pngs, links = render(Path(td))
-        build_pptx(pngs, links)
-        print(f"{len(pngs)} slides -> {PPTX_OUT.name} "
-              f"({PPTX_OUT.stat().st_size // 1024} KB), "
-              f"{PDF_OUT.name} ({PDF_OUT.stat().st_size // 1024} KB)")
+        build_pptx(pngs, links, PPTX_OUT)
+        notes = load_notes()
+        if notes:
+            build_pptx(pngs, links, PPTX_PRESENTER_OUT, notes)
+        made = [PPTX_OUT, PDF_OUT] + ([PPTX_PRESENTER_OUT] if notes else [])
+        print(f"{len(pngs)} slides -> " + ", ".join(
+            f"{p.name} ({p.stat().st_size // 1024} KB)" for p in made))
     return 0
 
 
