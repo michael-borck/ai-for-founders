@@ -20,8 +20,15 @@ facilitator/         run-the-session materials (NOT published)
   closer-options.md  the Ben fork: pure live vs NotebookLM horizon closer
 slides/              the deck
   deck.html          rendered self-contained deck (open in a browser to present)
-  deck.md            slide source
+  deck.md            slide source (with qr-poll.png / qr-companion.png for the PPTX)
+  deck.pptx          organiser fallback export
 README.md
+```
+
+Regenerate the PPTX after editing `deck.md`:
+
+```bash
+cd slides && awk '/^## Slide 1/{f=1} f' deck.md | sed 's/^## Slide [0-9]* — /## /' | pandoc - --slide-level=2 --resource-path=. -t pptx -o deck.pptx
 ```
 
 The companion is the **only** thing published to the Pages URL. Facilitator and slide materials live in the repo but are not served — attendees can't browse to the run-of-show mid-session.

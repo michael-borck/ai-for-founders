@@ -19,6 +19,19 @@
   a{color:var(--accent-2);text-decoration:none;transition:color .15s;}
   a:hover{color:var(--text);}
   .wrap{max-width:1020px;margin:0 auto;padding:0 1.5rem;}
+
+  /* sticky section nav */
+  .sitenav{position:sticky;top:0;z-index:30;background:rgba(10,10,11,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-3);}
+  .navrow{display:flex;align-items:center;gap:1.2rem;padding:.55rem 1.5rem;}
+  .navbrand{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--text);white-space:nowrap;}
+  .navbrand .ac{color:var(--accent);}
+  .navlinks{display:flex;gap:.2rem;overflow-x:auto;flex:1;scrollbar-width:none;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{font-family:var(--mono);font-size:.74rem;color:var(--gray-1);padding:.35rem .6rem;border-radius:7px;white-space:nowrap;}
+  .navlinks a:hover{color:var(--text);background:var(--panel-2);}
+  .navout{font-family:var(--mono);font-size:.74rem;color:var(--gray-2);white-space:nowrap;}
+  @media(max-width:760px){ .navout{display:none;} }
+  section{scroll-margin-top:3.4rem;}
   .corner{position:fixed;top:1.3rem;left:1.6rem;z-index:10;font-family:var(--mono);font-size:.76rem;font-weight:700;color:var(--gray-2);}
   .corner a{color:var(--gray-2);} .corner a:hover{color:var(--text);} .corner .tld{color:var(--accent);}
 
@@ -195,9 +208,25 @@
 </head>
 <body>
 
-<div class="corner"><a href="https://bigpicture.borck.dev">&larr; the big picture</a></div>
+<nav class="sitenav">
+  <div class="wrap navrow">
+    <a href="#top" class="navbrand">AI for <span class="ac">Founders</span></a>
+    <div class="navlinks">
+      <a href="#session">Today</a>
+      <a href="#check">Self-check</a>
+      <a href="#traps">Traps</a>
+      <a href="#strategies">Strategies</a>
+      <a href="#trust">Trust tool</a>
+      <a href="#library">Prompts</a>
+      <a href="#tools">Tools</a>
+      <a href="#private">Private</a>
+      <a href="#deeper">Go deeper</a>
+    </div>
+    <a href="https://bigpicture.borck.dev" class="navout">&larr; the big picture</a>
+  </div>
+</nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
     <div class="eyebrow">Curtin Ignition &middot; AI companion</div>
     <h1>AI for <span class="accent">Founders</span></h1>
@@ -261,7 +290,7 @@
 </section>
 
 <!-- STRATEGIES -->
-<section>
+<section id="strategies">
   <div class="wrap">
     <div class="sechead"><h2>Three strategies that keep you in charge</h2><span class="count">// it is the strokes, not the racquet</span></div>
     <p class="secintro">Give a professional tennis player any racquet and they beat you. Give you the best racquet in the world and they still beat you. The tool barely matters; how you play does. These three ways of working keep the thinking, and the judgment, with you.</p>
@@ -364,7 +393,7 @@
 </section>
 
 <!-- STARTER PROMPTS -->
-<section>
+<section id="library">
   <div class="wrap">
     <div class="sechead"><h2>Starter prompts</h2><span class="count">// steal these, then make them yours</span></div>
     <p class="secintro">A founder&rsquo;s working set. Each makes the AI argue with you rather than flatter you. Copy, paste, edit the bits in brackets.</p>
@@ -376,7 +405,7 @@
 </section>
 
 <!-- TOOLS TO EXPLORE -->
-<section>
+<section id="tools">
   <div class="wrap">
     <div class="sechead"><h2>Tools to explore</h2><span class="count">// the big names, and where it is heading</span></div>
     <p class="secintro">If you are just starting, these are the tools most people reach for. Each has a free tier. Try the same task in two of them and see which voice suits you.</p>
@@ -410,7 +439,7 @@
 </section>
 
 <!-- RUN IT PRIVATE -->
-<section>
+<section id="private">
   <div class="wrap">
     <div class="sechead"><h2>Run it private, on your own laptop</h2><span class="count">// no subscription, no data leaving the machine</span></div>
     <p class="secintro">The tool is the racquet, not the strokes, so any of these will do. You can run capable AI locally for free. It is weaker than a frontier model at the hardest tasks, but more than enough for the strategies above, and it never sends your work to anyone.</p>
@@ -439,7 +468,7 @@
 </section>
 
 <!-- TASKS / GO DEEPER -->
-<section>
+<section id="deeper">
   <div class="wrap">
     <div class="sechead"><h2>Go deeper: self-paced exercises</h2><span class="count">// do these in your own time</span></div>
     <p class="secintro">Four hands-on tasks from the workshop, each a self-contained hour or less. Pick one, use whatever AI tool you have, and produce something real.</p>

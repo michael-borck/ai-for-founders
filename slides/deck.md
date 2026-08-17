@@ -12,7 +12,15 @@ Slide source for the 60-minute session. Render target: a single self-contained H
 
 *Show of hands: who's used AI on their idea this week?*
 
-**Slides are signposts — the companion site is the handout.** QR + link on this slide (and again on slides 5 and 12): prompts, tools, and this deck all live at michael-borck.github.io/ai-for-founders. *(Poll QR joins this slide once the form exists.)*
+**Slides are signposts — the companion site is the handout.** QR + link on this slide (and again on slides 5 and 12): prompts, tools, and this deck all live at michael-borck.github.io/ai-for-founders. Beside it, the **poll QR** (classpulse.borck.education/audience/RXARHX), framed "While you arrive — one question:" — skim the histogram at minute 4 and pace accordingly.
+
+**While you arrive — one question:**
+
+![Poll](qr-poll.png){width=1.1in}
+
+**The site is the handout:**
+
+![Companion site](qr-companion.png){width=1.1in}
 
 ---
 
@@ -56,7 +64,9 @@ Working in **free chat** — no subscription, nothing to install.
 2. **Pressure-test** — past the flattery
 3. **Sharpen the pitch** — two-pass on the pitch
 
-*Run each on YOUR idea, in parallel with the volunteer's.*
+*Run each on YOUR idea, in parallel with the volunteer's. Sensitive idea? Work the tradie example today — run yours tonight on a local model.*
+
+![Follow along — today's prompts, top of the site](qr-companion.png){width=1.1in}
 
 ---
 
@@ -126,3 +136,5 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 - **Tonight:** run move 1 on your real idea.
 
 ### Direct it. Don't delegate. Never surrender.
+
+![Companion site — prompts, tools, this deck](qr-companion.png){width=1.1in}
