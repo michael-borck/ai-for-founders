@@ -112,7 +112,9 @@ When it returns, show the aiming — the three assumptions are the three context
 
 ## Slide 8 — Move 2: Pressure-test (24:00–36:00)
 
-Paste prompt 3. Read the three failure reasons out loud — slower than feels natural; this is the room hearing an AI be genuinely useful for the first time today. Then prompt 4.
+Paste prompt 3. Read the three failure reasons out loud — slower than feels natural; this is the room hearing an AI be genuinely useful for the first time today.
+
+**The load-bearing assumption is the beat (dry run: Gemini names the injected contrarian bet, verbatim, as the thing most likely to be wrong).** Read that final sentence aloud, slowly, then: *"In prompt 2 I told it my contrarian bet. In prompt 3 it's telling me my bet is the part most likely to be wrong. It's not attacking the idea — it's attacking* my claim. *It can only do that because I gave it the claim."* Optional one-liner if it fits: context compounds — aimed once in prompt 2, still aimed two prompts later. Then prompt 4.
 
 **The arc — name it the moment the verdict lands, using whatever pass 1 actually was:** *"Twenty minutes ago this model gave me [the everyone-gets-it market report / a round of applause]. Now it's naming the single assumption most likely to kill this, and the cheapest experiment to test it. Generic, to aimed, to a decision — that arc is the entire session in one thread."*
 
