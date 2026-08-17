@@ -34,7 +34,17 @@ The edge lives in your judgement: taste, context, and the variation no rival's i
 
 ---
 
-## Slide 3 — Trap 1: Sycophancy
+## Slide 3 — Walk the talk
+
+- One academic, in conversation with AI: **~30 tools** designed, built, and shipped solo — bigpicture.borck.dev
+- AI taught at **undergraduate, postgraduate, and executive** levels (Curtin) — the books are free at books.borck.education
+- This deck, the companion site, and the poll you just answered were **built in conversation with AI**. That is the point.
+
+*Thirty seconds, dry understatement, move on.*
+
+---
+
+## Slide 4 — Trap 1: Sycophancy
 
 The model tells you what you want to hear.
 
@@ -46,7 +56,7 @@ It's managing your feelings, not assessing your work.
 
 ---
 
-## Slide 4 — Trap 2: Gell-Mann Amnesia
+## Slide 5 — Trap 2: Gell-Mann Amnesia
 
 You catch its errors in your own domain.
 
@@ -56,7 +66,7 @@ Smooth prose feels authoritative. **Smoothness ≠ accuracy.**
 
 ---
 
-## Slide 5 — LIVE: one idea, three moves
+## Slide 6 — LIVE: one idea, three moves
 
 Working in **free chat** — no subscription, nothing to install.
 
@@ -64,13 +74,17 @@ Working in **free chat** — no subscription, nothing to install.
 2. **Pressure-test** — past the flattery
 3. **Sharpen the pitch** — two-pass on the pitch
 
-*Run each on YOUR idea, in parallel with the volunteer's. Sensitive idea? Work the tradie example today — run yours tonight in Msty (one install, nothing leaves your laptop).*
+*Run each on YOUR idea, in parallel with the volunteer's — or just watch. Both work.*
+
+*Open one: gemini.google.com · chatgpt.com · claude.ai*
+
+*Sensitive idea? Work the tradie example today — run yours tonight in Msty (one install, nothing leaves your laptop).*
 
 ![Follow along — today's prompts, top of the site](qr-companion.png){width=1.1in}
 
 ---
 
-## Slide 6 — Move 1: Validate (two-pass)
+## Slide 7 — Move 1: Validate (two-pass)
 
 **Pass 1 (naive):** an enthusiastic, over-long love-fest. *Sycophancy, live.*
 
@@ -80,7 +94,7 @@ Working in **free chat** — no subscription, nothing to install.
 
 ---
 
-## Slide 7 — Move 2: Pressure-test
+## Slide 8 — Move 2: Pressure-test
 
 > Do not flatter me. Three reasons this fails. Name the load-bearing assumption.
 
@@ -90,7 +104,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 8 — Move 3: Sharpen the pitch
+## Slide 9 — Move 3: Sharpen the pitch
 
 **Pass 1:** generic 60-word pitch. Forgettable.
 
@@ -98,7 +112,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 9 — Push back: three ways
+## Slide 10 — Push back: three ways
 
 1. **Devil's advocate** — make it attack your idea; you decide what survives. *(You just did this in move 2.)*
 2. **Board of directors** — a room of voices (CFO, sceptical customer, growth marketer), not one answer. You weigh them.
@@ -108,7 +122,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 10 — The trust tool
+## Slide 11 — The trust tool
 
 **Average / Precise × Small / Large.**
 
@@ -119,7 +133,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 11 — The method, in three sentences
+## Slide 12 — The method, in three sentences
 
 1. **Add context** — the specifics only you hold.
 2. **Prompt past the flattery** — ask "why does this fail?", not "what do you think?"
@@ -129,7 +143,7 @@ Then: **Scale / Pivot / Kill** — and the cheapest experiment that moves it up 
 
 ---
 
-## Slide 12 — Takeaways
+## Slide 13 — Takeaways
 
 - **The companion site** — RTCF builder, prompt library, trust tool + VET.
 - **The starter prompts** — copy-paste, from today.

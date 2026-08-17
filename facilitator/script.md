@@ -18,6 +18,8 @@ Show of hands: *"Who's used AI on their idea this week?"* Don't dwell — you'll
 
 > One thing before we start: the slides are signposts, not the handout. The companion site is the handout — every prompt we run today, the tools, and this deck itself all live there. Scan the QR or type the link; it's also on the follow-along slide when we go live, and again at the end.
 
+**Walk the talk (30 seconds, slide 3).** One academic, in conversation with AI: ~30 tools shipped solo; AI taught at undergrad, postgrad, and exec ed. Then the line that matters: *"the deck you're watching, the site you scanned, and the poll you just answered were all built in conversation with AI."* Dry understatement, move on. Answers the unspoken "has this person actually done it?" — and it is the thesis, demonstrated.
+
 **The volunteer question.** Offer the live-idea seat — *"who's got an idea they'd be happy to have pressure-tested in front of the room?"* Bold hand → carry their idea through all three moves. No hand → the tradie stand-in carries (prompts are idea-agnostic; you supply the edge). Either way, everyone else runs the same prompts on *their own* idea in parallel.
 
 ---

@@ -10,7 +10,7 @@ Say it at the open, after the two-pass reveal, and at the close.
 
 | Min | Block | Key move |
 |---|---|---|
-| 0–5 | **Hook + thesis** | Land the provocation. Housekeeping: *the site is the handout* (QR + link on the title slide). Show of hands; offer the live-idea seat — else the tradie stand-in. |
+| 0–5 | **Hook + thesis** | Land the provocation. Housekeeping: *the site is the handout* (QR + link on the title slide). Show of hands; offer the live-idea seat — else the tradie stand-in. Walk-the-talk slide: 30 s, dry understatement. |
 | 5–12 | **The average + two traps** | Sycophancy (sets up move 2) + Gell-Mann. Skip Dismissal Fallacy. |
 | 12–24 | **Move 1 — Validate (RTCF, two-pass)** | Naive → generic. Add edge → soul. |
 | 24–36 | **Move 2 — Pressure-test (past the flattery)** | Devil's-advocate prompt + Scale/Pivot/Kill. |
@@ -20,6 +20,8 @@ Say it at the open, after the two-pass reveal, and at the close.
 | 58–60 | **Takeaways** | Companion site + prompt library + "tonight" nudge. |
 
 The spine is **12–45**: one founder's real idea carried through three moves. Everyone else runs the same prompts on *their own* idea in parallel.
+
+**The cut plan — decide now, not on stage.** If you're behind at minute 36, cut move 3's second pass (the voice sample). Moves 1 and 2 carry the thesis; move 3 is the bonus. Never cut the two-pass reveal.
 
 ## The two-pass reveal (the moment the thesis lands)
 
