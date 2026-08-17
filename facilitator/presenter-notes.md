@@ -106,6 +106,8 @@ When it returns, show the aiming — the three assumptions are the three context
 
 **Hold in your head:** this same model calls the idea a PIVOT with a $50 experiment in move 2. Don't foreshadow it to the room — the surprise is the payoff.
 
+**The suggestion chips (Gemini offers "where should we focus next?" after pass 2) — half a beat, not an apology:** *"See these? The model's offering to drive. They're reasonable — and they're follow-ups to* its *answer, not* my *priorities. At home, click them when they match where you were already going. Just notice who decided. Today, we drive: why does this fail?"* (If its first chip is close to the pressure-test anyway, add: *"its suggestion is near where I'm headed — but I'll frame it my way, as an attack."*) Same discipline as declining the Research button — direct it, don't delegate applies to navigation too.
+
 **Advance:** to slide 8 as you copy prompt 3.
 
 ## Slide 8 — Move 2: Pressure-test (24:00–36:00)
