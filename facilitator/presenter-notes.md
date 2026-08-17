@@ -82,6 +82,10 @@ Choreography slide — almost everything here is Do, not Say.
 
 **Do, in order:** (1) companion site on the projector, scroll to the session prompts — say *"everything I paste today comes from your handout, in order — nothing up my sleeve."* (2) Fresh chat tab beside it. (3) Confirm the room is in: *"One of the three free chats on screen — you run your idea in parallel, or just watch. Both work."*
 
+**Mixed models on the floor — name it as lesson one, then set one rule.** (Dry runs: Gemini writes a market report, Claude writes one and asks for your wedge, Fable offers a 10-minute Research mode.) Say: *"You're on different models, and you'll get different answers — different formats, different voices; one of them may offer to go away and research for ten minutes. That's not a bug — it's the first finding: none of them will be specific to you until you make them."* The rule: decline research/agent modes today — *"we're conversing, not commissioning. That button is ten minutes of very thorough research into the market everyone can see — press it in move 2, when you've got an assumption worth verifying."* (Research mode = the verify column of the trust tool — the callback lands at slide 11.)
+
+**Harvest the differences, don't fight them:** after each pass ask *"who got something different?"* — take one or two, max. A clarifying question, a research offer, a different format: free teaching material. More than two and you lose the clock.
+
 **Fast-finisher escalation (operator-heavy room will need it):** *"Done before me? Go to the starter prompts on the site and run the board of directors on your idea."* Say it once here; repeat as needed during the moves.
 
 **Advance:** to slide 7 as you copy prompt 1. From here to slide 10 the deck is a backdrop.
