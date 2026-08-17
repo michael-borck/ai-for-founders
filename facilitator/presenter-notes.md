@@ -116,9 +116,11 @@ Paste prompt 3. Read the three failure reasons out loud — slower than feels na
 
 **The load-bearing assumption is the beat (dry run: Gemini names the injected contrarian bet, verbatim, as the thing most likely to be wrong).** Read that final sentence aloud, slowly, then: *"In prompt 2 I told it my contrarian bet. In prompt 3 it's telling me my bet is the part most likely to be wrong. It's not attacking the idea — it's attacking* my claim. *It can only do that because I gave it the claim."* Optional one-liner if it fits: context compounds — aimed once in prompt 2, still aimed two prompts later. Then prompt 4.
 
-**The arc — name it the moment the verdict lands, using whatever pass 1 actually was:** *"Twenty minutes ago this model gave me [the everyone-gets-it market report / a round of applause]. Now it's naming the single assumption most likely to kill this, and the cheapest experiment to test it. Generic, to aimed, to a decision — that arc is the entire session in one thread."*
+**Scale/Pivot/Kill: gloss, don't teach** (this room knows the words): *"Scale — double down. Pivot — change the bet. Kill — stop."* Five words each as you paste prompt 4; the pills on the slide do the rest.
 
-Normalise the kill — the room needs to hear a lecturer say it: *"If it had said Kill, that's a win. A fast cheap kill is the best deal in startups; the expensive version of this lesson costs eighteen months."*
+**The arc — name it the moment the verdict lands (dry run: Gemini returns a bold PIVOT, calls the app-first plan "a dead end", and prescribes a $50, 5-day Wizard-of-Oz WhatsApp test):** *"Prompt 1 gave me the market report everyone gets. Prompt 4 just told me my plan is — read it — a dead end. Generic, to aimed, to a verdict — that arc is the entire session in one thread."* Two more points at the screen: the experiment carries a built-in kill criterion (no photos to WhatsApp in 14 days → KILL), and the test itself is aimed — it attacks the habit gap using the thread's own context (zero friction, no new app, where their thumbs already are).
+
+Normalise the kill — the room needs to hear a lecturer say it, and the kill criterion is the moment: *"It just handed me a way to find out for fifty dollars whether to stop. A fast cheap kill is the best deal in startups; the expensive version of this lesson costs eighteen months."*
 
 Name the tool as you leave: what we just ran is the *devil's advocate* — the first of three; the other two get one line each later.
 
